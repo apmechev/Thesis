@@ -1,0 +1,77 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+
+\usepackage[toc,page]{appendix}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+
+\include{thesis.preamble}
+
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+%\setcitestyle{authoryear,open={(},close={)}} %Citations bracketed with ()
+%\setcitestyle{citesep={;}} %Makes multiple citations with ;
+%% The graphicx package provides the includegraphics command.
+\usepackage{graphicx}
+\usepackage{footnote}
+\usepackage{epsfig}
+
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%\usepackage[switch]{lineno}
+%\linenumbers
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\begin{document}
+
+\title{\LARGE {\bf Goede DAG: LOFAR Workflows}\\
+ \vspace*{6mm}
+}
+
+\author{Alexandar P. Mechev}
+\submitdate{November 2019}
+
+\normallinespacing
+\maketitle
+
+\preface
+\input{abstract/abstract}
+\input{acknowledgements/acknowledgements}
+\input{dedication/dedication}
+\input{quotes/quotes}
+
+\body
+\input{introduction/introduction}
+\input{background/background}
+
+% body of thesis comes here
+\input{ch3/chapter3}
+\input{ch4/chapter4}
+
+
+\input{conclusion/conclusion}
+
+\appendix
+% appendices come here
+
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{bibliography/bibliography}
+
+\end{document}
