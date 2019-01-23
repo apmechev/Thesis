@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="163.62372mm"
+   height="162.40508mm"
+   viewBox="0 0 163.62372 162.40508"
+   version="1.1"
+   id="svg1129"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="fig1.svg">
+  <defs
+     id="defs1123">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path21977"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#001c17;fill-opacity:1;fill-rule:evenodd;stroke:#a6a6a6;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <inkscape:path-effect
+       only_selected="false"
+       apply_with_weight="true"
+       apply_no_weight="true"
+       helper_size="0"
+       steps="2"
+       weight="33.333333"
+       is_visible="true"
+       id="path-effect12395"
+       effect="bspline" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker11441"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11439"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#001c17;fill-opacity:1;fill-rule:evenodd;stroke:#a6a6a6;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect11413"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker11337"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#001c17;fill-opacity:1;fill-rule:evenodd;stroke:#a6a6a6;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path11335"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <inkscape:path-effect
+       only_selected="false"
+       apply_with_weight="true"
+       apply_no_weight="true"
+       helper_size="0"
+       steps="2"
+       weight="33.333333"
+       is_visible="true"
+       id="path-effect11309"
+       effect="bspline" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10321"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:1.00000003pt;stroke-opacity:0.9372549"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path10319"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <inkscape:path-effect
+       only_selected="false"
+       apply_with_weight="true"
+       apply_no_weight="true"
+       helper_size="0"
+       steps="2"
+       weight="33.333333"
+       is_visible="true"
+       id="path-effect10293"
+       effect="bspline" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker7517"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7515"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:1.00000003pt;stroke-opacity:0.9372549"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect7423"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker31619"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path31617"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:1.00000003pt;stroke-opacity:0.9372549"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect31615"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2782"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2780"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:1.00000003pt;stroke-opacity:0.9372549"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect2774"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-1"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5220-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#217867;fill-opacity:1;fill-rule:evenodd;stroke:#217867;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect25149"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker22175"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:1.00000003pt;stroke-opacity:0.9372549"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path22173"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <inkscape:path-effect
+       only_selected="false"
+       apply_with_weight="true"
+       apply_no_weight="true"
+       helper_size="0"
+       steps="2"
+       weight="33.333333"
+       is_visible="true"
+       id="path-effect22171"
+       effect="bspline" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="70.098383"
+     inkscape:cy="405.279"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1385"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1126">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-14.950049,-48.731995)">
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:original-d="m 35.865191,77.531289 c -0.03262,6.77245 -0.0655,13.54516 -0.09865,20.31811"
+       inkscape:path-effect="#path-effect22171"
+       inkscape:connector-curvature="0"
+       id="path22169"
+       d="m 35.865191,77.531289 c -0.03288,6.772449 -0.06577,13.545159 -0.09865,20.31811"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:0.38898274;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.9372549;marker-end:url(#marker22175);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       ry="4.4202614"
+       y="60.618641"
+       x="17.604492"
+       height="18.174328"
+       width="58.799297"
+       id="rect2770"
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="21.493607"
+       y="55.15778"
+       id="text16557"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan16555"
+         x="21.493607"
+         y="55.15778"
+         style="font-size:7.76111126px;stroke-width:0.26458332px">Calib_1 stage</tspan></text>
+    <rect
+       style="fill:#800000;fill-opacity:0;stroke:none;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect17307"
+       width="50.24667"
+       height="28.33057"
+       x="26.157127"
+       y="64.98439"
+       ry="4.4202614"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="19.208122"
+       y="71.928009"
+       id="text18117"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan18115"
+         x="19.208122"
+         y="71.928009"
+         style="font-size:7.05555534px;stroke-width:0.26458332px">ndppp_prep_cal</tspan></text>
+    <rect
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect18123"
+       width="58.799297"
+       height="18.174328"
+       x="17.604492"
+       y="98.718674"
+       ry="4.4202614"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="28.829819"
+       y="109.94398"
+       id="text18127"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan18125"
+         x="28.829819"
+         y="109.94398"
+         style="stroke-width:0.26458332px">calib_cal</tspan></text>
+    <rect
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect18135"
+       width="58.799297"
+       height="18.174328"
+       x="116.63425"
+       y="98.564438"
+       ry="4.4202614"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="131.06683"
+       y="110.3243"
+       id="text18139"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan18137"
+         x="131.06683"
+         y="110.3243"
+         style="stroke-width:0.26458332px">fitclock</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#217867;fill-opacity:1;fill-rule:evenodd;stroke:#217867;stroke-width:0.33752036;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Lend-1);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="M 78.763324,108.50245 C 91.208631,95.282601 103.65337,82.063352 116.0976,68.844649"
+       id="path9156-57"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect25149"
+       inkscape:original-d="M 78.763324,108.50245 C 91.20864,95.282609 103.65338,82.063359 116.0976,68.844649"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#001c17;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-71.156906"
+       y="183.48079"
+       id="text9944"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"
+       transform="rotate(-49.708677)"><tspan
+         sodipodi:role="line"
+         id="tspan9942"
+         x="-71.156906"
+         y="183.48079"
+         style="font-size:5.64444447px;text-align:center;text-anchor:middle;fill:#001c17;fill-opacity:1;stroke-width:0.26458332px">Averaged</tspan><tspan
+         sodipodi:role="line"
+         x="-71.156906"
+         y="190.69102"
+         style="font-size:5.64444447px;text-align:center;text-anchor:middle;fill:#001c17;fill-opacity:1;stroke-width:0.26458332px"
+         id="tspan25605">Data</tspan></text>
+    <rect
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       ry="4.4202614"
+       y="61.069202"
+       x="116.63425"
+       height="18.174328"
+       width="58.799297"
+       id="rect2764"
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       id="text2768"
+       y="71.695129"
+       x="124.03638"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.26458332px"
+         y="71.695129"
+         x="124.03638"
+         id="tspan2766"
+         sodipodi:role="line">Pre-process</tspan></text>
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:0.36324877;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.9372549;marker-end:url(#marker2782);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 138.3002,78.148719 c -0.0345,6.252379 -0.069,12.504979 -0.10357,18.75776"
+       id="path2772"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect2774"
+       inkscape:original-d="m 138.3002,78.148719 c -0.0343,6.25238 -0.0688,12.50498 -0.10357,18.75776"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"
+       sodipodi:nodetypes="cc" />
+    <text
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       id="text2786"
+       y="54.62862"
+       x="120.14539"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:7.76111126px;stroke-width:0.26458332px"
+         y="54.62862"
+         x="120.14539"
+         id="tspan2784"
+         sodipodi:role="line">Calib_2 stage</tspan></text>
+    <rect
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7280"
+       width="58.799297"
+       height="18.174328"
+       x="19.775063"
+       y="141.06502"
+       ry="4.4202614"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:0.32294005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.9372549;marker-end:url(#marker31619);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 37.378829,160.46196 c -0.0212,8.43981 -0.0424,16.87992 -0.0636,25.32027"
+       id="path31613"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect31615"
+       inkscape:original-d="m 37.378829,160.46196 c -0.02093,8.43981 -0.04214,16.87992 -0.0636,25.32027"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"
+       sodipodi:nodetypes="cc" />
+    <text
+       id="text26968"
+       y="151.98213"
+       x="21.831879"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         style="font-size:6.3499999px;stroke-width:0.26458332px"
+         y="151.98213"
+         x="21.831879"
+         id="tspan26966"
+         sodipodi:role="line">ndppp_prep_targ</tspan></text>
+    <rect
+       ry="4.4202614"
+       y="187.10191"
+       x="19.775063"
+       height="18.174328"
+       width="58.799297"
+       id="rect26997"
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="20.471153"
+       y="198.92659"
+       id="text27001"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan26999"
+         x="20.471153"
+         y="198.92659"
+         style="stroke-width:0.26458332px">predict_ateam</tspan></text>
+    <rect
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7413"
+       width="58.799297"
+       height="18.174328"
+       x="117.70863"
+       y="139.15047"
+       ry="4.4202614"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       id="text9944-5"
+       y="155.82716"
+       x="-45.647114"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#001c17;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="rotate(-50.785874)"><tspan
+         style="font-size:5.64444447px;fill:#001c17;fill-opacity:1;stroke-width:0.26458332px"
+         y="155.82716"
+         x="-45.647114"
+         id="tspan9942-3"
+         sodipodi:role="line">Fitclock</tspan><tspan
+         style="font-size:5.64444447px;fill:#001c17;fill-opacity:1;stroke-width:0.26458332px"
+         y="163.0374"
+         x="-45.647114"
+         sodipodi:role="line"
+         id="tspan5775">Solutions</tspan></text>
+    <text
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       id="text6349"
+       y="135.51558"
+       x="24.139442"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:7.76111126px;stroke-width:0.26458332px"
+         y="135.51558"
+         x="24.139442"
+         id="tspan6347"
+         sodipodi:role="line">Targ_1 stage</tspan></text>
+    <text
+       id="text26927"
+       y="150.72191"
+       x="124.14996"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         style="fill:#000000;fill-opacity:1;stroke-width:0.26458332px"
+         y="150.72191"
+         x="124.14996"
+         id="tspan26925"
+         sodipodi:role="line">dppconcat</tspan></text>
+    <rect
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       ry="4.4202614"
+       y="164.55013"
+       x="117.70863"
+       height="18.174328"
+       width="58.799297"
+       id="rect7411"
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="119.48375"
+       y="175.85143"
+       id="text5761"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan5759"
+         x="119.48375"
+         y="175.85143"
+         style="stroke-width:0.26458332px">gsmcal_solve</tspan></text>
+    <rect
+       style="fill:#959595;fill-opacity:0.93719812;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5763"
+       width="58.799297"
+       height="18.174328"
+       x="117.70863"
+       y="189.42061"
+       ry="4.4202614"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       id="text5767"
+       y="200.49559"
+       x="119.48375"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         style="stroke-width:0.26458332px"
+         y="200.49559"
+         x="119.48375"
+         id="tspan5765"
+         sodipodi:role="line">gsmcal_apply</tspan></text>
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:0.33773714;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.9372549;marker-end:url(#marker7517);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 146.20907,180.57873 c -6.7e-4,2.55802 -0.001,5.11619 -0.002,7.67449"
+       id="path7421"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect7423"
+       inkscape:original-d="m 146.20907,180.57873 c -2.7e-4,2.55802 -8e-4,5.11619 -0.002,7.67449"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:original-d="m 146.20907,155.27105 c -2.7e-4,2.55802 -8e-4,5.11619 -0.002,7.67449"
+       inkscape:path-effect="#path-effect10293"
+       inkscape:connector-curvature="0"
+       id="path10291"
+       d="m 146.20907,155.27105 c -6.7e-4,2.55802 -0.001,5.11619 -0.002,7.67449"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:0.9372549;fill-rule:evenodd;stroke:#090909;stroke-width:0.33773714;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.9372549;marker-end:url(#marker10321);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:original-d="M 78.763324,108.50245 C 91.20864,95.282609 103.65338,82.063359 116.0976,68.844649"
+       inkscape:path-effect="#path-effect11309"
+       inkscape:connector-curvature="0"
+       id="path11307"
+       d="M 78.763324,108.50245 C 91.208631,95.282601 103.65337,82.063352 116.0976,68.844649"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#001c17;fill-opacity:1;fill-rule:evenodd;stroke:#a6a6a6;stroke-width:0.33752036;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11337);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#001c17;fill-opacity:1;fill-rule:evenodd;stroke:#a6a6a6;stroke-width:0.33752036;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11441);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="M 78.763324,192.0352 C 91.208636,178.81535 103.65338,165.5961 116.0976,152.3774"
+       id="path11411"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect11413"
+       inkscape:original-d="M 78.763324,192.0352 C 91.20864,178.81535 103.65338,165.5961 116.0976,152.3774"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="122.48877"
+       y="135.51558"
+       id="text12357"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116"><tspan
+         sodipodi:role="line"
+         id="tspan12355"
+         x="122.48877"
+         y="135.51558"
+         style="font-size:7.76111126px;stroke-width:0.26458332px">Targ_2 stage</tspan></text>
+    <text
+       transform="rotate(-48.916701)"
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       id="text12363"
+       y="130.05066"
+       x="-6.2119741"
+       style="font-style:normal;font-weight:normal;font-size:7.9375px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#001c17;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan12361"
+         style="font-size:5.64444447px;text-align:center;text-anchor:middle;fill:#001c17;fill-opacity:1;stroke-width:0.26458332px"
+         y="130.05066"
+         x="-6.2119746"
+         sodipodi:role="line">Calibration</tspan><tspan
+         style="font-size:5.64444447px;text-align:center;text-anchor:middle;fill:#001c17;fill-opacity:1;stroke-width:0.26458332px"
+         y="137.26089"
+         x="-6.2119741"
+         sodipodi:role="line"
+         id="tspan12367">Solutions</tspan></text>
+    <path
+       inkscape:export-ydpi="97.123116"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:original-d="M 79.433825,148.1039 C 91.06859,135.90587 102.7028,123.7084 114.33648,111.51149"
+       inkscape:path-effect="#path-effect12395"
+       inkscape:connector-curvature="0"
+       id="path12393"
+       d="M 79.433825,148.1039 C 91.068583,135.90586 102.7028,123.7084 114.33648,111.51149"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#001c17;fill-opacity:1;fill-rule:evenodd;stroke:#a6a6a6;stroke-width:0.338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow1Lstart);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="opacity:0.98000004;fill:none;stroke:#909090;stroke-width:0.3674497;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.3674497, 0.3674497;stroke-dashoffset:0;stroke-opacity:0.9372549"
+       id="rect1106"
+       width="63.848526"
+       height="64.226501"
+       x="15.133774"
+       y="57.524448"
+       ry="4.6079755"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <rect
+       ry="4.6079755"
+       y="57.524448"
+       x="112.65163"
+       height="64.226501"
+       width="63.848526"
+       id="rect1123"
+       style="opacity:0.98000004;fill:none;stroke:#909090;stroke-width:0.3674497;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.3674497, 0.3674497;stroke-dashoffset:0;stroke-opacity:0.9372549"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <rect
+       style="opacity:0.98000004;fill:none;stroke:#909090;stroke-width:0.39139134;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.39139134, 0.39139134;stroke-dashoffset:0;stroke-opacity:0.9372549"
+       id="rect1125"
+       width="63.824585"
+       height="72.896011"
+       x="114.55348"
+       y="138.04536"
+       ry="5.2299757"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <rect
+       ry="5.2299757"
+       y="138.04536"
+       x="17.413605"
+       height="72.896011"
+       width="63.824585"
+       id="rect1127"
+       style="opacity:0.98000004;fill:none;stroke:#909090;stroke-width:0.39139134;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.39139134, 0.39139134;stroke-dashoffset:0;stroke-opacity:0.9372549"
+       inkscape:export-filename="/home/apmechev/plots1/4_stages_steps1.png"
+       inkscape:export-xdpi="97.123116"
+       inkscape:export-ydpi="97.123116" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2556"
+       style="font-weight:bold;font-size:53.33333206px;line-height:453.54330444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion2558"><rect
+           id="rect2560"
+           width="734.38092"
+           height="700.03571"
+           x="18.182745"
+           y="152.77324" /></flowRegion><flowPara
+         id="flowPara2562"></flowPara></flowRoot>  </g>
+</svg>

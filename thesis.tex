@@ -3,11 +3,11 @@
 
 \usepackage[toc,page]{appendix}
 \usepackage{url}
-\usepackage{hyperref}
 \usepackage{enumitem}
 %\usepackage{icthesis}
 
 \include{thesis.preamble}
+
 
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
@@ -36,6 +36,7 @@
 
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{hyperref}                                                                                                                                       
 
 \begin{document}
 
@@ -61,7 +62,7 @@
 
 % body of thesis comes here
 \input{ch3/chapter3}
-%\input{ch4/chapter4}
+\input{ch4/chapter4}
 
 
 \input{conclusion/conclusion}
@@ -71,6 +72,6 @@
 
 
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliography{../ch3/chapter3.bib}%, ch4/chapter4.bib}
+\bibliography{../ch3/chapter3.bib, ../ch4/chapter4.bib}
 
 \end{document}

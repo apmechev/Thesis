@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm thesis/thesis.*
+
 pdflatex  -output-directory=thesis/  thesis.tex
 
 cd thesis

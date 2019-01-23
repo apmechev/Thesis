@@ -10,8 +10,10 @@
 % \usepackage{url}
 % \usepackage{hyperref}
 % \usepackage[all]{hypcap} % Clicking puts you on top of figure
-\chapter{Scaling LOFAR Processing}
-\label{ch:GRID_LRT}
+
+%\addcontentsline{toc}{chapter}{Scaling LOFAR Processing}                                                                                                     
+
+\chapter{Scaling LOFAR Processing}\label{ch:GRID_LRT}
 
 %\subtitle{Framework for distributing Radio Astronomy processing}
 
@@ -19,7 +21,6 @@
 %        Leiden University\\
 %        E-mail: \email{oonk@strw.leidenuniv.nl}}
 %        
-
 
 \abstract{ The Low Frequency Array (LOFAR) radio telescope stationed near Exloo, the Netherlands is an international aperture synthesis radio telescope used to study the universe at low frequencies. Aperture synthesis requires large amounts of computation between data acquisition and science ready images. The LOFAR Two Meter Sky Survey (LoTSS) will require to process 50 PB of data within five years. The data rates demanded by this project require processing at locations with high-speed access to the data. The current software packages are not suited for all cluster architectures, and cannot launch and monitor processing at multiple locations. 
 
@@ -234,13 +235,13 @@ Finally, as the reduction is automated, it can be started right after the telesc
 Minimizing the latency between observation and science quality images will benefit the LOFAR community immensely by allowing radio astronomers to focus on their specific science case. An all-sky survey at the 150 MHz range will create a multitude of targets for follow-up with optical telescopes and result in many discoveries in the field of Radio Astronomy. A full list of science results expected from the LoTSS project can be found in\cite{lotss}. Efficient high-throughput processing of LOFAR data will empower the above science cases opening the way to  exciting new discoveries.
 
 
-\begin{appendices}
+\begin{appendix}
 
 \section{Execution of LOFAR Reduction Tools }\label{sec:appendix_1}
 
 The LRT framework handles staging of LOFAR data, packaging and uploading worker node scripts (named sandboxes), creating PiCaS job tokens and launching pilot jobs on the SURFsara Gina cluster. The framework is modular, allowing an user to execute any of the previous steps manually, or alternatively launch an automated reduction. It can be downloaded from the Github page (\href{https://github.com/apmechev/GRID_LRT}{github.com/apmechev/GRID\_LRT}) and installed with \\
 \verb|python setup.py build && python setup.py install| . Documentation on the usage of the tools can be found at the Github page. 
-\end{appendices}
+\end{appendix}
 
 % \begin{thebibliography}{99}
 %\bibitem{softdrive}
