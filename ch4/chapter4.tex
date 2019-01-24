@@ -90,7 +90,8 @@
 
 %\addcontentsline{toc}{chapter}{Pipeline Collector}
 
-\chapter{\textit{Pipeline Collector}: gathering performance data for distributed astronomical pipelines}\label{ch:pipeline_collector}
+\chapter[Pipeline Collector]{\textit{Pipeline Collector}: gathering performance data for distributed astronomical pipelines}\label{ch:pipeline_collector}
+\setcounter{footnote}{0}
 
 %peedup real life pipelines performance automatic measurements radio astronomy
 %\thanks{A footnote to the article title}%X
@@ -129,7 +130,9 @@ Modern astronomical data processing requires complex software pipelines to proce
 %\tableofcontents
 %\linenumbers
 
-\section{\label{sec:intro}Introduction }
+\section{\label{ch4:intro}Introduction }
+\setcounter{footnote}{0}
+
 Astronomical data often requires significant processing before it is considered ready for scientific analysis. This processing is done increasingly by complex and autonomous software pipelines, often consisting of numerous processing steps, which are run without user interaction. It is necessary to collect performance statistics for each pipeline step. Doing so will enable scientists to discover and address software and hardware inefficiencies and produce scientific data at a higher rate. To identify these inefficiencies, we have extended the performance monitoring package \textit{tcollector}\footnote{https://github.com/OpenTSDB/tcollector}\citep{tcollector}. The resulting suite, \textit{pipeline\_collector}, makes it possible to use \textit{tcollector} to record data for complex pipelines. We have used a leading radio telescope as the test case for the \textit{pipeline\_collector} suite. The discoveries made with our software will help remove bottlenecks and suggest hardware requirements for current and future processing clusters. We summarize our findings in Table \ref{table:results} in Section \ref{sec:results}.
 
 Over the past two decades, processing data in radio astronomy has increasingly moved from personal machines to large compute clusters. Over this time, radio telescopes have undergone upgrades in the form of wide band receivers and upgraded correlators \citep{lofarcobalt,gmrt_upgrade}. In addition, several aperture synthesis arrays such as the Low Frequency Array \citep[LOFAR,][]{LOFAR}, Murchison Widefield Array \citep[MWA][]{MWA,mwa2} and MeerKAT \citep{meerkat} have begun observing the radio sky, leading to an increase of data rates by up to 3 orders of magnitude \citep{mwa_data_size,meerkat_size}.
@@ -468,7 +471,7 @@ In this paper, we present a novel system for automated collection of performance
 
 The software automatically collects performance data at the operating system level without impacting processing time. Data for each pipeline step is extracted using the OpenTSDB API, plotted and analyzed. Additionally, the \textit{pipeline\_collector} suite is easy to extend with new collectors that record more detailed time-series data for each pipeline step. The performance data is stored in the time series database OpenTSDB.
 
-Here, we used this data to find 9 insights into the LOFAR prefactor pipeline listed in Table \ref{table:results}. The implementation details are described in \ref{appendix1}.
+Here, we used this data to find 9 insights into the LOFAR prefactor pipeline listed in Table \ref{table:results}. The implementation details are described in \ref{sec:ch4_appendix1}.
 
 The \textit{prefactor} pipeline is used to do the initial processing for over 3000 observations that are part of the LOFAR SKSP Tier 1 survey. However, this pipeline is also used for lots of other LOFAR datasets outside the SKSP project. We have shown that increasing the RAM throughput is the easiest way to speedup \textit{prefactor} processing. Running the \textit{calib\_cal} step on hardware with RAM faster than 4 GB/s will save up to 700k CPU hours for the 3000+ unprocessed datasets. This throughput increase will also speedup the \textit{gsmcal\_solve} step by 30\% saving an additional 400k CPU hours. This is a significant fraction of the estimated 2,400k CPU hours required to process this data with the \textit{prefactor} pipeline. 
 

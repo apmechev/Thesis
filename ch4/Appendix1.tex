@@ -1,6 +1,7 @@
-\appendix
 
-\section{Performance Collection Implementation Details}\label{appendix1}
+\begin{subappendices}
+
+\section{Performance Collection Implementation Details}\label{sec:ch4_appendix1}
 
 
 In this work, we have developed the \textit{pipeline\_collector} suite, aimed at collecting detailed time-series information from distributed scientific pipelines. 
@@ -30,4 +31,4 @@ The setup options for \textit{pipeline\_collector} are stored in a configuration
 The \textit{pipeline\_collector} suite reads the current pipeline step from a file, the location of which is specified in the configuration. This file needs to be updated each time the pipeline begins a new step. For LOFAR we have a script running with the pipeline, and determining the current step using the pipeline logs. As each pipeline has a unique sequence of steps, the current step needs to be recorded in a file in order for \textit{pipeline\_collector} to report it to the time series database. The location of the file recording the current pipeline step is read from the configuration file. 
 
 Next, the names of the specific processes need to be included in the configuration file. In the case of LOFAR, we select the \texttt{NDPPP}, \texttt{bbs-reducer} and \texttt{losoto} processes. The \textit{pipeline\_collector} searches the running processes for the current user for these process names and launches a collector for each new process launched by the current step. 
-
+\end{subappendices}
