@@ -217,7 +217,7 @@ Overall, the software for both steps show no significant improvement when compil
   \caption{\textit{gsmcal\_solve} }
   \label{fig:ch4_gsmcal_bar}
  \end{subfigure}
-  \caption{Job completion times for \textit{calib\_cal} and \textit{gsmcal\_solve} steps tested on four hardware setups. The \textit{calib\_cal} step ran 244 times. The \textit{gsmcal\_solve} ran 24 times as the data is concatenated from 244x1 to 24x10 sets.  The step with the longest latency is \textit{gsmcal\_solve} while \textit{calib\_cal} consumes a comparable number of core-hours over 244 jobs. } 
+    \caption[Job completion times for two processing steps tested on four hardware setups]{Job completion times for \textit{calib\_cal} and \textit{gsmcal\_solve} steps tested on four hardware setups. The \textit{calib\_cal} step ran 244 times. The \textit{gsmcal\_solve} ran 24 times as the data is concatenated from 244x1 to 24x10 sets.  The step with the longest latency is \textit{gsmcal\_solve} while \textit{calib\_cal} consumes a comparable number of core-hours over 244 jobs. } 
   \label{fig:ch4_calibcal_fitclock_bars}
 \end{figure*}
 
@@ -233,7 +233,7 @@ Overall, the software for both steps show no significant improvement when compil
     \caption{Two compilation options on cluster node}
 	\label{fig:ch4_cmvfs2_calib}
     \end{subfigure}%
-      \caption{Difference in processing time for \textit{calib\_cal} when compiled remotely and natively. \textit{calib\_cal} was run 244 times with the native software and 40 times with the CVMFS compilation. Two tests were done, one on the personal laptop (\ref{fig:ch4_cmvfs1_calib}) and one on a cluster node at the LIACS Data Science Lab (\ref{fig:ch4_cmvfs2_calib}). The test on a cluster node shows no significant difference in runtime between compilation options. The laptop test suggests that the remotely compiled software may run 5\% faster than the local compilation. } 
+      \caption[Speed comparison between natively and remotely compiled software for the 'calib\_cal' step.]{Difference in processing time for \textit{calib\_cal} when compiled remotely and natively. \textit{calib\_cal} was run 244 times with the native software and 40 times with the CVMFS compilation. Two tests were done, one on the personal laptop (\ref{fig:ch4_cmvfs1_calib}) and one on a cluster node at the LIACS Data Science Lab (\ref{fig:ch4_cmvfs2_calib}). The test on a cluster node shows no significant difference in runtime between compilation options. The laptop test suggests that the remotely compiled software may run 5\% faster than the local compilation. } 
 	\label{fig:ch4_cvmfs_native}
 \end{figure*}
 
@@ -250,7 +250,7 @@ Overall, the software for both steps show no significant improvement when compil
     \caption{Two compilation options on cluster node}
 	\label{fig:ch4_cmvfs2_gsmcal}
     \end{subfigure}%
-      \caption{Difference in processing time for \textit{gsmcal\_solve} when compiled remotely and natively. \textit{gsmcal\_solve} was run 50 times with the native software and 120 times with the CVMFS compilation. Two tests were done, one on the personal laptop (\ref{fig:ch4_cmvfs1_gsmcal}) and one on a cluster node at the LIACS Data Science Lab (\ref{fig:ch4_cmvfs2_gsmcal}). Just like with the \textit{calib\_cal} step, the \textit{gsmcal\_solve} step also doesn't accelerate significantly when natively compiled.} 
+      \caption[Speed comparison between natively and remotely compiled software for the 'gsmcal\_solve' step.]{Difference in processing time for \textit{gsmcal\_solve} when compiled remotely and natively. \textit{gsmcal\_solve} was run 50 times with the native software and 120 times with the CVMFS compilation. Two tests were done, one on the personal laptop (\ref{fig:ch4_cmvfs1_gsmcal}) and one on a cluster node at the LIACS Data Science Lab (\ref{fig:ch4_cmvfs2_gsmcal}). Just like with the \textit{calib\_cal} step, the \textit{gsmcal\_solve} step also doesn't accelerate significantly when natively compiled.} 
 	\label{fig:ch4_cvmfs_native_gsm}
 \end{figure*}
 
@@ -292,7 +292,7 @@ However, Fig. \ref{fig:ch4_calib_cal_CPU} shows that the runtime of the calibrat
 	\label{fig:ch4_gsmcal_CPU}
  \end{subfigure}
  \label{fig:ch4_CPU_3_steps}
- \caption{Performance of the bottleneck steps compared with the CPU speeds of the four test machines. The values are the mean of 244 runs (Standard prefactor run) and the error bars show the 1-sigma of the distribution of the run time. } 
+    \caption[Effect of CPU speeds on the bottle neck steps for the four test machines.]{Performance of the bottleneck steps compared with the CPU speeds of the four test machines. The values are the mean of 244 runs (Standard prefactor run) and the error bars show the 1-sigma of the distribution of the run time. } 
 \end{minipage}
 \hfill        %
 \end{figure}
@@ -317,7 +317,7 @@ In general, numerical codes benefit from larger cache sizes \citep{skadron1999br
 	\label{fig:ch4_gsmcal_cache}
  \end{subfigure}
  \label{fig:ch4_cache_3_steps}
- \caption{Performance of the two bottleneck steps with respect to Last Level Cache size. The \textit{gsmcal\_solve} step shows no trend between cache size and completion time. The \textit{calib\_cal} step runs the fastest on the machine with the smallest cache.  } 
+    \caption[Effect of cache size on the bottle neck steps for the four test machines.]{Performance of the two bottleneck steps with respect to Last Level Cache size. The \textit{gsmcal\_solve} step shows no trend between cache size and completion time. The \textit{calib\_cal} step runs the fastest on the machine with the smallest cache.  } 
 \end{minipage}
 \end{figure}
 
@@ -340,7 +340,7 @@ If the entire data set does not fit into cache, the software needs to transfer d
 	\label{fig:ch4_gamcal_RAM}
  \end{subfigure}
  \label{fig:ch4_ram_bandw}
- \caption{Performance of the two bottleneck steps and RAM bandwidth in GB/s. Both the \textit{calib\_cal} and \textit{gsmcal\_solve} steps show a trend of faster processing times on machines with higher RAM bandwidth. Both steps show a trend of decreasing processing time with increasing RAM throughput.} 
+    \caption[Effect of RAM throughput on the bottle neck steps for the four test machines.]{Performance of the two bottleneck steps and RAM bandwidth in GB/s. Both the \textit{calib\_cal} and \textit{gsmcal\_solve} steps show a trend of faster processing times on machines with higher RAM bandwidth. Both steps show a trend of decreasing processing time with increasing RAM throughput.} 
 \end{minipage}
 \end{figure}
 
@@ -365,7 +365,7 @@ The calibration steps both stored less than 200MB of data in memory throughout t
       \caption{\textit{gsmcal\_solve}}
 	\label{fig:ch4_fitclock_VMRSS}
  \end{subfigure}
- \caption{Time series of the Virtual Memory Resident Set Size . This is the amount of data stored in RAM (in kB) during the \textit{calib\_cal} and \textit{gsmcal\_solve} steps. Both steps show the same amount of memory use on all test machines. Additionally, after a brief loading of data, the memory usage remains constant until processing is finished. }
+    \caption[Time series of the Virtual Memory Resident Set Size]{Time series of the Virtual Memory Resident Set Size. This is the amount of data stored in RAM (in kB) during the \textit{calib\_cal} and \textit{gsmcal\_solve} steps. Both steps show the same amount of memory use on all test machines. Additionally, after a brief loading of data, the memory usage remains constant until processing is finished. }
  \label{fig:ch4_VMRSS}
 \end{figure*}
 
@@ -382,7 +382,7 @@ The calibration steps both stored less than 200MB of data in memory throughout t
 	\label{fig:ch4_gsmcal_HDD}
  \end{subfigure}
  \label{fig:ch4_HDD_2_steps}
- \caption{Performance of the two bottleneck steps and Disk bandwidth in MB/s. There is no correlation between the Disk read speed and the Runtime of the steps.} 
+    \caption[Performance of the two bottleneck steps and Disk bandwidth in MB/s.]{Performance of the two bottleneck steps and Disk bandwidth in MB/s. There is no correlation between the Disk read speed and the Runtime of the steps.} 
 \end{figure}
 
 
@@ -406,7 +406,7 @@ The Level 1 Cache is split into cache for instructions and data. For all our tes
       \caption{Level 2 Instruction cache misses }
 	\label{fig:ch4_L2Im}
   \end{subfigure}
-  \caption{Cache miss rates for \textit{calib\_cal} and \textit{gsmcal\_solve}, executed on the SURFsara gina cluster. The cache is split into instruction and data caches. The figures above show the difference in number of cache misses for both instruction cache and data cache for the slowest \textit{prefactor} steps. \textit{calib\_cal} suffers significantly more Data cache misses than \textit{gsmcal\_solve} while the two steps undergo similar instruction Cache misses.  }
+    \caption[Cache miss rates for the bottlenexk steps, executed on the SURFsara gina cluster.]{Cache miss rates for \textit{calib\_cal} and \textit{gsmcal\_solve}, executed on the SURFsara gina cluster. The cache is split into instruction and data caches. The figures above show the difference in number of cache misses for both instruction cache and data cache for the slowest \textit{prefactor} steps. \textit{calib\_cal} suffers significantly more Data cache misses than \textit{gsmcal\_solve} while the two steps undergo similar instruction Cache misses.  }
 \end{figure}
 
 
@@ -434,7 +434,7 @@ The Full Issue Cycles counter indicates the percentage of processor cycles, in w
 	\label{fig:ch4_full_issue}
   \end{subfigure}
   \label{fig:ch4_rr}
-  \caption{Resource stall cycles and Full Instruction Issue cycles. The two steps were  executed on the SURFsara gina cluster. }
+    \caption[Resource stall cycles and Full Instruction Issue cycles.]{Resource stall cycles and Full Instruction Issue cycles. The two steps were  executed on the SURFsara gina cluster. }
 \end{figure}
 
 The plots in Figures \ref{fig:ch4_rstall} and \ref{fig:ch4_full_issue} indicate that the \textit{calib\_cal} step does not use the internal CPU pipelines efficiently leading to waiting on resources and sub-optimal use of the CPU's Computational Units.
