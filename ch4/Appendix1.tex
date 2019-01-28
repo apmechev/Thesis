@@ -8,15 +8,15 @@ In this work, we have developed the \textit{pipeline\_collector} suite, aimed at
 
 The \textit{tcollector} package is a python software suite that can collect system performance data at predetermined intervals. The package is designed to monitor the performance statistics for web-servers and cluster nodes. The tcollector software records time series of the different performance metrics and sends them to a Time Series Database through HTTP. The Time Series Database, OpenTSDB stores the data in an HBase \citep{hbase} instance at the performance collection server. Users interested in plotting time series can plot real time or historical data through an HTTP interface with OpenTSDB. With a central performance collection server, data from multiple processing sites can be collected and analyzed. 
 
-Tcollector formats the time series information in four fields. First is the name of the metric which is measured. Second is the UNIX timestamp. Third is the time series recorded as an integer or a float. Finally, a set of tags (key-value pairs) can be added to the data point. These four fields are discussed below and can be seen on the right side of Figure \ref{fig:tsdb_tcollector}. 
+Tcollector formats the time series information in four fields. First is the name of the metric which is measured. Second is the UNIX timestamp. Third is the time series recorded as an integer or a float. Finally, a set of tags (key-value pairs) can be added to the data point. These four fields are discussed below and can be seen on the right side of Figure \ref{fig:ch4_tsdb_tcollector}. 
 
 \begin{figure}[!h]
     \includegraphics[width=\linewidth]{ch4/figures/figA14/TSDB_tcollector.pdf}
       \caption{Communication between worker nodes and the TSDB server, including the pipeline\_collector modules (in red). The \textit{pipeline\_collector} suite collects information on the running LOFAR pipelines, while the rest of the tcollector package collects system performance data. The existing tcollector package and its collectors are shown in gray. The collectors in gray only record metrics from the global system. }
-	\label{fig:tsdb_tcollector}
+	\label{fig:ch4_tsdb_tcollector}
 \end{figure}
 
-\subsection{The pipeline\_collector suite}\label{sec:customcollectors}
+\subsection{The pipeline\_collector suite}\label{sec:ch4_customcollectors}
 
 
 

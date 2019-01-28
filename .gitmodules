@@ -1,0 +1,3 @@
+[submodule "ch6"]
+	path = ch6
+	url = git@github.com:apmechev/performance_model_paper.git

@@ -13,7 +13,7 @@
 
 %\addcontentsline{toc}{chapter}{Scaling LOFAR Processing}                                                                                                     
 
-\chapter[Scaling LOFAR Processing]{An Automated Scalable Framework for Distributing Radio Astronomy Processing Across Clusters and Clouds}\label{ch:GRID_LRT}
+\chapter[LOFAR Scalability Framework]{An Automated Scalable Framework for Distributing Radio Astronomy Processing Across Clusters and Clouds}\label{ch:GRID_LRT}
 
 
 %\subtitle{Framework for distributing Radio Astronomy processing}
@@ -52,7 +52,7 @@ Building on previous work (Oonk+, in prep), we created a framework to launch and
 
 The LOFAR data reduction software known as `pre-FACTOR'\cite{prefactor} was integrated in this framework. This software has been in use since November 2016 and at the time of writing (Feb 2017) had processed more than 100 datasets. This equals one quarter of all the LoTSS data gathered from September 2014 to March 2017. By deploying the LRT framework on a cluster with a high-bandwidth connection to the data, the entirety of the LoTSS data can be reduced within the five year timespan of the project. 
 
-The paper is structured as follows: Section \ref{sec:lofar_red} outlines the LOFAR data reduction process and computational requirements. Section \ref{sec:design} describes the design of the LRT framework and its capabilities, Section \ref{sec:use} describes the modification of the existing LOFAR software, and the performance and results are in Section \ref{sec:performance_results}. Finally, conclusions  and future work are in Section \ref{sec:conclusion}.
+The paper is structured as follows: Section \ref{sec:ch3_lofar_red} outlines the LOFAR data reduction process and computational requirements. Section \ref{sec:ch3_design} describes the design of the LRT framework and its capabilities, Section \ref{sec:ch3_use} describes the modification of the existing LOFAR software, and the performance and results are in Section \ref{sec:ch3_performance_results}. Finally, conclusions  and future work are in Section \ref{sec:ch3_conclusion}.
 
 \section{Related Work}
 
@@ -66,26 +66,26 @@ CouchDB is also successfully used by the LHCb team to monitor the nightly build 
 
 CernVM-FS\cite{cvmfs2008} has been used by projects to package and publish software. Software such as the ATLAS \cite{cvmfsatlas} and the NO$\nu$A \cite{cvmfsnova} are compiled on a central server and published to worker nodes. The LOFAR software has been similarly packaged (Oonk+ in prep). This makes deployment of processing scripts possible without compilation on the worker machines. 
 
-\section{LOFAR Data Processing}\label{sec:lofar_red}
+\section{LOFAR Data Processing}\label{sec:ch3_lofar_red}
 
-Creating images from data collected by an aperture synthesis array\cite{aperturesynth} requires several steps of calibration and imaging. In order to place this work in the proper radio astronomy context, a brief introduction to LOFAR data processing follows. Section \ref{sec:image} gives an overview of LOFAR processing from an archived observation to a final image. A schematic of this is in Fig.\ref{fig:both_pipes}. Section \ref{sec:dirin_process} details the processing steps currently implemented as well as their computational challenges. Section \ref{sec:impl} contains an overview of the benefits of integrating the processing software with the LRT framework.  Finally, section \ref{sec:dataflow} gives description of the processing by focusing on the dataflow. A visualisation of the processing detailing the flow of data is presented in Fig. \ref{fig:DIpipe}.
+Creating images from data collected by an aperture synthesis array\cite{aperturesynth} requires several steps of calibration and imaging. In order to place this work in the proper radio astronomy context, a brief introduction to LOFAR data processing follows. Section \ref{sec:ch3_image} gives an overview of LOFAR processing from an archived observation to a final image. A schematic of this is in Fig.\ref{fig:ch3_both_pipes}. Section \ref{sec:ch3_dirin_process} details the processing steps currently implemented as well as their computational challenges. Section \ref{sec:ch3_impl} contains an overview of the benefits of integrating the processing software with the LRT framework.  Finally, section \ref{sec:ch3_dataflow} gives description of the processing by focusing on the dataflow. A visualisation of the processing detailing the flow of data is presented in Fig. \ref{fig:ch3_DIpipe}.
 
 
-\subsection{Producing Images From LOFAR Data}\label{sec:image}
+\subsection{Producing Images From LOFAR Data}\label{sec:ch3_image}
 
 The raw data is stored in the LOFAR Long Term Archive. Typically, an 8 hour observation results in a 16 TB dataset split into 244 65GB files. Throughout the LoTSS data processing, this data is reduced to a 500GB set of calibrated data. The calibrated data is then imaged producing a final set of a few 1.2GB images of 25k*25k pixels. The calibrated set is archived as it can be re-imaged in the future. 
 
 \begin{figure}
  \includegraphics[width=.79\textwidth]{ch3/figures/DIDDpipe.png}\\
- \caption{A schematic of the data flow through the Direction Independent Pipeline (pre-FACTOR\cite{prefactor}) and one of the Direction Dependent Pipelines (DDFacet). The Initial Source Subtraction is only necessary for some DD pipelines and is not currently implemented. }
- \label{fig:both_pipes}
+ \caption[Prefactor and DDFacet Data Flow]{A schematic of the data flow through the Direction Independent Pipeline (pre-FACTOR\cite{prefactor}) and one of the Direction Dependent Pipelines (DDFacet). The Initial Source Subtraction is only necessary for some DD pipelines and is not currently implemented. }
+ \label{fig:ch3_both_pipes}
 \end{figure}
 
 
-Data reduction for the LoTSS survey is split into two pipelines: Direction Independent (DI) calibration and Direction Dependent (DD) calibration (Fig\ref{fig:both_pipes}). The Direction Independent pipeline\cite{prefactor}\cite{van2016lofar} produces images that are limited in resolution and contain instrumental effects\cite{lotss}. To achieve high fidelity continuum images, the ionospheric and beam errors must be corrected\cite{lofar_calib}. As those effects vary across the field of view, a Direction Dependent calibration step must follow. Without these corrections the image quality and resolution is severely limited\cite{van2016lofar}.  We are currently working on a GRID implementation of the Direction Dependent pipeline and will report on this in a future paper.
+Data reduction for the LoTSS survey is split into two pipelines: Direction Independent (DI) calibration and Direction Dependent (DD) calibration (Fig\ref{fig:ch3_both_pipes}). The Direction Independent pipeline\cite{prefactor}\cite{van2016lofar} produces images that are limited in resolution and contain instrumental effects\cite{lotss}. To achieve high fidelity continuum images, the ionospheric and beam errors must be corrected\cite{lofar_calib}. As those effects vary across the field of view, a Direction Dependent calibration step must follow. Without these corrections the image quality and resolution is severely limited\cite{van2016lofar}.  We are currently working on a GRID implementation of the Direction Dependent pipeline and will report on this in a future paper.
 
 
-\subsection{Direction Independent Processing}\label{sec:dirin_process}
+\subsection{Direction Independent Processing}\label{sec:ch3_dirin_process}
 
 The LOFAR telescope consists of many antennae, each with its own electronic gain. A gain calibration needs to be performed by observing a bright calibrator source before or after the science target\cite{lofar_calib}. Using this observation, the antenna gains for the telescope are calculated. This is performed by the Calibration pipeline of the pre-FACTOR software\cite{prefactor}.  The results from this step are applied to the science target and target observation is averaged  and processed. This consists of removing Radio Frequency Interference and subtraction of bright off-axis sources, and finally calibration against a skymodel derived from surveys conducted with previous telescopes\cite{lofar_calib}\cite{van2016lofar}. These steps are performed by the Target pipeline of the pre-FACTOR software\cite{prefactor}. The result is a calibrated dataset which is up to 64 times smaller than the uncalibrated archived data.
 
@@ -93,10 +93,10 @@ A 16TB dataset cannot fit into a machine's memory, which is typically less than 
 
 %The initial part of the LOFAR data processing can benefit from a cluster of many small machines. Doing so not only improves latency but allows for both scalability and fault tolerance, as discussed in Sections  \ref{sec:intermediate_storage} and \ref{sec:capabilities}. 
 
-The Direction Independent calibration pipeline (Fig.\ref{fig:DIpipe}) consists of an existing set of scripts which use the LOFAR software suite\cite{lofarcookbook} to process the initial datasets. These scripts also handle the post-processing and application of the calibration results\cite{van2016lofar}. These scripts are contained in the package \emph{pre-FACTOR}\cite{prefactor}. The order of the scripts and their parameters are contained in a parameter-set file (henceforth 'parset'). The parset defines a sequence of procedures, each launching one or more executables. The execution of the procedures in a parset defines a step in the Direction Independent Pipeline. 
+The Direction Independent calibration pipeline (Fig.\ref{fig:ch3_DIpipe}) consists of an existing set of scripts which use the LOFAR software suite\cite{lofarcookbook} to process the initial datasets. These scripts also handle the post-processing and application of the calibration results\cite{van2016lofar}. These scripts are contained in the package \emph{pre-FACTOR}\cite{prefactor}. The order of the scripts and their parameters are contained in a parameter-set file (henceforth 'parset'). The parset defines a sequence of procedures, each launching one or more executables. The execution of the procedures in a parset defines a step in the Direction Independent Pipeline. 
 
 
-\subsection{Implementing the DI Calibration on the GRID}\label{sec:impl}
+\subsection{Implementing the DI Calibration on the GRID}\label{sec:ch3_impl}
 
 The LoTSS survey is mainly conducted by a team at Leiden University. The bandwidth between a University cluster and the LOFAR data archive is too low to download the data, 10 MB/s in the case of Leiden University. At Leiden University, downloading of one dataset would take 10 times longer than the processing. The processing  was moved to the SURFsara grid location at the Amsterdam Science Park\footnote{http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Service/system\_specs.html} as there were previous successes in processing LOFAR data at SURFsara (Oonk+ in prep).  In order to take advantage of the computational resources at the SURFsara Gina cluster\cite{gina_specs}, the LOFAR pre-FACTOR pipeline was modified as part of the development LRT framework. The two steps of the DI reduction, the Calibrator and Target, were each split in two parts. The first part of the Calibrator and Target processing is parallelized by running one file per node, and the second runs combine these results. This takes advantage of the data level parallelism of LOFAR processing.
 
@@ -104,35 +104,35 @@ Additionally, splitting the computation makes it more robust. In the case that t
 
 The pre-FACTOR software was designed to be run on single machines or clusters with a shared file system. Because the worker machines at the SURFsara cluster have isolated storage, scripts are included in the LOFAR Reduction Tools to load the relevant data on the worker node before processing. After a job is finished, the scripts save intermediate results to a storage location external to the cluster. 
 
-\subsection{Data Flow and Processing Steps}\label{sec:dataflow}
+\subsection{Data Flow and Processing Steps}\label{sec:ch3_dataflow}
 
 A researcher interested in processing LOFAR data needs to download it from the LOFAR Long Term Archive. Leiden University leads the LoTSS survey and has a computer cluster dedicated for LOFAR processing. The connection between the Leiden location and the LOFAR data archive is typically 10 MB/s. At this rate, downloading a single 16TB LoTSS dataset completes in two weeks. At this rate, transferring 3000 datasets would take over a century. 
 
 Unlike at Leiden University, the SURFsara clusters have a gigabit connection to the data archive, accelerating the data retrieval to 1.5 days. Additionally, having two orders of magnitude more processing nodes than at Leiden, the reduction can be further parallelized. This has accelerated the processing of one (downloaded) dataset from more than two days to less than half a day.
 
-Using intermediate storage to hold the results from each step, the pre-FACTOR DI pipeline (Fig.\ref{fig:both_pipes}) was split into four steps as in Fig. \ref{fig:DIpipe}. The Calib 1 and Target 1 steps download the raw data at one piece per worker machine and store the processing results (Calibration Tables and Processed data respectively) in storage. The second Calibration and Target steps combine these results and process them producing the calibration solutions and datasets respectively. 
+Using intermediate storage to hold the results from each step, the pre-FACTOR DI pipeline (Fig.\ref{fig:ch3_both_pipes}) was split into four steps as in Fig. \ref{fig:ch3_DIpipe}. The Calib 1 and Target 1 steps download the raw data at one piece per worker machine and store the processing results (Calibration Tables and Processed data respectively) in storage. The second Calibration and Target steps combine these results and process them producing the calibration solutions and datasets respectively. 
 
 
 \begin{figure}
  \includegraphics[width=.79\textwidth]{ch3/figures/Pipeline_parallel.png}\\
- \caption{Data flow and parallelization of the Direction Independent Processing. The Calibrator 1 and Target 1 steps run concurrently as independent jobs. Calibrator 2 and Target 2 combine these results. Note that the Target 1 step requires the solutions produced by the Calibrator 2 step. This places a strict ordering on the processing steps. }
- \label{fig:DIpipe}
+    \caption[Parallelization of prefactor processing]{Data flow and parallelization of the Direction Independent Processing. The Calibrator 1 and Target 1 steps run concurrently as independent jobs. Calibrator 2 and Target 2 combine these results. Note that the Target 1 step requires the solutions produced by the Calibrator 2 step. This places a strict ordering on the processing steps. }
+ \label{fig:ch3_DIpipe}
 \end{figure}
 
 
 
-\section{Framework Design}\label{sec:design}
+\section{Framework Design}\label{sec:ch3_design}
 
-The LRT framework (Fig. \ref{fig:design}) was developed to automate the LOFAR Direction Independent calibration by processing the data at the Gina cluster SURFsara\cite{gina_specs}. The goal of the framework was to adapt the pre-FACTOR package to take advantage of the large computational resources and high bandwidth at this site. Thanks to the data-level parallelism, using the computational resources at the Gina cluster accelerates the data reduction. 
+The LRT framework (Fig. \ref{fig:ch3_design}) was developed to automate the LOFAR Direction Independent calibration by processing the data at the Gina cluster SURFsara\cite{gina_specs}. The goal of the framework was to adapt the pre-FACTOR package to take advantage of the large computational resources and high bandwidth at this site. Thanks to the data-level parallelism, using the computational resources at the Gina cluster accelerates the data reduction. 
 
 \begin{figure}
  \includegraphics[width=\textwidth]{ch3/figures/design.png}\\
  \caption{Overview of the design of the LRT framework}
- \label{fig:design}
+ \label{fig:ch3_design}
 \end{figure}
 
 \subsection{Framework Elements}
-The LRT framework consists of a set of modules responsible for different parts of the data reduction. The \verb|srmlist| module handles the links to the data. If the data is on tape, it sends a command to stage it to disk. The \verb|sandbox| module creates an archive of processing scripts and uploads it to storage. The \verb|Token| module is responsible for managing metadata, which defines a processing job. Appendix \ref{sec:appendix_1} contains information on the functionality of each module and their use. 
+The LRT framework consists of a set of modules responsible for different parts of the data reduction. The \verb|srmlist| module handles the links to the data. If the data is on tape, it sends a command to stage it to disk. The \verb|sandbox| module creates an archive of processing scripts and uploads it to storage. The \verb|Token| module is responsible for managing metadata, which defines a processing job. Appendix \ref{sec:ch3_appendix_1} contains information on the functionality of each module and their use. 
 
 \subsubsection{Storing Job Metadata}
 
@@ -143,9 +143,9 @@ The first implementation of PiCaS and CouchDB for LOFAR data reduction was carri
 
 By logging the name of the pipeline step in the job description, each job is aware of which pipeline step it is processing and executes the appropriate scripts. Important to note is that the CouchDB documents can store text and integer values as well as file attachments. The LOFAR implementation uses attachments to store diagnostic files produced by the worker machines, lists of links to the data and parset files that define the pre-FACTOR workflow. 
 
-\subsubsection{Creating Job Tokens}\label{sec:create_tokens}
+\subsubsection{Creating Job Tokens}\label{sec:ch3_create_tokens}
 
-The first step to automating batch processing is to create the job tokens which hold the processing metadata and load them into the database. In order to track multiple concurrent reductions, these tokens are combined in sets. Once this set is given a name, a batch of tokens can be created for each pipeline step and uploaded into the PiCaS server. These tokens are set in the `todo' state, indicating the processing has not yet started. The specific implementation of the `pre-FACTOR' software is discussed in Appendix \ref{sec:appendix_1}.
+The first step to automating batch processing is to create the job tokens which hold the processing metadata and load them into the database. In order to track multiple concurrent reductions, these tokens are combined in sets. Once this set is given a name, a batch of tokens can be created for each pipeline step and uploaded into the PiCaS server. These tokens are set in the `todo' state, indicating the processing has not yet started. The specific implementation of the `pre-FACTOR' software is discussed in Appendix \ref{sec:ch3_appendix_1}.
 
 % \begin{figure}
 %  \includegraphics[width=.79\textwidth]{Token_load.png}\\
@@ -153,11 +153,11 @@ The first step to automating batch processing is to create the job tokens which 
 %  \label{fig:tok_load}
 % \end{figure}
 
-\subsubsection{Packing Scripts}\label{sect:scripts}
+\subsubsection{Packing Scripts}\label{sect:ch3_scripts}
 
-While the PiCaS database can hold metadata which differs across jobs, pipelines or observations; the processing scripts need to be stored in a location where the worker machines have access to them. These scripts are archived and uploaded to storage and their location is added to the job token. After a worker machine locks a job token, it downloads and extracts the processing scripts, reads the metadata from the token and begins the processing (Fig.\ref{fig:tok_run}).
+While the PiCaS database can hold metadata which differs across jobs, pipelines or observations; the processing scripts need to be stored in a location where the worker machines have access to them. These scripts are archived and uploaded to storage and their location is added to the job token. After a worker machine locks a job token, it downloads and extracts the processing scripts, reads the metadata from the token and begins the processing (Fig.\ref{fig:ch3_tok_run}).
 
-The location of the scripts is stored in the job token. This allows different steps of the pipeline to use different sets of scripts. The benefits from this design is that as long as the worker node has access to the URI (Universal Resource Identifier) of the scripts, it can process the data, making data reduction portable over a variety of distributed computing environments, including the GRID. This capability will be used in the future to move processing to the location of the archive (Section \ref{sec:future}). Implementation of this process is summarised in Appendix \ref{sec:appendix_1}. 
+The location of the scripts is stored in the job token. This allows different steps of the pipeline to use different sets of scripts. The benefits from this design is that as long as the worker node has access to the URI (Universal Resource Identifier) of the scripts, it can process the data, making data reduction portable over a variety of distributed computing environments, including the GRID. This capability will be used in the future to move processing to the location of the archive (Section \ref{sec:ch3_future}). Implementation of this process is summarised in Appendix \ref{sec:ch3_appendix_1}. 
 
 
 \subsubsection{Processing}
@@ -168,12 +168,12 @@ Since the processing scripts and metadata are stored remotely, the same small la
 
 \begin{figure}
  \includegraphics[width=.76\textwidth]{ch3/figures/Token_run.png}\\
- \caption{Starting processing on worker machines. Currently processing is done on SURFsara Gina nodes, however the framework has been tested at the Leiden University cluster.}
- \label{fig:tok_run}
+    \caption[Starting processing on worker machines]{Starting processing on worker machines. Currently processing is done on SURFsara Gina nodes, however the framework has been tested at the Leiden University cluster.}
+ \label{fig:ch3_tok_run}
 \end{figure}
 
 
-\subsubsection{Intermediate Data Storage}\label{sec:intermediate_storage}
+\subsubsection{Intermediate Data Storage}\label{sec:ch3_intermediate_storage}
 
 Splitting the processing into multiple steps requires intermediate data to be stored at a location accessible to the worker machines. As the current processing is done at the Gina cluster, the intermediate results are stored in several dedicated
 storage pools hosted by SURFsara. The LRT processing scripts check for the availability of an initial data set or intermediate data product on launch and download it. This avoids unnecessary repetition of reduction steps and allows to restarting a failed job.
@@ -182,33 +182,33 @@ Since the data location is static, the paths of the data are hard coded into the
 
 \begin{figure}
  \includegraphics[width=.76\textwidth]{ch3/figures/Token_process.png}\\
- \caption{Processing of LOFAR data from the Long Term Archive with results stored at an intermediate storage location.}
- \label{fig:tok_process}
+    \caption[Schematic of data movement.]{Processing of LOFAR data from the Long Term Archive with results stored at an intermediate storage location.}
+ \label{fig:ch3_tok_process}
 \end{figure}
 
-\subsection{LOFAR Surveys Use Case}\label{sec:use}
+\subsection{LOFAR Surveys Use Case}\label{sec:ch3_use}
 The LOFAR Two Meters Sky Survey requires processing of more than 8 PB of data each year in order to keep up with the data produced by the telescope. As there are more than 3000 observations planned, processing them manually is untenable. Additionally, the large raw data sizes require the data be reduced in parallel before the Direction Dependent calibration step since the data will not fit in the memory of a single machine. 
 
 Re-purposing the LOFAR pre-FACTOR software to take advantage of the GRID computing resources by leveraging the automation provided by the LRT framework has allowed the processing of more than a hundred datasets in the timespan of four months. Additionally, this was done in the time frame that an astronomer would normally produce less than 10 Direction Independent calibrated observations, hence a providing a necessary speed up by an order of magnitude.
 
 
-\subsection{Framework Capabilities}\label{sec:capabilities}
+\subsection{Framework Capabilities}\label{sec:ch3_capabilities}
 
 The LRT implementation is designed to be as platform independent as possible. It allows for easy extensions enabling LOFAR reduction schemes other than the LoTSS reduction. Two examples of this are the updated LOFAR GRID spectroscopy and LOFAR GRID pre-processing pipelines (Oonk+ in prep). The GRID pre-processing pipeline runs flagging of bad data and averaging, however performs no calibration. The spectroscopy pipeline uses an independent set of scripts to perform calibration,  bandwidth correction and imaging. 
 
 Thanks to the abstraction of the metadata and scripts storage, processing is also possible at other locations. The pre-FACTOR scripts require an installation of the LOFAR software stack\cite{lofar_stack}. These requirements are met by mounting a CernVM-FS\cite{cvmfs2008}\cite{softdrive} installation of the LOFAR stack. The Cern-VM FileSystem service provides a portable pre-compiled copy of the LOFAR software.  With the CVMFS prerequisite satisfied and an active grid proxy, any computer can download data and process a job in any data reduction step. 
 
 
-\subsection{Initial Results}\label{sec:performance_results}
+\subsection{Initial Results}\label{sec:ch3_performance_results}
 
-Automatically launching jobs has made it possible to process more than 100 datasets between November 2016 and February 2017. Without a framework to automate and distribute the processing and a cluster at a Grid location, these datasets would need to be downloaded to an institute's cluster. Such standalone runs of the `pre-FACTOR' scripts typically process one observation in two weeks taking into account the data transfer time.  At the 10MB/s connection (The sustained speed at Leiden University), the downloading would take over 5 years alone. Porting the LOFAR LoTSS data reduction to a Grid location using the LRT framework has resulted in a 15x increase in data throughput. Suggestions on further increasing the throughput are presented in Section \ref{sec:future}.
+Automatically launching jobs has made it possible to process more than 100 datasets between November 2016 and February 2017. Without a framework to automate and distribute the processing and a cluster at a Grid location, these datasets would need to be downloaded to an institute's cluster. Such standalone runs of the `pre-FACTOR' scripts typically process one observation in two weeks taking into account the data transfer time.  At the 10MB/s connection (The sustained speed at Leiden University), the downloading would take over 5 years alone. Porting the LOFAR LoTSS data reduction to a Grid location using the LRT framework has resulted in a 15x increase in data throughput. Suggestions on further increasing the throughput are presented in Section \ref{sec:ch3_future}.
  
 % \subsection{Bottlenecks and Proposed Solutions}
 % 
 % Launching multiple processing jobs leads to large data transfer rates between the raw data archive and the processing site. While the SURFsara Grid location has a gigabit connection to the data archives, launching more than two reductions at a time results in a download bottleneck. This bottleneck is caused by the 1 Gbps public connection between LTA sites. Most of the LoTSS data is stored at the Forschungszentrum Jülich location. Thus, the 1Gbps bandwidth between the archive and processing sites limits the download to 35 hours per 16TB observation. To process the outstanding data within the five project time line, the minimum bandwidth requirement is a 2.5 Gbps uninterrupted connection to the data. Solutions to this bottleneck are presented in Section \ref{sec:future}. 
 
 
-\section{Conclusion and Future Work}\label{sec:conclusion}
+\section{Conclusion and Future Work}\label{sec:ch3_conclusion}
 
 The goal of the LRT Framework is to create an automated software which can be used to port LOFAR processing to a massively distributed compute environment. The Direction Independent calibration of the LOFAR Two Meter Sky Survey was used as a demonstration of the capabilities of the LRT software. 
 
@@ -219,14 +219,14 @@ The scalability of this framework allows to launch multiple data reductions conc
 
 \subsection{Throughput Improvement}
 
-Using the LRT framework, more than 100 datasets have passed through the Direction Independent calibration. This is more than a 15 fold increase compared to the throughput at a institution with a limited bandwidth to the data archive. From these datasets, 30 images have been produced since November 2016.  The Direction Dependent pipeline, responsible for the imaging of the DI calibrated data, is not yet automated using the LRT framework. The topic of this automation will be handled in future work. Future improvements (Section \ref{sec:future}) are expected to increase the throughput to one image per day.  
+Using the LRT framework, more than 100 datasets have passed through the Direction Independent calibration. This is more than a 15 fold increase compared to the throughput at a institution with a limited bandwidth to the data archive. From these datasets, 30 images have been produced since November 2016.  The Direction Dependent pipeline, responsible for the imaging of the DI calibrated data, is not yet automated using the LRT framework. The topic of this automation will be handled in future work. Future improvements (Section \ref{sec:ch3_future}) are expected to increase the throughput to one image per day.  
 
 Currently, the data reduction is launched manually. There are upcoming plans to create a trigger launched by the Observatory at the end of a successful observation. Using this trigger, the processing can be integrated with the data acquisition and launched automatically at the end of the observation. Doing so enables producing an image less than a week after the observation has completed without requiring human interaction. 
 % 
-\subsection{Future Work}\label{sec:future}
+\subsection{Future Work}\label{sec:ch3_future}
 
 
-Most of the LoTSS data is not stored at the SURFsara Grid location. Because of the high data sizes, the 1 Gbps transfer between these remote sites and SURFsara is insufficient to process the 3000+ datasets. The proposed solution is to launch the initial reduction steps (Calibrator 1 and Target 1 in Fig.\ref{fig:DIpipe}) on compute clusters at the archive locations. Running the Target 1 step at these sites will reduce the data size from 16TB to 0.5TB. The resulting intermediate data can easily be transferred over a 1 Gbps connection in 1 hour compared with the 35 hours for the original data. 
+Most of the LoTSS data is not stored at the SURFsara Grid location. Because of the high data sizes, the 1 Gbps transfer between these remote sites and SURFsara is insufficient to process the 3000+ datasets. The proposed solution is to launch the initial reduction steps (Calibrator 1 and Target 1 in Fig.\ref{fig:ch3_DIpipe}) on compute clusters at the archive locations. Running the Target 1 step at these sites will reduce the data size from 16TB to 0.5TB. The resulting intermediate data can easily be transferred over a 1 Gbps connection in 1 hour compared with the 35 hours for the original data. 
 
 While the LRT framework successfully automated the Direction Independent calibration pipeline, it still needs to  implement the Direction Dependent processing scripts. The DI data can be easily split into pieces and processed concurrently, however current Direction Dependent pipelines cannot split the data easily. This means they will only benefit from the automation aspect of the framework. Because of this limitation of the algorithms, (Direction Dependent) processing of each dataset needs to be done on a single machine.  This part of the processing currently takes more than four days per dataset per node. To process all 3000 observations within five years, the DD reduction will need at least 8 dedicated machines continuously processing data. Nevertheless, the input data is only 200-500GB making it easier to store and transfer to institutes not part of the European Grid Infrastructure. 
 
@@ -239,7 +239,7 @@ Minimizing the latency between observation and science quality images will benef
 
 \begin{subappendices}
 
-\section{Execution of LOFAR Reduction Tools }\label{sec:appendix_1}
+\section{Execution of LOFAR Reduction Tools }\label{sec:ch3_appendix_1}
 
 The LRT framework handles staging of LOFAR data, packaging and uploading worker node scripts (named sandboxes), creating PiCaS job tokens and launching pilot jobs on the SURFsara Gina cluster. The framework is modular, allowing an user to execute any of the previous steps manually, or alternatively launch an automated reduction. It can be downloaded from the Github page (\href{https://github.com/apmechev/GRID_LRT}{github.com/apmechev/GRID\_LRT}) and installed with \\
 \verb|python setup.py build && python setup.py install| . Documentation on the usage of the tools can be found at the Github page. 
