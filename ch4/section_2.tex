@@ -1,4 +1,4 @@
-\section{Measuring LOFAR Pipeline performance with pipeline\_collector}\label{sec:ch4_methods}
+\section[Measuring LOFAR Pipeline performance with pipeline\_collector]{Measuring LOFAR Pipeline performance with \\pipeline\_collector}\label{sec:ch4_methods}
 We developed the package \textit{pipeline\_collector} as an extension of  the performance collection package \textit{tcollector}. \textit{pipeline\_collector} makes it possible to collect performance data for complex multi-step pipelines. Additionally, it makes it easy to record performance data from other utilities. A performance monitoring utility that we plan to integrate in the future are the PAPI tools described in section \ref{sec:ch4_related}. The resulting performance data was recorded in a database and analyzed. For our tests, we used the LOFAR \textit{prefactor} pipeline, however with minor modifications, any multi-step pipeline can be profiled. 
 
 \textit{tcollector} is a software package that automatically launches 'collector' scripts. These scripts are  sample the specific system resource and send the data to the main tcollector process. This process then sends the data to the dedicated time series database. We created custom scripts to monitor processes launched by the \textit{prefactor} pipeline (\ref{sec:ch4_customcollectors}). 
@@ -44,9 +44,9 @@ The time-series database is also used to collect low-level CPU information for e
 
 In order to study the effect of different hardware configurations on the performance of LOFAR processing, the \textit{prefactor} pipeline was run on four different sets of hardware. The four machines tasked with processing LOFAR data comprised nodes at three computational clusters and a personal computer. The tests were run while the systems were idle to make sure there is no interference of other software with the LOFAR processing. Table \ref{tab:ch4_nodes} details the specifics of the four test machines.
 
- \begin{table*}
- \begin{center} 
-
+ \begin{table}
+     \begin{center} 
+\resizebox{\textwidth}{!}{
   \begin{tabular}{ l | c | c | c | c | c | c }
     \hline
     Location & CPU Speed (MHz) & CPU Model & Micro-architecture & Cache Size & RAM Speed\footnotemark & Disk Speed\footnotemark \\ \hline
@@ -57,9 +57,9 @@ In order to study the effect of different hardware configurations on the perform
     Laptop & 3300 & E3-1505M & Skylake &  8 MB  & 4.7 GB/s & 822 MB/s\\ \hline
     \hline
   \end{tabular}   
-     \caption[Hardware specifications of the four test machines.]{CPU, Cache, RAM and Storage specifications of the four test machines. The tested machines span a factor of 1.5x in CPU speed, 4x in cache and RAM Speed and $~$10x in Disk speed.}
-  \label{tab:ch4_nodes}
+  \label{tab:ch4_nodes}}
+         \caption[Hardware specifications of the four test machines.]{CPU, Cache, RAM and Storage specifications of the four test machines. The tested machines span a factor of 1.5x in CPU speed, 4x in cache and RAM Speed and $~$10x in Disk speed.}
   \end{center}
- \end{table*}
+ \end{table}
 
 
