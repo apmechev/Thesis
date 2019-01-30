@@ -275,74 +275,66 @@ The CPU speed is usually the primary factor determining how fast computations ca
 
 However, Fig. \ref{fig:ch4_calib_cal_CPU} shows that the runtime of the calibration of the calibrator does not strongly depend on the CPU frequency. While the test nodes at SURFsara and Leiden run at the same CPU frequency, running on a cluster node at SURFsara takes half the time as on a node at Leiden. Even more surprisingly, the \textit{gsmcal\_solve} step does not benefit significantly from a faster CPU, despite being the most computationally heavy \textit{prefactor} step (\textbf{R2}). This step does the gain calibration on the target field using the StEFCal algorithm \citep{stefcal}. Figure \ref{fig:ch4_gsmcal_CPU} shows only a slight improvement over faster CPU clock speeds for both steps. The correlation between completion time and CPU speed is similar for both steps.
 
-\begin{figure}
-\begin{minipage}[b]{0.45\textwidth}
-\begin{subfigure}[b]{\linewidth}
+\begin{figure*}
+    \centering
+\begin{subfigure}[b]{0.45\linewidth}
 %\begin{subfigure}{.5\textwidth}
-    \includegraphics[width=\textwidth]{ch4/figures/fig7/calibcalCPU.pdf}
+    \includegraphics[width=\linewidth]{ch4/figures/fig7/calibcalCPU.pdf}
       \caption{calib\_cal }
 	\label{fig:ch4_calib_cal_CPU}
  \end{subfigure}%
-
-\vspace*{5mm} % vertical whitespace
-\begin{subfigure}[b]{\linewidth}
-  %\begin{subfigure}{.5\textwidth}
-    \includegraphics[width=\textwidth]{ch4/figures/fig7/gsmcalCPU.pdf}
+ \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{ch4/figures/fig7/gsmcalCPU.pdf}
       \caption{\textit{gsmcal\_solve}}
 	\label{fig:ch4_gsmcal_CPU}
  \end{subfigure}
  \label{fig:ch4_CPU_3_steps}
     \caption[Effect of CPU speeds on the bottle neck steps for the four test machines.]{Performance of the bottleneck steps compared with the CPU speeds of the four test machines. The values are the mean of 244 runs (Standard prefactor run) and the error bars show the 1-sigma of the distribution of the run time. } 
-\end{minipage}
+
 \hfill        %
-\end{figure}
+\end{figure*}
 
 \subsubsection{Cache}
 The CPU has a hierarchy of caches consisting of Level 1, Level 2 Cache and LLC Cache. For the four processors tested, the Level 1 and 2 caches were all the same size, thus the only difference is the Last Level Cache (LLC or just Cache in Figure \ref{fig:ch4_mem_hiearch}). This cache stores data needed by the CPU, so the larger it is, the less the processor needs to wait for RAM to return data. 
 
 In general, numerical codes benefit from larger cache sizes \citep{skadron1999branch,goto2008anatomy}. Interestingly,  figure \ref{fig:ch4_gsmcal_cache} suggests that the \textit{gsmcal\_solve} step does not exclusively depend on larger cache \textbf{R3} (Table \ref{table:ch4_results}). On the machines with a larger cache, the \textit{gsmcal\_solve} step completed processing as quickly as on the machines with smaller cache, even down to 8MB.  
 
-\begin{figure}
-\begin{minipage}[b]{0.45\textwidth}
-\begin{subfigure}[b]{\linewidth}
-    \includegraphics[width=\textwidth]{ch4/figures/fig8/calibcal_LLC.pdf}
+\begin{figure*}
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{ch4/figures/fig8/calibcal_LLC.pdf}
       \caption{calib\_cal }
 	\label{fig:ch4_calib_cal_cache}
  \end{subfigure}%
-
-\vspace*{5mm} % vertical whitespace
-\begin{subfigure}[b]{\linewidth}
-    \includegraphics[width=\textwidth]{ch4/figures/fig8/gsmcal_LLC.pdf}
+ \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{ch4/figures/fig8/gsmcal_LLC.pdf}
       \caption{\textit{gsmcal\_solve}}
 	\label{fig:ch4_gsmcal_cache}
  \end{subfigure}
  \label{fig:ch4_cache_3_steps}
     \caption[Effect of cache size on the bottle neck steps for the four test machines.]{Performance of the two bottleneck steps with respect to Last Level Cache size. The \textit{gsmcal\_solve} step shows no trend between cache size and completion time. The \textit{calib\_cal} step runs the fastest on the machine with the smallest cache.  } 
-\end{minipage}
-\end{figure}
+
+\end{figure*}
 
 \subsubsection{RAM Bandwidth}
 
 If the entire data set does not fit into cache, the software needs to transfer data from RAM to the CPU. In these cases,  \textit{prefactor} benefits from a fast bandwidth between the cache and RAM. For this study, the RAM throughput was benchmarked\footnote{Using the command \texttt{\$> dd if=/dev/zero of=/dev/shm/test  bs=1M count=2048}}. This command copies dummy data into system memory. As this utility exists on all Unix systems, this is a standardized benchmark of the RAM performance. 
 
-\begin{figure}
-\begin{minipage}[b]{0.45\textwidth}
-\begin{subfigure}[b]{\linewidth}
-    \includegraphics[width=\textwidth]{ch4/figures/fig9/calibcal_MEM.pdf}
+\begin{figure*}
+\centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{ch4/figures/fig9/calibcal_MEM.pdf}
       \caption{\textit{calib\_cal}}
 	\label{fig:ch4_calib_cal_RAM}
  \end{subfigure}%
- \vspace*{5mm} % vertical whitespace
-
-  \begin{subfigure}{\linewidth}
-    \includegraphics[width=\textwidth]{ch4/figures/fig9/gsmcal_MEM.pdf}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\linewidth]{ch4/figures/fig9/gsmcal_MEM.pdf}
       \caption{\textit{gsmcal\_solve}}
 	\label{fig:ch4_gamcal_RAM}
  \end{subfigure}
  \label{fig:ch4_ram_bandw}
     \caption[Effect of RAM throughput on the bottle neck steps for the four test machines.]{Performance of the two bottleneck steps and RAM bandwidth in GB/s. Both the \textit{calib\_cal} and \textit{gsmcal\_solve} steps show a trend of faster processing times on machines with higher RAM bandwidth. Both steps show a trend of decreasing processing time with increasing RAM throughput.} 
-\end{minipage}
-\end{figure}
+\end{figure*}
 
 Figure \ref{fig:ch4_calib_cal_RAM} showed that higher bandwidth is correlated with a faster completion time for the \textit{calib\_cal} and \textit{gsmcal\_solve} steps (\textbf{R4}). The result is to be expected as the working set of these steps is 200MB and 1.0GB respectively, and cannot fit into cache readily, however it is loaded into RAM within the first 5 seconds of the run (Figure \ref{fig:ch4_VMRSS}), and is streamed from memory throughout the run. 
 
