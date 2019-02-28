@@ -76,7 +76,7 @@ Creating images from data collected by an aperture synthesis array\cite{aperture
 The raw data is stored in the LOFAR Long Term Archive. Typically, an 8 hour observation results in a 16 TB dataset split into 244 65GB files. Throughout the LoTSS data processing, this data is reduced to a 500GB set of calibrated data. The calibrated data is then imaged producing a final set of a few 1.2GB images of 25k*25k pixels. The calibrated set is archived as it can be re-imaged in the future. 
 
 \begin{figure}
- \includegraphics[width=.79\textwidth]{ch3/figures/DIDDpipe.png}\\
+ \includegraphics[width=.79\textwidth]{ch3/figures/DIDDpipe.eps}\\
  \caption[Prefactor and DDFacet Data Flow]{A schematic of the data flow through the Direction Independent Pipeline (pre-FACTOR\cite{prefactor}) and one of the Direction Dependent Pipelines (DDFacet). The Initial Source Subtraction is only necessary for some DD pipelines and is not currently implemented. }
  \label{fig:ch3_both_pipes}
 \end{figure}
@@ -113,8 +113,9 @@ Unlike at Leiden University, the SURFsara clusters have a gigabit connection to 
 Using intermediate storage to hold the results from each step, the pre-FACTOR DI pipeline (Fig.\ref{fig:ch3_both_pipes}) was split into four steps as in Fig. \ref{fig:ch3_DIpipe}. The Calib 1 and Target 1 steps download the raw data at one piece per worker machine and store the processing results (Calibration Tables and Processed data respectively) in storage. The second Calibration and Target steps combine these results and process them producing the calibration solutions and datasets respectively. 
 
 
-\begin{figure}
- \includegraphics[width=.79\textwidth]{ch3/figures/Pipeline_parallel.png}\\
+\begin{figure}[H]
+    \centering
+ \includegraphics[width=.85\textwidth]{ch3/figures/Pipeline_parallel.eps}\\
     \caption[Parallelization of prefactor processing]{Data flow and parallelization of the Direction Independent Processing. The Calibrator 1 and Target 1 steps run concurrently as independent jobs. Calibrator 2 and Target 2 combine these results. Note that the Target 1 step requires the solutions produced by the Calibrator 2 step. This places a strict ordering on the processing steps. }
  \label{fig:ch3_DIpipe}
 \end{figure}
