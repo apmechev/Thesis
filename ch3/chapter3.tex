@@ -127,7 +127,7 @@ Using intermediate storage to hold the results from each step, the pre-FACTOR DI
 The LRT framework (Fig. \ref{fig:ch3_design}) was developed to automate the LOFAR Direction Independent calibration by processing the data at the Gina cluster SURFsara\cite{gina_specs}. The goal of the framework was to adapt the pre-FACTOR package to take advantage of the large computational resources and high bandwidth at this site. Thanks to the data-level parallelism, using the computational resources at the Gina cluster accelerates the data reduction. 
 
 \begin{figure}
- \includegraphics[width=\textwidth]{ch3/figures/design.png}\\
+ \includegraphics[width=\textwidth]{ch3/figures/design.eps}\\
  \caption{Overview of the design of the LRT framework}
  \label{fig:ch3_design}
 \end{figure}
@@ -148,11 +148,6 @@ By logging the name of the pipeline step in the job description, each job is awa
 
 The first step to automating batch processing is to create the job tokens which hold the processing metadata and load them into the database. In order to track multiple concurrent reductions, these tokens are combined in sets. Once this set is given a name, a batch of tokens can be created for each pipeline step and uploaded into the PiCaS server. These tokens are set in the `todo' state, indicating the processing has not yet started. The specific implementation of the `pre-FACTOR' software is discussed in Appendix \ref{sec:ch3_appendix_1}.
 
-% \begin{figure}
-%  \includegraphics[width=.79\textwidth]{Token_load.png}\\
-%  \caption{Loading tokens into PiCaS database (Section \ref{sec:create_tokens})}
-%  \label{fig:tok_load}
-% \end{figure}
 
 \subsubsection{Packing Scripts}\label{sect:ch3_scripts}
 
@@ -168,7 +163,7 @@ Processing is launched with a launch script executed on a worker node. This scri
 Since the processing scripts and metadata are stored remotely, the same small launch script can load many different reduction pipelines simply by changing the group of tokens it should lock.  This design choice makes it easy to create other script archives for the Direction Dependent pipeline or other LOFAR processing workflows. 
 
 \begin{figure}
- \includegraphics[width=.76\textwidth]{ch3/figures/Token_run.png}\\
+ \includegraphics[width=.76\textwidth]{ch3/figures/token_run.eps}\\
     \caption[Starting processing on worker machines]{Starting processing on worker machines. Currently processing is done on SURFsara Gina nodes, however the framework has been tested at the Leiden University cluster.}
  \label{fig:ch3_tok_run}
 \end{figure}
@@ -182,7 +177,7 @@ storage pools hosted by SURFsara. The LRT processing scripts check for the avail
 Since the data location is static, the paths of the data are hard coded into the scripts. The framework design, however, also allows a job to log the location of its output data into the CouchDB database. Jobs in subsequent steps can read the location of their input data from the tokens of the previous job. This will be implemented when the LOFAR data processing becomes distributed across multiple locations. 
 
 \begin{figure}
- \includegraphics[width=.76\textwidth]{ch3/figures/Token_process.png}\\
+ \includegraphics[width=.76\textwidth]{ch3/figures/token_process.eps}\\
     \caption[Schematic of data movement.]{Processing of LOFAR data from the Long Term Archive with results stored at an intermediate storage location.}
  \label{fig:ch3_tok_process}
 \end{figure}
