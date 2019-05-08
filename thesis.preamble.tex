@@ -1,3 +1,11 @@
+%\let\oldaddtocontents\addtocontents
+
+
+
+\usepackage[toc,page]{appendix}
+\usepackage{url}
+\usepackage{enumitem}
+
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{latexsym}
@@ -12,6 +20,7 @@
 
 %For gray rows in tables
 \usepackage{xcolor, colortbl}
+
 \usepackage{tikz}
 \definecolor{Gray}{gray}{0.9}
 
@@ -29,6 +38,18 @@
 \input{boxit.sty}
 \input{icthesis.sty}
 
+%\usepackage[					% clean thesis style
+%	figuresep=colon,%
+%	sansserif=false,%
+%	hangfigurecaption=false,%
+%	hangsection=true,%
+%	hangsubsection=true,%
+%	colorize=full,%
+%	colortheme=bluemagenta,%
+%	bibsys=bibtex,%
+%	bibfile=bib-refs,%
+%	bibstyle=alphabetic,%
+%]{cleanthesis}
 
 
 \newcommand{\ipc}{{\sf ipc}}
@@ -84,6 +105,9 @@
 \newcommand{\boolnsat}{\!\not\models}
 
 
+
+
+
 \newcommand{\op}[1]{\mathrm{#1}}
 \newcommand{\s}[1]{\ensuremath{\mathcal #1}}
 
@@ -124,6 +148,52 @@
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{theorem}{Theorem}[chapter]
 
+
+
+
+\usepackage{lmodern}
+\newlength\chapnumb
+\setlength\chapnumb{4cm}
+
+\titleformat{\chapter}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \fontsize{80}{90}\selectfont\thechapter}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+
+%\let\oldaddtocontents\addtocontents
+%\usepackage[backend=bibtex, style=authoryear, backref, useprefix=true]{biblatex}
+%\usepackage[sort&compress,nonamebreak]{natbib}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[natbib, maxcitenames=3, mincitenames=1, style=numeric]{biblatex}
+%
+%\usepackage[thumblink=none,linefill=dots,height={auto},minheight={33pt},%
+%            width={40pt},distance={2mm},topthumbmargin={40pt},bottomthumbmargin={40pt},%
+%            nophantomsection=false,ignorehoffset=true,ignorevoffset=true,final=true,%
+%            hidethumbs=true,verbose=true]{thumbs}
+%
+%\usepackage{xpatch}
+%%restore (twice!) the definition in \addthumb:
+%\xpatchcmd{\addthumb}{\addtocontents}{\oldaddtocontents}{}{}            
+%\xpatchcmd{\addthumb}{\addtocontents}{\oldaddtocontents}{}{}
+%\xpatchcmd{\addthumb}{\addtocontents}{\oldaddtocontents}{}{}
+%
+
+
+
 \newcommand{\Figref}[1]{Figure~\ref{#1}}
 \newcommand{\fig}[3]{
  \begin{figure}[!ht]
@@ -154,3 +224,4 @@
  }
  \end{figure}
 }
+

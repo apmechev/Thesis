@@ -1,15 +1,19 @@
-\documentclass[a4paper,12pt,twoside]{report}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\documentclass[a4paper,12pt,twoside,openright]{book}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\usepackage[
+  top=3cm,
+  bottom=2.8cm,
+  left=2.5cm,
+  right=2.5cm,
+  marginparwidth=0cm,
+  marginparsep=0cm,
+  headheight=13.6pt]{geometry}
 
-\usepackage[toc,page]{appendix}
-\usepackage{url}
-\usepackage{enumitem}
 %\usepackage{icthesis}
-
 \include{thesis.preamble}
 
 
-\usepackage{natbib}
+
 %%%%\bibliographystyle{abbrvnat}
 %\setcitestyle{authoryear,open={(},close={)}} %Citations bracketed with ()
 %\setcitestyle{citesep={;}} %Makes multiple citations with ;
@@ -40,8 +44,13 @@
 
 \usepackage{subcaption}
 \usepackage{hyperref}                                                                                                                       
+\addbibresource{../ch3/chapter3.bib}
+\addbibresource{../ch4/chapter4.bib}
+\addbibresource{../ch5/chapter5.bib}
+\addbibresource{../ch6/chapter6.bib}
 
-%%Chapter heading
+
+
 \begin{document}
 
 \title{\LARGE {\bf Goede DAG: LOFAR Workflows}\\
@@ -64,6 +73,7 @@
 \input{introduction/introduction}
 \input{background/background}
 
+
 % body of thesis comes here
 \input{ch3/chapter3}
 \input{ch4/chapter4}
@@ -77,7 +87,9 @@
 
 
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{abbrv}	
-\bibliography{../ch3/chapter3.bib,../ch4/chapter4.bib,../ch5/chapter5.bib,../ch6/chapter6.bib} %Using ../ because bibtex compilation happens in the thesis/ folder
+%\bibliographystyle{abbrv}	
+%\bibliography{../ch3/chapter3.bib,../ch4/chapter4.bib,../ch5/chapter5.bib,../ch6/chapter6.bib} %Using ../ because bibtex compilation happens in the thesis/ folder
+\printbibliography
+
 
 \end{document}
