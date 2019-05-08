@@ -1,12 +1,14 @@
 #!/bin/bash
 
+git submodule update --remote
+
 rm thesis/thesis.*
 
 pdflatex  -output-directory=thesis/  thesis.tex
 
 cd thesis
 #cp ../thesis.tex ./ 
-bibtex thesis 
+biber thesis 
 cd ../
 pdflatex  -output-directory=thesis/  thesis.tex
 pdflatex  -output-directory=thesis/  thesis.tex
