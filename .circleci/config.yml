@@ -4,6 +4,7 @@ jobs:
     machine:
       pre:
         - sudo apt-get install texlive-xetex
+        - sudo apt-get install texlive-latex-base
     steps:
       - checkout
 
