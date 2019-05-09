@@ -24,3 +24,22 @@ jobs:
       - run: 
           name: "First PDFLaTeX"
           command: pdflatex  -output-directory=thesis/  thesis.tex
+
+      - run:
+          name: "Run biber (not justin)"
+          command: |
+              cd thesis
+              biber thesis
+              cd ../
+
+      - run:
+          name: "Second PDFLaTeX"
+          command: pdflatex  -output-directory=thesis/  thesis.tex
+
+      - run:
+          name: "Third PDFLaTeX"
+          command: pdflatex  -output-directory=thesis/  thesis.tex
+
+      -run:
+          name: "Check if output exists"
+          command: ls thesis/thesis.pdf
