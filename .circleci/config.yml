@@ -13,6 +13,7 @@ jobs:
           command: |
                 sudo apt-get update -yqq
                 sudo apt-get install -y texlive-full
+                sudo apt-get -y install biber
       - run:
           name: "Update Submodule"
           command: |
