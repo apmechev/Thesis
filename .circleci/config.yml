@@ -9,6 +9,11 @@ jobs:
       - checkout
 
       - run:
+          name: "Install Deps"
+          command:|
+                sudo apt-get update -yqq
+                sudo apt-get install -y texlive-full
+      - run:
           name: "Update Submodule"
           command: |
               git submodule init
