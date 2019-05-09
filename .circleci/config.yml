@@ -3,8 +3,8 @@ jobs:
   build:
     machine:
       pre:
-        - sudo apt-get install texlive-xetex
-        - sudo apt-get install texlive-latex-base
+        - sudo apt-get install texlive-full
+          #        - sudo apt-get install texlive-latex-base
     steps:
       - checkout
 
