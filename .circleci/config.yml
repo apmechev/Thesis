@@ -44,3 +44,9 @@ jobs:
       - run:
           name: "Check if output exists"
           command: ls thesis/thesis.pdf
+
+      - run:
+          name: "Check if '??' references exist"
+          command: |
+              export ALL_REFS_OK=$( pdftotext thesis/thesis.pdf - |grep "??" )
+              [[ ! -z "$ALL_REFS_OK" ]] && { echo "There are undefined references\n" ; echo $ALL_REFS_OK ; exit 1; }
