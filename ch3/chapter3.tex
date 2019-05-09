@@ -127,7 +127,7 @@ Using intermediate storage to hold the results from each step, the pre-FACTOR DI
 The LRT framework (Fig. \ref{fig:ch3_design}) was developed to automate the LOFAR Direction Independent calibration by processing the data at the Gina cluster SURFsara\cite{gina_specs}. The goal of the framework was to adapt the pre-FACTOR package to take advantage of the large computational resources and high bandwidth at this site. Thanks to the data-level parallelism, using the computational resources at the Gina cluster accelerates the data reduction. 
 
 \begin{figure}
- \includegraphics[width=\textwidth]{ch3/figures/design.eps}\\
+ \includegraphics[width=0.7\textwidth]{ch3/figures/design.eps}\\
  \caption{Overview of the design of the LRT framework}
  \label{fig:ch3_design}
 \end{figure}
@@ -163,7 +163,7 @@ Processing is launched with a launch script executed on a worker node. This scri
 Since the processing scripts and metadata are stored remotely, the same small launch script can load many different reduction pipelines simply by changing the group of tokens it should lock.  This design choice makes it easy to create other script archives for the Direction Dependent pipeline or other LOFAR processing workflows. 
 
 \begin{figure}
- \includegraphics[width=.76\textwidth]{ch3/figures/token_run.eps}\\
+ \includegraphics[width=.7\textwidth]{ch3/figures/token_run.eps}\\
     \caption[Starting processing on worker machines]{Starting processing on worker machines. Currently processing is done on SURFsara Gina nodes, however the framework has been tested at the Leiden University cluster.}
  \label{fig:ch3_tok_run}
 \end{figure}
