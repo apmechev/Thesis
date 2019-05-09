@@ -8,18 +8,13 @@ jobs:
       - checkout
 
       - run:
-          name: "Move to folder"
-          command: cd Thesis 
-      - run:
           name: "Update Submodule"
           command: |
               git submodule init
               git submodule update --remote 
-
       - run:
           name: "Remove old files"
           command: rm thesis/thesis.*
-    
       - run: 
           name: "First PDFLaTeX"
           command: pdflatex  -output-directory=thesis/  thesis.tex
