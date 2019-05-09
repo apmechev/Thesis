@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    docker:
-        - image: schickling:latex
-
+    machine:
+      pre:
+        - sudo apt-get install texlive-xetex
     steps:
       - checkout
 
