@@ -40,6 +40,6 @@ jobs:
           name: "Third PDFLaTeX"
           command: pdflatex  -output-directory=thesis/  thesis.tex
 
-      -run:
+      - run:
           name: "Check if output exists"
           command: ls thesis/thesis.pdf
