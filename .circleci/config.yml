@@ -10,7 +10,7 @@ jobs:
 
       - run:
           name: "Install Deps"
-          command:|
+          command: |
                 sudo apt-get update -yqq
                 sudo apt-get install -y texlive-full
       - run:
