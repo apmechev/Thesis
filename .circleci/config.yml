@@ -14,7 +14,7 @@ jobs:
               git submodule update --remote 
       - run:
           name: "Remove old files"
-          command: rm thesis/thesis.*
+          command: rm -f thesis/thesis.*
       - run: 
           name: "First PDFLaTeX"
           command: pdflatex  -output-directory=thesis/  thesis.tex
