@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: "apmechev/thesisbuilder:v0.1"
+      - image: "apmechev/thesisbuilder:v0.2"
     steps:
       - checkout
       - run:
