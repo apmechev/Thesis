@@ -2,10 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      image: apmechev/thesisbuilder:v0.1
+      - image: "apmechev/thesisbuilder:v0.1"
     steps:
       - checkout
-
       - run:
           name: "Update Submodule"
           command: |
