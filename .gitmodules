@@ -2,3 +2,6 @@
 	path = ch6
 	url = git@github.com:apmechev/performance_model_paper.git
 	branch = Thesis
+[submodule "ch2"]
+	path = ch2
+	url = git@github.com:apmechev/LOFAR_distributed_Platform.git
