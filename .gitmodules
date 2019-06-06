@@ -4,4 +4,5 @@
 	branch = Thesis
 [submodule "ch2"]
 	path = ch2
-	url = git@github.com:apmechev/LOFAR_distributed_Platform.git
+        url = git@github.com:apmechev/LOFAR_distributed_Platform.git
+        branch = Thesis
