@@ -23,7 +23,6 @@ jobs:
               cd thesis
               biber thesis
               cd ../
-
       - run:
           name: "Second PDFLaTeX"
           command: pdflatex  -output-directory=thesis/  thesis.tex
@@ -35,7 +34,36 @@ jobs:
       - run:
           name: "Check if output exists"
           command: ls thesis/thesis.pdf
-
+      - run: 
+          name: "Check if more than 10 pages"
+          command: | 
+              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 10 )); then 
+                    echo "More than 10 pages"; 
+                    exit 0;
+              else
+                  echo "Less than 10 pages!!!"
+                  exit 1
+              fi
+      - run:
+          name: "Check if more than 50 pages"
+          command: |
+              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 50 )); then
+                echo "More than 10 pages";
+                exit 0;
+              else
+                echo "Less than 50 pages!!"
+                exit 1
+             fi
+      - run:
+          name: "Check if more than 100 pages"
+          command: |
+              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 100 )); then
+                echo "More than 100 pages";
+                exit 0;
+              else
+                echo "Less than 100 pages!!"
+                exit 1
+             fi
       - run:
           name: "Check if '??' references exist"
           command: |
