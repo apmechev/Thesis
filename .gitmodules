@@ -6,3 +6,7 @@
 	path = ch2
         url = git@github.com:apmechev/LOFAR_distributed_Platform.git
         branch = Thesis
+[submodule "ch7"]
+	path = ch7
+        url = git@github.com:apmechev/AGLOW_CI.git
+        branch = Thesis
