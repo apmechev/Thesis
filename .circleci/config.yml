@@ -47,23 +47,25 @@ jobs:
       - run:
           name: "Check if more than 50 pages"
           command: |
-              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 50 )); then
-                echo "More than 10 pages";
-                exit 0;
+              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 50 ));
+              then
+                echo "More than 50 pages"
+                exit 0
               else
                 echo "Less than 50 pages!!"
                 exit 1
-             fi
+              fi
       - run:
           name: "Check if more than 100 pages"
           command: |
-              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 100 )); then
-                echo "More than 100 pages";
-                exit 0;
+              if (( $(expr $(pdfinfo thesis/thesis.pdf | grep Pages| cut -d: -f2) + 0) > 100 ));
+              then
+                echo "More than 100 pages"
+                exit 0
               else
                 echo "Less than 100 pages!!"
                 exit 1
-             fi
+              fi
       - run:
           name: "Check if '??' references exist"
           command: |
