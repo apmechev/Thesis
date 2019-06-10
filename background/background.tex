@@ -54,7 +54,21 @@ The Direction Independent Calibration pipeline (DI pipeline) consists of two mai
  
 In order to create a high fidelity radio image, we need to correct for effects that not only change in time, but also across the field of view. These effects, such as the ionosphere or the beam response can be modelled and removed, and their removal is the responsibility of the Direction Dependent pipeline (DD pipeline). Upon successful completion, the DD pipeline produces a radio image that can be used for further scientific studies.
 
-There are a few software suites used to process LOFAR data, typically used in a series of steps creating a processing pipeline. The steps of the LOFAR processing pipelines use the software, each step encoding the processing parameters in a parameter-set (parset). 
+There are a few software packages used to process LOFAR data, typically used in a series of steps creating a processing pipeline. The LOFAR processing pipeline steps use the software, each step encoding the processing parameters in a parameter-set (parset). A pipeline is defined by the list of steps and the parameters of each step concatenated together into a parset file. The LoTSS DI pipeline, \texttt{prefactor} contains a set of scripts used to remove direction independent effects from LOFAR data. Many of the \texttt{prefactor} steps can be executed on the data in parallel: each Subband can be processed independently. Because of the large amount of data, the best architecture for these steps is a cluster of isolated machines with dedicated disks and a high speed connection to the data. The Dutch grid infrastructure at SURFsara is a logical place to launch these steps. 
+
+Our main goal is to provide the software infrastructure to make it easy for scientists to automatically process archived LOFAR data and produce science quality results with minor modifications to their processing scripts.
+
+\subsection{Research questions}
+
+The main research questions addresse in this work are:
+
+How do we create a general framework that can support LOFAR processing across a distributed cluster?
+
+How do we orchestrate complex workflows across distributed infrastructure and include continuous integration to ensure consistent software tools and pipelines?
+
+How do we collect and process performance statistics per pipeline step and use them to better understand the performance of our software?
+
+Ch
 
 
 
