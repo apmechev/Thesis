@@ -188,7 +188,7 @@ AGLOW combines the LOFAR software, the Grid LOFAR Tools (GRID\_LRT), and Airflow
   \framebox{\parbox{3.3in}{      
   \includegraphics[width=0.45\textwidth]{ch5/figures/AGLOW_structure.png}
  }}
- \caption{Design of the AGLOW software, incorporating Airflow, the GRID\_LRT package\cite{mechev} and custom operators designed to integrate LOFAR software, Grid middleware and dCache storage. GRID\_LRT is a software package developed to parallelize single LOFAR jobs at SURFsara. It contains several modules to help set up, and launch jobs on an HTC cluster at SURFsara. Airflow is a stand-alone package by Airbnb, which is extended with several classes that couple Airflow with the Grid infrastructure. These classes are collectively named the AGLOW operators/sensors. }
+    \caption[Design of the AGLOW software, including its constituent packages.]{Design of the AGLOW software, incorporating Airflow, the GRID\_LRT package\cite{mechev} and custom operators designed to integrate LOFAR software, Grid middleware and dCache storage. GRID\_LRT is a software package developed to parallelize single LOFAR jobs at SURFsara. It contains several modules to help set up, and launch jobs on an HTC cluster at SURFsara. Airflow is a stand-alone package by Airbnb, which is extended with several classes that couple Airflow with the Grid infrastructure. These classes are collectively named the AGLOW operators/sensors. }
  \label{AGLOW_structure}
 \end{figure}
 
@@ -231,7 +231,7 @@ Using AGLOW to accelerate the execution of a pipeline requires deciding how to s
   \framebox{\parbox{3.3in}{      
   \includegraphics[width=0.45\textwidth]{ch5/figures/Operators.png}
  }}
- \caption{Airflow Operators for Staging LOFAR data, creating job descriptions and submitting jobs to the Dutch grid. On the left is the input given to each operator. `SRM lists' are lists of links to data at the LOFAR LTA or located on the SURFsara dCache storage. Parsets are files specific to `prefactor' and `DDF-pipeline' and define the processing for each pipeline step. Finally, the `Sandbox' and `Token' operators read their parameters from a configuration file. The use of a scripts sandbox and job description tokens is detailed in our previous work\cite{mechev}. Documentation of the operators is available at  \protect\url{https://aglow.readthedocs.io/en/latest/operators.html}}
+    \caption[Graphical representation of the Airflow Operators built for AGLOW]{Airflow Operators for Staging LOFAR data, creating job descriptions and submitting jobs to the Dutch grid. On the left is the input given to each operator. `SRM lists' are lists of links to data at the LOFAR LTA or located on the SURFsara dCache storage. Parsets are files specific to `prefactor' and `DDF-pipeline' and define the processing for each pipeline step. Finally, the `Sandbox' and `Token' operators read their parameters from a configuration file. The use of a scripts sandbox and job description tokens is detailed in our previous work\cite{mechev}. Documentation of the operators is available at  \protect\url{https://aglow.readthedocs.io/en/latest/operators.html}}
  \label{AGLOW_Operators}
 \end{figure}
  
@@ -255,7 +255,7 @@ In Airflow, the DPPP parset task is encoded in a DAG (Fig. \ref{fig:NDPPP_DAG}).
  \framebox{\parbox{2.5in}{      
   \includegraphics[width=0.35\textwidth]{ch5/figures/NDPPP_DAG.png}
  }}
-  \caption{Render of the DPPP parset DAG in the Airflow User Interface. This view shows the setup and submission steps. Even this simple DAG can include branching options such as the \texttt{branch\_if\_staging\_needed} task which checks if the data is not staged and stages it. All of the operators in this figure are part of the AGLOW software. Their inputs and outputs are shown in Fig. \ref{AGLOW_Operators}. Using configuration files, the NDPPP DAG can be used by different users for different science cases making it portable and maintainable. These features make reproducible science with LOFAR data easy. 
+    \caption[Renderng of the DAG encoding a DPPP parset as shown by the Airflow User Interface.]{Render of the DPPP parset DAG in the Airflow User Interface. This view shows the setup and submission steps. Even this simple DAG can include branching options such as the \texttt{branch\_if\_staging\_needed} task which checks if the data is not staged and stages it. All of the operators in this figure are part of the AGLOW software. Their inputs and outputs are shown in Fig. \ref{AGLOW_Operators}. Using configuration files, the NDPPP DAG can be used by different users for different science cases making it portable and maintainable. These features make reproducible science with LOFAR data easy. 
  }
  \label{fig:NDPPP_DAG}
 \end{figure}
@@ -335,7 +335,7 @@ Our experience with automating LOFAR scientific workflows on a distributed archi
 \begin{figure*}[!ht]
  \centering
  \includegraphics[width=0.52\textwidth]{ch5/figures/SKSP_Dag1.png}
- \caption{Workflow for the prefactor pipeline. Here we show the reuse of AGLOW operators for the four prefactor steps. In addition to the LOFAR processing, we also have conditional operators to skip processing of the calibrator if it has been previously processed. This is done by the `branch\_if\_cal\_exists' task. We also have a final step that checks if all the results have been uploaded, done by the `all\_files\_done' task. Likewise, quality checks can be added in this workflow wherever needed.}
+    \caption[Render of the DAG encoding the full prefactor pipeline.]{Workflow for the prefactor pipeline. Here we show the reuse of AGLOW operators for the four prefactor steps. In addition to the LOFAR processing, we also have conditional operators to skip processing of the calibrator if it has been previously processed. This is done by the `branch\_if\_cal\_exists' task. We also have a final step that checks if all the results have been uploaded, done by the `all\_files\_done' task. Likewise, quality checks can be added in this workflow wherever needed.}
  \label{SKSP_workflow}
 \end{figure*}
 
