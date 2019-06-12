@@ -9,4 +9,9 @@ thesis/thesis.preamble.aux
 thesis/thesis.preamble.tex
 thesis/thesis.toc
 thesis/uhead.sty
+thesis/thesis-blx.bib
+thesis/thesis.bbl
+thesis/thesis.bcf
+thesis/thesis.run.xml
 
+*-eps-converted-to.pdf

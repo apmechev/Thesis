@@ -13,5 +13,4 @@ cd ../
 pdflatex  -output-directory=thesis/  thesis.tex
 pdflatex  -output-directory=thesis/  thesis.tex
 
-#mv thesis.preamble.aux thesis/
-
+#mv thesis.preamble.aux thesis
