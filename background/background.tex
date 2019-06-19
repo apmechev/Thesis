@@ -56,6 +56,13 @@ With its 3000+ observations, the LoTSS project requires a large amount of proces
  
 In addition to the raw hardware requirements, a large project as such needs to be able to track the status and location of data products, automate processing and make results easily available. As LOFAR data is stored at multiple locations, it is also important that the framework tasked with processing LoTSS data is portable and can run independently of the infrastructure details.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{background/figures/raw_image.jpeg}
+    \caption[Image of the raw data]{Raw data for LOFAR observation L229587. We only image half of the bandwidth, from Subband 061 to Subband 183. }
+    \label{fig:aperture_synthesis}
+\end{figure}
+
 \subsection{SURFsara} 
 
 One of the archive locations storing LOFAR data is SURFsara at the Amsterdam Science Park. Aside from a large storage archive, SURFsara also supports several clusters, including the Gina cluster, part of the Dutch Grid infrastructure. Grid computing is a non-interactive application-oriented computational paradigm for distributed computing where a 'grid' consists of a large pool of nodes where users can submit batch jobs. A grid can consist of one cluster or groups of clusters at one or multiple geographical locations, connected with high-speed links and a common job management interface. Using this interface, users can scale out their projects, given that their processing is massively parallel. Computational resources on such a platform are granted based on a scientific proposal and are used freely across the Grid, while jobs are scheduled based on the job requirements and the current resource availability of the grid nodes. This processing paradigm is perfect for large grid-search simulations, but also for the first steps of LOFAR processing. Furthermore, the high-speed connection to the LOFAR archive makes SURFsara a logical location to orchestrate large scale LOFAR projects.
