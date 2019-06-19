@@ -1,3 +1,5 @@
+\chapter{Introduction}
+
 \section{Introduction}\label{sec:intro_intro}
 
 For almost a century, computational machines have been used as a tool to improve scientific research. In part driven by national security concerns during the First and Second World Wars as well as the Cold War, increasingly complex computers have been designed. Early computers were entirely designed for application-specific tasks, with a large drive behind them being nuclear simulations for the Manhattan project. In 1945, the popular Von-Neumann architecture was developed with the goal of making Monte Carlo simulations easier to develop and to facilitate general purpose computing. This architecture was a significant improvement over previous computers where changing the program required physically flipping switches and changing cables on the computer itself. One of the first computers built according to the von-Neumann architecture was the MANIAC computer commissioned by Los Alamos National Laboratory, seen on the left in Figure \ref{fig:intro_supercomputers}.
@@ -42,7 +44,7 @@ Aperture synthesis is the practice of combining the signal of multiple antennas 
 
 LOFAR is a large low-frequency radio telescope centered near Dwingeloo, Drenthe, in the Netherlands. In the Netherlands, LOFAR has thousands of antennas grouped in Core (near Dwingeloo) and Remote stations. LOFAR also has International stations across Europe, spanning from Ireland to Estonia, Sweden to Italy. These international stations make it possible to create images of radio sources with a similar angular resolution to leading higher frequency telescopes. Much like these telescopes, LOFAR was also designed to support a variety of science cases, from large scale broadband studies to spectroscopy and transient detection. 
 
-LOFAR stores its broadband data at one of several Long-Term Archive locations. These locations store the data on tape, due to its large size and infrequent access. Typical broadband observations are up to 16TB in size, which can drop down to 8TB with compression. While individual researchers use this data to study their object of interest, the majority of the broadband data will be imaged to produce the LOFAR Two-Meter Sky Survey (LoTSS). 
+LOFAR stores its broadband data at one of several Long-Term Archive locations. These locations store the data on tape, due to its large size and infrequent access. Typical broadband observations are up to 16TB in size, which can drop down to 10TB with compression. While individual researchers use this data to study their object of interest, the majority of the broadband data will be imaged to produce the LOFAR Two-Meter Sky Survey (LoTSS). 
 
 \subsubsection{LoTSS} 
 
@@ -71,9 +73,10 @@ In order to create a high fidelity radio image, we need to correct for effects t
 
 There are a few software packages used to process LOFAR data, typically used in a series of steps creating a processing pipeline. The LOFAR processing pipeline steps use the software, each step encoding the processing parameters in a parameter-set (parset). A pipeline is defined by the list of steps and the parameters of each step concatenated together into a parset file. The LoTSS DI pipeline, \texttt{prefactor} contains a set of scripts used to remove direction independent effects from LOFAR data. Many of the \texttt{prefactor} steps can be executed on the data in parallel: each Subband can be processed independently. Because of the large amount of data, the best architecture for these steps is a cluster of isolated machines with dedicated disks and a high-speed connection to the data. The Dutch grid infrastructure at SURFsara is a logical place to launch these steps. 
 
-Our main goal is to provide the software infrastructure to make it easy for scientists to automatically process archived LOFAR data and produce science quality results with minor modifications to their processing scripts.
 
-\subsection{Research questions}
+\section{Problem Statement and Research Questions}
+
+Radio Astronomy data sets are too large to process in bulk on individual workstations and often strain the resources of small clusters at universities and other institutions. This limitation in resources requires high throughput processing capability, and automation in order to serve processed data in bulk to astronomers. 
 
 The main research questions addressed in this work are:
 
