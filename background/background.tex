@@ -134,15 +134,13 @@ We describe the platform for this processing in Chapters \ref{ch:LOFAR_DSP} and 
 Once we have determined the utility of distributed processing for the LOFAR case, we ask whether a framework can be built to automate large complex workflows. The LOFAR radio telescope serves multiple science cases, each of which is served by a multi-step pipeline with a wide set of parameters. Running an entire pipeline on a single computational node is inefficient, thus the framework developed in Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT} needs to be used to parallelize the relevant steps. This research question asks how to build software to efficiently integrate software pipelines with the distributed platform described previously. 
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
-    \emph{\textbf{Research Question 1:} Is it possible to use a distributed shared infrastructure for efficient LOFAR data processing?}
+    \emph{\textbf{Research Question 2:} How can we build software to easily accelerate complex pipelines for Radio Astronomy?} 
 \end{addmargin}
 
+The results of this research question are detailed in Chapters \ref{ch:AGLOW} and \ref{ch:AGOW_CI}, where we detail the software used to automate large scale LOFAR processing as well as a unique use of this software in the LOFAR \texttt{prefactor} Continuous Integration pipeline.  
 
+\subsection{Research Question 3}
 
-
-How do we create a general framework that can support LOFAR processing across a distributed cluster?
-
-How do we orchestrate complex workflows across distributed infrastructure and include continuous integration to ensure consistent software tools and pipelines?
 
 How do we collect and process performance statistics per pipeline step and use them to better understand the performance of our software?
 
