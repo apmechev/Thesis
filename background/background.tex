@@ -119,6 +119,27 @@ Radio Astronomy data sets are too large to process in bulk on individual worksta
 The problem statement identifies a very general challenge with LOFAR processing. The LOFAR radio telescope acquires data at a rate of roughly a terabyte per second. This data is stored in a Long Term Archive as it can serve multiple science cases. Our goal is to create the tools for scientists to be able to efficiently process this data with their scripts and software. As such, the tools we build need to be both scalable and generic.   
 
 
+\subsection{Research Question 1}
+
+To efficiently process LOFAR data, we need to take advantage of the data level parallelism of the early processing steps, each of which can be parallelized by a factor of 244. We investigate a framework for  massively distributed shared platform for this purpose. This leads to our first research question:
+
+\begin{addmargin}[4em]{8em}% 1em left, 2em right
+    \emph{\textbf{Research Question 1:} Is it possible to use a distributed shared infrastructure for efficient LOFAR data processing?}
+\end{addmargin}
+
+We describe the platform for this processing in Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT}.
+
+\subsection{Research Question 2}
+
+Once we have determined the utility of distributed processing for the LOFAR case, we ask whether a framework can be built to automate large complex workflows. The LOFAR radio telescope serves multiple science cases, each of which is served by a multi-step pipeline with a wide set of parameters. Running an entire pipeline on a single computational node is inefficient, thus the framework developed in Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT} needs to be used to parallelize the relevant steps. This research question asks how to build software to efficiently integrate software pipelines with the distributed platform described previously. 
+
+\begin{addmargin}[4em]{8em}% 1em left, 2em right
+    \emph{\textbf{Research Question 1:} Is it possible to use a distributed shared infrastructure for efficient LOFAR data processing?}
+\end{addmargin}
+
+
+
+
 How do we create a general framework that can support LOFAR processing across a distributed cluster?
 
 How do we orchestrate complex workflows across distributed infrastructure and include continuous integration to ensure consistent software tools and pipelines?
