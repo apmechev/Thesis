@@ -112,7 +112,12 @@ There are a few software packages used to process LOFAR data, typically used in 
 
 Radio Astronomy data sets are too large to process in bulk on individual workstations and often strain the resources of small clusters at universities and other institutions. This limitation in resources requires high throughput processing capability, and automation in order to serve processed data in bulk to astronomers. 
 
-The main research questions addressed in this work are:
+\begin{addmargin}[4em]{8em}% 1em left, 2em right
+    \emph{\textbf{Problem Statement:} How can we efficiently process broadband LOFAR data in a generic way?} 
+\end{addmargin}
+
+The problem statement identifies a very general challenge with LOFAR processing. The LOFAR radio telescope acquires data at a rate of roughly a terabyte per second. This data is stored in a Long Term Archive as it can serve multiple science cases. Our goal is to create the tools for scientists to be able to efficiently process this data with their scripts and software. As such, the tools we build need to be both scalable and generic.   
+
 
 How do we create a general framework that can support LOFAR processing across a distributed cluster?
 
