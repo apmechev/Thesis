@@ -18,7 +18,7 @@
 
 
 %For gray rows in tables
-\usepackage{xcolor, colortbl}
+\usepackage{colortbl}
 
 \usepackage{tikz}
 \definecolor{Gray}{gray}{0.9}
@@ -202,7 +202,19 @@
 %
 
 
-%Journal names
+
+
+\usepackage{xcolor}
+\usepackage{framed}
+\definecolor{shadecolor}{rgb}{.9,.9,.9}
+\definecolor{framecolor}{rgb}{.6,.6,.6}
+\usepackage{lipsum}
+
+
+\newenvironment{frshaded*}{%
+    \def\FrameCommand{\fboxrule=\FrameRule\fboxsep=\FrameSep \fcolorbox{framecolor}{shadecolor}}%
+    \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+    {\endMakeFramed}
 
 \newcommand{\Figref}[1]{Figure~\ref{#1}}
 \newcommand{\fig}[3]{
