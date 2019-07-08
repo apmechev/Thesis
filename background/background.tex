@@ -157,48 +157,36 @@ After the Direction Independent calibration, we perform correction for Direction
 
 \section{Problem Statement and Research Questions}
 
-Radio Astronomy data sets are too large to process in bulk on individual workstations and often strain the resources of small clusters at universities and other institutions. This limitation in resources requires high throughput processing capability, and automation in order to serve processed data in bulk to astronomers. 
+Radio Astronomy data sets are too large to process in bulk on individual workstations and often strain the resources of small clusters at universities and other institutions. This limitation in resources requires high throughput processing capability, and automation in order to serve processed data in bulk to astronomers. The LOFAR radio telescope acquires data at a rate of roughly a terabyte per hour. This data is stored in a Long Term Archive as it can serve multiple science cases. Our goal is to create the tools for scientists to be able to efficiently process this data with their scripts and software. As such, these tools need to be fast, easy to use, general, and scalable. 
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
     \emph{\textbf{Problem Statement:} How can we efficiently process broadband LOFAR data in a generic way?} 
 \end{addmargin}
 
-The problem statement identifies a very general challenge with LOFAR processing. The LOFAR radio telescope acquires data at a rate of roughly a terabyte per second. This data is stored in a Long Term Archive as it can serve multiple science cases. Our goal is to create the tools for scientists to be able to efficiently process this data with their scripts and software. As such, the tools we build need to be both scalable and generic.   
 
 
 \subsection{Research Question 1}
 
-To efficiently process LOFAR data, we need to take advantage of the data level parallelism of the early processing steps, each of which can be parallelized by a factor of 244. We investigate a framework for  massively distributed shared platform for this purpose. This leads to our first research question:
+To efficiently process LOFAR data, we need to take advantage of the data level parallelism of the early processing steps, each of which can be parallelized by a factor of 244. Because of the large sizes of LOFAR observations, transfer time can be comparable to the processing time. To minimize transfer time, we need to study how to deploy processing pipelines at the LTA storage sites. In this research question, we ask how to best build a framework for massively distributed shared platform for LOFAR, and how to deploy LOFAR processing in massively parallel manner.
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
-    \emph{\textbf{Research Question 1:} Is it possible to use a distributed shared infrastructure for efficient LOFAR data processing?}
+    \emph{\textbf{Research Question 1:} How can we use a distributed shared infrastructure for efficient LOFAR data processing?}
 \end{addmargin}
-
-We describe the platform for this processing in Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT}.
 
 \subsection{Research Question 2}
 
-Once we have determined the utility of distributed processing for the LOFAR case, we ask whether a framework can be built to automate large complex workflows. The LOFAR radio telescope serves multiple science cases, each of which is served by a multi-step pipeline with a wide set of parameters. Running an entire pipeline on a single computational node is inefficient, thus the framework developed in Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT} needs to be used to parallelize the relevant steps. This research question asks how to build software to efficiently integrate software pipelines with the distributed platform described previously. 
+Once we have determined the utility of distributed processing for the LOFAR case, we ask how to automate complex LOFAR workflows. The LOFAR radio telescope serves multiple science cases, each of which is served by a multi-step pipeline with a wide set of parameters. Running an entire pipeline on a single computational node is inefficient, thus a workflow orchestration software is needed to parallelize the relevant steps. In this research question, we ask how to build software to efficiently integrate scientific pipelines with a massively parallel distributed processing platform. 
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
     \emph{\textbf{Research Question 2:} How can we build software to easily accelerate complex pipelines for Radio Astronomy?} 
 \end{addmargin}
 
-The results of this research question are detailed in Chapters \ref{ch:AGLOW} and \ref{ch:AGLOW_CI}, where we detail the software used to automate large scale LOFAR processing as well as a unique use of this software in the LOFAR \texttt{prefactor} Continuous Integration pipeline.  
 
 \subsection{Research Question 3}
 
-Once complex pipelines can be executed on a distributed environment, researchers may ask whether the software running on hundreds of systems concurrently is running optimally. We ask whether it is possible to integrate monitoring tools to our processing framework in a way that we can transparently collect performance data along scientific processing.     
+Once complex pipelines can be executed on a distributed environment, researchers may ask whether the software running on hundreds of systems concurrently is running optimally. Manually monitoring automated runs is not possible, hence software is needed to collect this performance data per pipeline step. Furthermore, some of the processing parameters for LOFAR pipelines result in large data sets. In order to serve LOFAR processing to the scientific community, we need to understand how our resource usage scales with each of the processing parameters. We ask whether it is possible to integrate monitoring tools to our processing framework in a way that we can transparently collect performance data along scientific processing.     
 
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
     \emph{\textbf{Research Question 3:} Can we automatically collect performance information during massively distributed processing and predict run times for future data sets?}
 \end{addmargin}
-
-This research question is answered in Chapters \ref{ch:pipeline_collector} and \ref{ch:Scalability_model}. In these chapters, we discuss our discoveries as well as the utility of being able to predict the processing time for future processing pipelines. Future projects, such as a LOFAR data processing portal, will utilize these results to predict the processing requirements of jobs submitted by users. 
-
-
-
-
-
-
