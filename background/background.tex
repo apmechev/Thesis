@@ -6,7 +6,7 @@
 
 For almost a century, computational machines have been used as a tool to improve scientific research. In part driven by national security concerns during the First and Second World Wars as well as the Cold War, increasingly complex computers have been designed. Early computers were entirely designed for application-specific tasks, with a large drive behind them being hydrodynamics simulations for the first Hydrogen bomb. In 1945, the popular Von-Neumann architecture was developed with the goal of making Monte Carlo simulations easier to develop and to facilitate general purpose computing. This architecture was a significant improvement over previous computers where changing the program required physically flipping switches and changing cables on the computer itself. One of the first computers built according to the von-Neumann architecture was the MANIAC computer commissioned by Los Alamos National Laboratory, seen on the left in Figure \ref{fig:intro_supercomputers}.
 
-With the advancement of an architecture that treats code and data identically, it was possible to create more complex programs including compilers: programs that could create machine code from human-readable code. As the 50s and 60s passed, general purpose computers were increasingly used in science. From weather dynamics to fluid dynamics, from chaos theory to game theory, these computers were being adopted by a wide range of scientific fields. Astronomy was likewise also a driving force for computational innovation. In 1953, for example, the first high-level programming language for IBM computers was developed by John Backus, a programmer frustrated with the difficulty of accurately calculating the moon's position using only machine code. John Backus' `Speedcode' was a direct predecessor of Fortran, a language developed at IBM in the '50s and still used by the scientific community today. Another important discovery on our road was the Fast Fourier Transform (FFT), discovered by two researchers from Princeton and IBM. The FFT has been described as `the most important numerical algorithm of our lifetime' and the author's personal favourite `an algorithm the whole family can use'\citep{top_10_algos}. As we will soon see, Radio Astronomers quickly became part of this family.
+With the advancement of an architecture that treats code and data identically, it was possible to create more complex programs including compilers: programs that could create machine code from human-readable code. As the '50s and '60s passed, general purpose computers were increasingly used in science. From weather dynamics to fluid dynamics, from chaos theory to game theory, these computers were being adopted by a wide range of scientific fields. Astronomy was likewise also a driving force for computational innovation. In 1953, for example, the first high-level programming language for IBM computers was developed by John Backus, a programmer frustrated with the difficulty of accurately calculating the moon's position using only machine code. John Backus' `Speedcode' was a direct predecessor of Fortran, a language developed at IBM in the '50s and still used by the scientific community today. Another important discovery on our road was the Fast Fourier Transform (FFT), discovered by two researchers from Princeton and IBM. The FFT has been described as `the most important numerical algorithm of our lifetime' and the author's personal favourite `an algorithm the whole family can use'\citep{top_10_algos}. As we will soon see, Radio Astronomers quickly became part of this family.
 
 \begin{figure}[h]
 \includegraphics[width=.45\linewidth]{background/figures/Maniac_1952.jpg}\quad\includegraphics[width=.45\linewidth]{background/figures/cartesius.jpeg}
@@ -15,9 +15,9 @@ With the advancement of an architecture that treats code and data identically, i
 
 \end{figure}
 
-As computers became more available, they were increasingly adopted by universities and research institutes. In the '70s, computers began to talk to each other over a network connection. This capability not only made scientific collaboration easier but made it possible to distribute computation across multiple sites. Moreover, the development of the integrated circuit and subsequent drop in price/performance of computers made it financially feasible for scientific institutes to purchase multiple computers dedicated to scientific research. As hardware, networks, and software matured, computer clusters became more widely used\citep{tel_2000}. In part because of their cost effectiveness, and potential for parallelization, clusters of computers became more widely used as the 80's wound down. By then, general purpose computing was widely adopted by the astronomical community. In the 80's several astronomical software suites have been developed, with software such as AIPS and IRAF and standards such as FITS used to this day. 
+As computers became more available, they were increasingly adopted by universities and research institutes. In the '70s, computers began to talk to each other over a network connection. This capability not only made scientific collaboration easier but made it possible to distribute computation across multiple sites. Moreover, the development of the integrated circuit and subsequent drop in price/performance of computers made it financially feasible for scientific institutes to purchase multiple computers dedicated to scientific research. As hardware, networks, and software matured, computer clusters became more widely used\citep{tel_2000}. In part because of their cost effectiveness, and potential for parallelization, clusters of computers became more widely used as the '80s wound down. By then, general purpose computing was widely adopted by the astronomical community. In the '80s several astronomical software suites have been developed, with software such as AIPS and IRAF and standards such as FITS used to this day. 
 
-The '90s continued the distributed computing trend with the appearance of commodity compute clusters, with virtual `supercomputers' being created from Commercial Off-The-Shelf (COTS) hardware, and networking. These clusters became quickly adopted by scientists to perform simulations and data processing. Around the same time, the idea of 'grids' was created. The concept was that of a country, continent or even world-wide network of hardware that can transparently handle distributed tasks, and provide researchers with a vast pool of resources. Grid processing was pioneered by CERN with the goal of meeting the computational and storage requirements of their High Energy Physics modelling and data reduction. While this infrastructure was originally built for HEP experiments, it is also useful for other scientific projects, particularly low-frequency Radio Astronomy. 
+The '90s continued the distributed computing trend with the appearance of commodity compute clusters, with virtual `supercomputers' being created from Commercial Off-The-Shelf (COTS) hardware, and networking. These clusters became quickly adopted by scientists to perform simulations and data processing. Around the same time, the idea of `grids' was created. The concept was that of a country, continent or even world-wide network of hardware that can transparently handle distributed tasks, and provide researchers with a vast pool of resources. Grid processing was pioneered by CERN with the goal of meeting the computational and storage requirements of their High Energy Physics modelling and data reduction. While this infrastructure was originally built for HEP experiments, it is also useful for other scientific projects, particularly low-frequency Radio Astronomy. 
 
 
 \subsection{Astronomy and Computing}
@@ -83,37 +83,7 @@ With its 3000+ observations, the LoTSS project requires a large amount of proces
  
 In addition to the raw hardware requirements, a large project as such needs to be able to track the status and location of data products, automate processing and make results easily available. As LOFAR data is stored at multiple locations, it is also important that the framework tasked with processing LoTSS data is portable and can run independently of the infrastructure details.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.8\linewidth]{background/figures/raw_image1.jpeg}
-    \caption[Image of the raw data]{Raw data for LOFAR observation L229587. We only image half of the bandwidth, from Subband 061 to Subband 183.  }
-    \label{fig:L229587_raw}
-\end{figure}
 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.8\linewidth]{background/figures/prepcal_image.jpeg}
-    \caption[Image of preprocessed data]{Preprocessed data for the same observation as figure \ref{fig:L229587_raw}. Note the corrected scale bar, obtained by applying the calibrator solutions.}
-    \label{fig:L229587_prepcal}
-\end{figure}
-
-
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.8\linewidth]{background/figures/INTERP.jpeg}
-    \caption[Image of concatenated data]{Data from L229587 after interpolation. }
-    \label{fig:L229587_concat_aoflag}
-\end{figure}
-
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.8\linewidth]{background/figures/final_gsmacl.jpeg}
-    \caption[Image of DI calibrated data]{Data from L229587 after calibration against a global skymodel. This calibration removes the direction independent effects}
-    \label{fig:L229587_DI_cal}
-\end{figure}
 
 \subsection{SURFsara} 
 
@@ -132,6 +102,57 @@ In order to create a high fidelity radio image, we need to correct for effects t
 
 There are a few software packages used to process LOFAR data, typically used in a series of steps creating a processing pipeline. The LOFAR processing pipeline steps use the software, each step encoding the processing parameters in a parameter-set (parset). A pipeline is defined by the list of steps and the parameters of each step concatenated together into a parset file. The LoTSS DI pipeline, \texttt{prefactor} contains a set of scripts used to remove direction independent effects from LOFAR data. Many of the \texttt{prefactor} steps can be executed on the data in parallel: each Subband can be processed independently. Because of the large amount of data, the best architecture for these steps is a cluster of isolated machines with dedicated disks and a high-speed connection to the data. The Dutch grid infrastructure at SURFsara is a logical place to launch these steps. 
 
+\subsection{The life of a data set}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=.8\linewidth]{background/figures/raw_image1.jpeg}
+    \caption[Image of the raw data]{Raw data for LOFAR observation L229587. We only image half of the bandwidth, from Subband 061 to Subband 183.  }
+    \label{fig:L229587_raw}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=.8\linewidth]{background/figures/prepcal_image.jpeg}
+    \caption[Image of preprocessed data]{Preprocessed data for the same observation as figure \ref{fig:L229587_raw}. Note the corrected scale bar, obtained by applying the calibrator solutions.}
+    \label{fig:L229587_prepcal}
+\end{figure}
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=.8\linewidth]{background/figures/INTERP.jpeg}
+%    \caption[Image of concatenated data]{Data from L229587 after interpolation. }
+%    \label{fig:L229587_concat_aoflag}
+%\end{figure}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=.8\linewidth]{background/figures/final_gsmacl.jpeg}
+    \caption[Image of DI calibrated data]{Data from L229587 after calibration against a global skymodel. This calibration removes the direction independent effects}
+    \label{fig:L229587_DI_cal}
+\end{figure}
+
+
+A broadband LOFAR data set has to be processed by the Direction Independent and Direction Dependent pipelines. In this section, we'll show the progress of one observation\footnote{The target is P18Hetdex03, observed on 2014-05-28 with phase centre 11h55m41.282, +049d44m52.908} from raw data to a final scientific image. Because of the large size of the data involved, we only use half of the bandwidth, from 120.2MHz to 167.7MHz.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=.8\linewidth]{background/figures/full_ampphase.jpeg}
+    \caption[Fully calibrated image]{Full direction dependent calibrated image of the L229587 data, done at a high resolution. }
+    \label{fig:L229587_full_high}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=.8\linewidth]{background/figures/full_low_ampphase.jpeg}
+    \caption[Fully calibrated low resolution image]{Full direction dependent calibrated image of the L229587 data, done at a low resolution in order to better retrieve large scale emission. }
+    \label{fig:L229587_full_low}
+\end{figure}
+
+
+
+Figure \ref{fig:L229587_raw} shows an image of the data downloaded from the LOFAR Long Term Archive. There have been no corrections done to this data, resulting in a large amplitude offset (see scale bar below figure) and strong artifacts around bright sources. In order to decrease these artifacts and calibrate the brightness of the sources, we use calibration data from a known bright radio source and apply these solutions to our data.  The resulting data produces Figure \ref{fig:L229587_prepcal}. We remove Radio Frequency Interference (caused by manmade sources) from our data and correct for bright off-axis radio sources. Finally, we use a model of the radio sky obtained by a previous survey to calibrate all our direction independent gain parameters. The resulting data produces Figure \ref{fig:L229587_DI_cal}.
+
+After the Direction Independent calibration, we perform correction for Direction Dependent effects. This correction is done by the ddf-pipeline scripts using the DDFacet and killMS software packages. To produce the images, we use the `tier1-jul2018' parameters with bootstrapping turned off. This processing produces two images, a high resolution and a low resolution image of our data. These are shown in Figures \ref{fig:L229587_full_high} and \ref{fig:L229587_full_low} respectively. 
 
 \section{Problem Statement and Research Questions}
 
