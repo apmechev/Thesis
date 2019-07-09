@@ -46,9 +46,9 @@ The time-series database is also used to collect low-level CPU information for e
 
 In order to study the effect of different hardware configurations on the performance of LOFAR processing, the \textit{prefactor} pipeline was run on four different sets of hardware. The four machines tasked with processing LOFAR data comprised nodes at three computational clusters and a personal computer. The tests were run while the systems were idle to make sure there is no interference of other software with the LOFAR processing. Table \ref{tab:ch4_nodes} details the specifics of the four test machines.
 
- \begin{table}
+ \begin{table*}
      \begin{center} 
-\resizebox{\textwidth}{!}{
+\resizebox{0.8\textwidth}{!}{
   \begin{tabular}{ l | c | c | c | c | c | c }
     \hline
     Location & CPU Speed (MHz) & CPU Model & Micro-architecture & Cache Size & RAM Speed\footnotemark & Disk Speed\footnotemark \\ \hline
@@ -62,6 +62,6 @@ In order to study the effect of different hardware configurations on the perform
   
          \caption[Hardware specifications of the four test machines.]{CPU, Cache, RAM and Storage specifications of the four test machines. The tested machines span a factor of 1.5x in CPU speed, 4x in cache and RAM Speed and $~$10x in Disk speed.\label{tab:ch4_nodes}}
   \end{center}
- \end{table}
+ \end{table*}
 
 
