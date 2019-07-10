@@ -18,6 +18,10 @@ jobs:
           command: pdflatex  -output-directory=thesis/  thesis.tex
 
       - run:
+          name: "Run makeglossary"
+          command: makeglossaries -d thesis/ thesis
+
+      - run:
           name: "Run biber (not justin)"
           command: |
               cd thesis
