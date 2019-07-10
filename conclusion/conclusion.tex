@@ -28,16 +28,18 @@ In Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT}, we detail our success with
     \emph{\textbf{Research Question 2:} How can we build software to easily accelerate complex pipelines for Radio Astronomy?}
 \end{addmargin}
 
-Chapters \ref{ch:AGLOW} and \ref{AGLOW_CI} detail the advances in parallelizing complex scientific pipelines on a distributed shared infrastructures. We integrate a mature workflow orchestration package with distributed LOFAR processing. We discuss the need for this orchestration, as well as the abilities to support additional complex pipelines. As an example application, we build a Continuous Integration pipeline tasked with verifying and validating the initial steps of LOFAR processing. 
+Chapters \ref{ch:AGLOW} and \ref{ch:AGLOW_CI} detail the advances in parallelizing complex scientific pipelines on a distributed shared infrastructures. We integrate a mature workflow orchestration package with distributed LOFAR processing. We discuss the need for this orchestration, as well as the abilities to support additional complex pipelines. As an example application, we build a Continuous Integration pipeline tasked with verifying and validating the initial steps of LOFAR processing. 
 
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
     \emph{\textbf{Research Question 3:} Can we automatically collect performance information during massively distributed processing and predict run times for future data sets?}
 \end{addmargin}
 
-Chapters \ref{ch:pipeline_collector} and \ref{ch:Scalability_model} describe a performance monitoring suite for LOFAR data and our scalability  model for LOFAR processing. 
+Chapters \ref{ch:pipeline_collector} and \ref{ch:Scalability_model} describe a performance monitoring suite for LOFAR data and our scalability  model for LOFAR processing. When running massively distributed processing, scientists are unable to monitor the performance of the underlying software. Collecting these statistics is necessary for understanding processing inefficiencies and suggest ways to accelerate data processing. Performance data can also be used to understand the effect of processing parameters on the resource usage of complex pipelines. We study this in detail, building a model that can be used to understand the scalability of multiple processing steps. This model shows the limitations on scientific parameters imposed by limited processing resources as well as suggestions on decreasing processing time without sacrificing scientific data quality. 
 
 
 \section{Future Work}
 
-The Square Kilometer Array, (SKA) is a planned aperture synthesis radio telescope expected to have a total collecting area of one square kilometer.  
+This work focuses on the first stages of LOFAR data processing, because of the large gains possible by parallelization. We take in mind the complexity of our processing workflows, the wide range of scientific pipelines and the heterogenous nature of the underlying infrastructure. Because of these factors, the software we've built can be used by a wide range of astronomical pipelines. Moreover, we can incorporate processing hosted at scientific institutions and cloud providers, to scale scientific processing horizontally.  One application for large scale distributed processing is the Square kilometer Array. 
+
+The Square Kilometer Array, (SKA) is a planned aperture synthesis radio telescope expected to have a total collecting area of one square kilometer.   
