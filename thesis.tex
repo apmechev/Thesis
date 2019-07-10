@@ -10,7 +10,7 @@
   headheight=13.6pt]{geometry}
 
 \usepackage{icthesis}
-\include{thesis.preamble}
+\input{thesis.preamble}
 \include{journals}
 
 
@@ -32,9 +32,6 @@
 
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
-%% The lineno packages adds line numbers. Start line numbering with
-%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-%% for the whole article with \linenumbers after \end{frontmatter}.
 %\usepackage[switch]{lineno}
 %\linenumbers
 
@@ -43,7 +40,6 @@
 
 
 \usepackage{subcaption}
-\usepackage{hyperref}                                                                                                                       
 
 \addbibresource{../background/background.bib}
 \addbibresource{../ch2/bibliography.bib}
@@ -56,7 +52,7 @@
 \hyphenation{LOFAR}
 \hyphenation{CouchDB}
 
-
+\input{glossary}
 
 \begin{document}
 
@@ -72,6 +68,9 @@
 \onehalfspacing
 
 \preface
+
+
+
 
 \input{abstract/abstract.tex}
 \input{dedication/dedication.tex}
@@ -102,10 +101,14 @@
 % appendices come here
 
 %\phantomsection
-%\clearpage
+\clearpage
+\printglossaries
+
+\clearpage
 \addcontentsline{toc}{chapter}{Bibliography}
 %\bibliographystyle{abbrv}	
 %\bibliography{../ch3/chapter3.bib,../ch4/chapter4.bib,../ch5/chapter5.bib,../ch6/chapter6.bib} %Using ../ because bibtex compilation happens in the thesis/ folder
+
 \printbibliography
 
 
