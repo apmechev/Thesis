@@ -2,15 +2,40 @@
 
 \label{ch:conclusions}
 
+As astronomical observatories collect ever growing data-sets, the processing challenges for these data will continue increasing. Large scale surveys expected to produce petabytes of data can no longer be processed on single machine or small dedicated clusters at scientific institutions. Large scale distributed processing is needed to serve the scientific requirements of these survey projects. 
+
+CERN's World-Wide computing grid provides sufficent resources for such projects, however due to its focus on distributed Monte-Carlo simulations, it also presents some design constraints. Namely, porting complex workflows to a grid-like environment requires a framework to distribute and monitor jobs. Additionally, a workflow orchestration software is needed to schedule and automate processing. 
 
 \section{Summary of Thesis Achievements}
 
-This work focuses on the software built to accelerate and parallelize LOFAR processing and the insights obtained into large scale processing of LOFAR data. To date, we have helped process an unprecedented 8 petabytes of data for the LOFAR Two-Meter Sky Survey (LoTSS), data which has led to  more than 30 publications. We describe a generic platform for scaling astronomical processing across multiple clusters, focused on the solutions for bulk LOFAR processing.  
+This work focuses on the software built to accelerate, parallelize, and automate LOFAR processing,  as well as the insights obtained into large scale processing of LOFAR data. To date, we have helped process an unprecedented 8 petabytes of data for the LOFAR Two-Meter Sky Survey (LoTSS), data which has led to  more than 30 publications. We describe a generic platform for scaling astronomical processing across multiple clusters, focused on the  application of bulk LOFAR processing.  
+
+We have built software that can encapsulate LOFAR processing steps and distribute them acros a heterogenous infrastructure. Our tools have been used by several scientists, implementing multiple complex pipelines, processing a total of 8 petabytes of data. 
+
+We implemented a complex monitoring suite along our processing to track the performance of individual pipeline steps. 
+
+\section{Answers to Research Questions}
 
 
-\section{Applications}
+\begin{addmargin}[4em]{8em}% 1em left, 2em right
+    \emph{\textbf{Research Question 1:} How can we use a distributed shared infrastructure for efficient LOFAR data processing?}
+\end{addmargin}
 
-While this work focuses specifically on accelerating LOFAR workflows, specificaly the \texttt{prefactor} pipeline, the software developed can be integrated with any arbitrary processing pipeline.  
+In Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT}, we detail our success with massively distributed processing of LOFAR data. We describe the underlying platform, inherited from the High Energy Physics community and the modifications to these tools that were required to host complex processing software. We detail these modifications and discuss the increas in throughput that distributed processing leads to. Finally, we make estimations on the processing time saved by parallelizing LOFAR data processing. The work described in these chapters is essential to producing scientific data sets at a high cadence, particularly considering the high data rates produced by LOFAR.  
+
+
+\begin{addmargin}[4em]{8em}% 1em left, 2em right
+    \emph{\textbf{Research Question 2:} How can we build software to easily accelerate complex pipelines for Radio Astronomy?}
+\end{addmargin}
+
+Chapters \ref{ch:AGLOW} and \ref{AGLOW_CI} detail the advances in parallelizing complex scientific pipelines on a distributed shared infrastructures. We integrate a mature workflow orchestration package with distributed LOFAR processing. We discuss the need for this orchestration, as well as the abilities to support additional complex pipelines. As an example application, we build a Continuous Integration pipeline tasked with verifying and validating the initial steps of LOFAR processing. 
+
+
+\begin{addmargin}[4em]{8em}% 1em left, 2em right
+    \emph{\textbf{Research Question 3:} Can we automatically collect performance information during massively distributed processing and predict run times for future data sets?}
+\end{addmargin}
+
+Chapters \ref{ch:pipeline_collector} and \ref{ch:Scalability_model} describe a performance monitoring suite for LOFAR data and our scalability  model for LOFAR processing. 
 
 
 \section{Future Work}
