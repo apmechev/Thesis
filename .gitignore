@@ -4,7 +4,6 @@ thesis/thesis.lof
 thesis/thesis.log
 thesis/thesis.lot
 thesis/thesis.out
-thesis/thesis.pdf
 thesis/thesis.preamble.aux
 thesis/thesis.preamble.tex
 thesis/thesis.toc
@@ -15,6 +14,11 @@ thesis/thesis.bcf
 thesis/thesis.run.xml
 thesis/thesis.tmb
 thesis/journals.aux
+thesis/thesis.glg
+thesis/thesis.glo
+thesis/thesis.gls
+thesis/thesis.ist
+thesis/versions/
 
 
 *-eps-converted-to.pdf
