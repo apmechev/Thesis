@@ -469,7 +469,7 @@ Finally, we discovered that compiling the software on a virtual machine did not 
 
 \section{Conclusions}
  
-In this paper, we present a novel system for automated collection of performance data for complex software pipelines. We use this suite to study the LOFAR \textit{prefactor} pipeline. The results are discussed aiming to understand the effect of different hardware parameters on the data processing. To do so, we run the pipeline on four different machines. 
+In this chapter, we present a novel system for automated collection of performance data for complex software pipelines. We use this suite to study the LOFAR \textit{prefactor} pipeline. The results are discussed aiming to understand the effect of different hardware parameters on the data processing. To do so, we run the pipeline on four different machines. 
 
 The software automatically collects performance data at the operating system level without impacting processing time. Data for each pipeline step is extracted using the OpenTSDB API, plotted and analyzed. Additionally, the \textit{pipeline\_collector} suite is easy to extend with new collectors that record more detailed time-series data for each pipeline step. The performance data is stored in the time series database OpenTSDB.
 
