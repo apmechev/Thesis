@@ -37,9 +37,19 @@ Chapters \ref{ch:AGLOW} and \ref{ch:AGLOW_CI} detail the advances in parallelizi
 
 Chapters \ref{ch:pipeline_collector} and \ref{ch:Scalability_model} describe a performance monitoring suite for LOFAR data and our scalability  model for LOFAR processing. When running massively distributed processing, scientists are unable to monitor the performance of the underlying software. Collecting these statistics is necessary for understanding processing inefficiencies and suggest ways to accelerate data processing. Performance data can also be used to understand the effect of processing parameters on the resource usage of complex pipelines. We study this in detail, building a model that can be used to understand the scalability of multiple processing steps. This model shows the limitations on scientific parameters imposed by limited processing resources as well as suggestions on decreasing processing time without sacrificing scientific data quality. 
 
+\section{Limitations}
+
+Using the software described, the LOFAR Surveys team was able to process several petabytes of archived data and produce scientific quality images. Despite the successes of the project, there are several issues that occasionally impede data processing and prevent rapid deployment of software pipelines.
+
+The primary issue is difficulty deploying processing software on the restricted computational clusters at Forschungszentrum J{\:u}lich, one of the three LOFAR archive locations. As this cluster neither supports docker, singularity nor CVMFS, deploying new software is difficult and time consuming. Additionally, orchestrating jobs at this site requires extra integration with our tools.
+
+Furthermore, our tools do not include data quality checks and automatic reprocessing, meaning some user overhead is needed to check the quality of each dataset and to debug common processing errors. As the software and scientific pipelines mature, we expect this issue to be slowly resolved.
+
+Finally, our current software distribution does not give semantic version to software images, nor is there a way to store these images or cite them in related papers. Implementing these features will not only make data processing easily reproducible but also make it possible to recognize the effort put into building and distributing software images.
+
 
 \section{Future Work}
 
 This work focuses on the first stages of LOFAR data processing, because of the large gains possible by parallelization. We take in mind the complexity of our processing workflows, the wide range of scientific pipelines and the heterogenous nature of the underlying infrastructure. Because of these factors, the software we've built can be used by a wide range of astronomical pipelines. Moreover, we can incorporate processing hosted at scientific institutions and cloud providers, to scale scientific processing horizontally.  One application for large scale distributed processing is the Square kilometer Array. 
 
-The Square Kilometer Array, (SKA) is a planned aperture synthesis radio telescope expected to have a total collecting area of one square kilometer. 
+The Square Kilometer Array, (SKA) is a planned aperture synthesis radio telescope expected to have a total collecting area of one square kilometer. It is expected to produce more than 160 TB per day \citep{johnston2017taming}, data which needs to be promptly processed. Scaling our tools to SKA-size processing requires a federation of clusters able to handle a high throughput workload.   
