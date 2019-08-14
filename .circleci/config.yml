@@ -71,6 +71,12 @@ jobs:
                 exit 1
               fi
       - run:
+          name: "Check if bib properly compiled"
+          command: |
+              export BIB_84_OK=$( pdftotext thesis/thesis.pdf - |grep "\[84\]"  )
+              [[ -z "$BIB_84_OK" ]] && { echo "Bibliography likely failed, can't find ref [84]\n"; exit 1; } || exit 0;
+
+      - run:
           name: "Check if '??' references exist"
           command: |
               export ALL_REFS_OK=$( pdftotext thesis/thesis.pdf - |grep "??" )
