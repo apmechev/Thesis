@@ -58,7 +58,7 @@ The LOFAR radio telescope is the world's largest aperture synthesis array with m
 
 The LOFAR Two Meter Sky Survey (LoTSS) Survey\cite{lotss} will observe 3000 different fields that collectively will map the entire northern radio sky. The size of each of these data sets is 16TB, making for a total of 48 Petabytes. To complete the LoTSS survey in the project's anticipated 5 year duration, 1PB of data need to be processed each month. 
 
-To mitigate delays caused by data transfer, the reduction must be done at a location with a high bandwidth connection to the raw data. Software packages for the initial processing of LOFAR data already exist\cite{van2016lofar}, however they were not designed to work on all cluster architectures. To complete the LoTSS project in time, a framework is needed to automatically process multiple data sets at a cluster with a fast connection to the data. 
+To mitigate delays caused by data transfer, the reduction must be done at a location with a high bandwidth connection to the raw data. Software packages for the initial processing of LOFAR data already exist\cite{vanweeren2016}, however they were not designed to work on all cluster architectures. To complete the LoTSS project in time, a framework is needed to automatically process multiple data sets at a cluster with a fast connection to the data. 
 
 Building on previous work (Oonk+, in prep), we created a framework to launch and monitor processing for multiple data sets. We present this framework, built to process data sets across multiple machines. The framework is named the LOFAR Reduction Tools (LRT) and it provides:
 
@@ -69,7 +69,7 @@ Building on previous work (Oonk+, in prep), we created a framework to launch and
  \item Generalization, enabling integration of software from other scientific domains
 \end{itemize}
 
-The LOFAR data reduction software known as `pre-FACTOR'\cite{prefactor} was integrated in this framework. This software has been in use since November 2016 and at the time of writing (Feb 2017) had processed more than 100 data sets. This equals one quarter of all the LoTSS data gathered from September 2014 to March 2017. By deploying the LRT framework on a cluster with a high-bandwidth connection to the data, the entirety of the LoTSS data can be reduced within the five year time span of the project. 
+The LOFAR data reduction software known as `pre-FACTOR'\cite{prefactor_LOTSS_DR1} was integrated in this framework. This software has been in use since November 2016 and at the time of writing (Feb 2017) had processed more than 100 data sets. This equals one quarter of all the LoTSS data gathered from September 2014 to March 2017. By deploying the LRT framework on a cluster with a high-bandwidth connection to the data, the entirety of the LoTSS data can be reduced within the five year time span of the project. 
 
 The paper is structured as follows: Section \ref{sec:ch3_lofar_red} outlines the LOFAR data reduction process and computational requirements. Section \ref{sec:ch3_design} describes the design of the LRT framework and its capabilities, Section \ref{sec:ch3_use} describes the modification of the existing LOFAR software, and the performance and results are in Section \ref{sec:ch3_performance_results}. Finally, conclusions  and future work are in Section \ref{sec:ch3_conclusion}.
 
@@ -96,23 +96,23 @@ The raw data is stored in the LOFAR Long Term Archive. Typically, an 8 hour obse
 
 \begin{figure}
  \includegraphics[width=.79\textwidth]{ch3/figures/DIDDpipe.eps}\\
- \caption[Prefactor and DDFacet Data Flow]{A schematic of the data flow through the Direction Independent Pipeline (pre-FACTOR\cite{prefactor}) and one of the Direction Dependent Pipelines (DDFacet). The Initial Source Subtraction is only necessary for some DD pipelines and is not currently implemented. }
+ \caption[Prefactor and DDFacet Data Flow]{A schematic of the data flow through the Direction Independent Pipeline (pre-FACTOR\cite{prefactor_LOTSS_DR1}) and one of the Direction Dependent Pipelines (DDFacet). The Initial Source Subtraction is only necessary for some DD pipelines and is not currently implemented. }
  \label{fig:ch3_both_pipes}
 \end{figure}
 
 
-Data reduction for the LoTSS survey is split into two pipelines: Direction Independent (DI) calibration and Direction Dependent (DD) calibration (Fig\ref{fig:ch3_both_pipes}). The Direction Independent pipeline\cite{prefactor}\cite{van2016lofar} produces images that are limited in resolution and contain instrumental effects\cite{lotss}. To achieve high fidelity continuum images, the ionospheric and beam errors must be corrected\cite{lofar_calib}. As those effects vary across the field of view, a Direction Dependent calibration step must follow. Without these corrections the image quality and resolution is severely limited\cite{van2016lofar}.  We are currently working on a GRID implementation of the Direction Dependent pipeline and will report on this in a future paper.
+Data reduction for the LoTSS survey is split into two pipelines: Direction Independent (DI) calibration and Direction Dependent (DD) calibration (Fig\ref{fig:ch3_both_pipes}). The Direction Independent pipeline\cite{prefactor_LOTSS_DR1}\cite{vanweeren2016} produces images that are limited in resolution and contain instrumental effects\cite{lotss}. To achieve high fidelity continuum images, the ionospheric and beam errors must be corrected\cite{lofar_calib}. As those effects vary across the field of view, a Direction Dependent calibration step must follow. Without these corrections the image quality and resolution is severely limited\cite{vanweeren2016}.  We are currently working on a GRID implementation of the Direction Dependent pipeline and will report on this in a future paper.
 
 
 \subsection{Direction Independent Processing}\label{sec:ch3_dirin_process}
 
-The LOFAR telescope consists of many antennae, each with its own electronic gain. A gain calibration needs to be performed by observing a bright calibrator source before or after the science target\cite{lofar_calib}. Using this observation, the antenna gains for the telescope are calculated. This is performed by the Calibration pipeline of the pre-FACTOR software\cite{prefactor}.  The results from this step are applied to the science target and target observation is averaged  and processed. This consists of removing Radio Frequency Interference and subtraction of bright off-axis sources, and finally calibration against a sky model derived from surveys conducted with previous telescopes\cite{lofar_calib}\cite{van2016lofar}. These steps are performed by the Target pipeline of the pre-FACTOR software\cite{prefactor}. The result is a calibrated data set which is up to 64 times smaller than the uncalibrated archived data.
+The LOFAR telescope consists of many antennae, each with its own electronic gain. A gain calibration needs to be performed by observing a bright calibrator source before or after the science target\cite{lofar_calib}. Using this observation, the antenna gains for the telescope are calculated. This is performed by the Calibration pipeline of the pre-FACTOR software\cite{prefactor_LOTSS_DR1}.  The results from this step are applied to the science target and target observation is averaged  and processed. This consists of removing Radio Frequency Interference and subtraction of bright off-axis sources, and finally calibration against a sky model derived from surveys conducted with previous telescopes\cite{lofar_calib}\cite{vanweeren2016}. These steps are performed by the Target pipeline of the pre-FACTOR software\cite{prefactor_LOTSS_DR1}. The result is a calibrated data set which is up to 64 times smaller than the uncalibrated archived data.
 
 A 16TB data set cannot fit into a machine's memory, which is typically less than 128GB. Because of this,  the Direction Independent processing is be split by dividing the original full-bandwidth observation into independent chunks of narrower bandwidth. A typical observation spanning 48 MHz is split into 244 files called Subbands each of which spans 0.1953 MHz.  These Subbands are processed simultaneously, as each undergoes the same processing steps. This is a form of data-level parallelism. 
 
 %The initial part of the LOFAR data processing can benefit from a cluster of many small machines. Doing so not only improves latency but allows for both scalability and fault tolerance, as discussed in Sections  \ref{sec:intermediate_storage} and \ref{sec:capabilities}. 
 
-The Direction Independent calibration pipeline (Fig.\ref{fig:ch3_DIpipe}) consists of an existing set of scripts which use the LOFAR software suite\cite{lofarcookbook} to process the initial data sets. These scripts also handle the post-processing and application of the calibration results\cite{van2016lofar}. These scripts are contained in the package \emph{pre-FACTOR}\cite{prefactor}. The order of the scripts and their parameters are contained in a parameter-set file (henceforth 'parset'). The parset defines a sequence of procedures, each launching one or more executables. The execution of the procedures in a parset defines a step in the Direction Independent Pipeline. 
+The Direction Independent calibration pipeline (Fig.\ref{fig:ch3_DIpipe}) consists of an existing set of scripts which use the LOFAR software suite\cite{lofarcookbook} to process the initial data sets. These scripts also handle the post-processing and application of the calibration results\cite{vanweeren2016}. These scripts are contained in the package \emph{pre-FACTOR}\cite{prefactor_LOTSS_DR1}. The order of the scripts and their parameters are contained in a parameter-set file (henceforth 'parset'). The parset defines a sequence of procedures, each launching one or more executables. The execution of the procedures in a parset defines a step in the Direction Independent Pipeline. 
 
 
 \subsection{Implementing the DI Calibration on the GRID}\label{sec:ch3_impl}
@@ -383,7 +383,7 @@ The LRT framework handles staging of LOFAR data, packaging and uploading worker 
 %\newblock Lofar: The low-frequency array.
 %\newblock {\em Astronomy \& Astrophysics}, 556:A2, 2013.
 %
-%\bibitem{van2016lofar}
+%\bibitem{vanweeren2016}
 %RJ~Van~Weeren, WL~Williams, MJ~Hardcastle, TW~Shimwell, DA~Rafferty, J~Sabater,
 %  G~Heald, SS~Sridhar, TJ~Dijkema, G~Brunetti, et~al.
 %\newblock Lofar facet calibration.
