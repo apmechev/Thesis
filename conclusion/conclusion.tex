@@ -6,13 +6,19 @@ As astronomical observatories collect ever-growing data-sets, the processing cha
 
 CERN's World-Wide computing grid provides sufficient resources for such projects; however, its focus is on distributed Monte-Carlo simulations. The design choices made to tackle these computations also present some design constraints for radio astronomical processing. Namely, porting complex workflows to a grid-like environment requires a framework to distribute and monitor jobs. Additionally, a workflow orchestration software is needed to schedule and automate processing. 
 
-\section{Summary of Thesis Achievements}
+\section{Summary of Thesis Contributions}
 
-This work focuses on the software built to accelerate, parallelize, and automate LOFAR processing as well as the insights obtained into large scale processing of LOFAR data. To date, we have helped process an unprecedented eight petabytes of data for the LOFAR Two-Meter Sky Survey (LoTSS), data which has led to more than 30 publications. We describe a generic platform for scaling astronomical processing across multiple clusters, focused on the application of bulk LOFAR processing.  
+This work focuses on the software built to accelerate, parallelize, and automate LOFAR processing as well as the insights obtained into large scale processing of LOFAR data.  We have built a scalability model which can be used to understand the performance of LOFAR broadband processing pipelines. Our model has brought novel insights into the limits of our current pipelines, as well as suggestions to improve processing throughput. 
 
-We have built software that can encapsulate LOFAR processing steps and distribute them across a heterogeneous infrastructure. Our tools have been used by several scientists, implementing multiple complex pipelines, processing a total of eight petabytes of data. 
+We have built a platform for processing a Radio Astronomy data on a heterogenous, distributed infrastructure. We exploited the data level parallelism of computationally intensive processing tasks, making several LOFAR scientific projects possible. Additionally, distributed processing is necessary for large astronomical surveys and we expect this paradigm will be seen more often in astronomical projects. 
 
-We implemented a modern monitoring suite along our processing to track the performance of individual pipeline steps. 
+Finally, we created an automated workflow system with the goal of  automatically producing high fidelity images from LOFAR observations. This system was a successful integration of industry software into Radio Astronomy, one of the goals of this thesis and its associated grant. Bringing open source tools used in industry is crucial to  keeping long lived scientific projects  maintainable and productive. Our results are the first steps in improving maintainability of LOFAR scientific workflows.  
+
+These advances in understanding and bypassing LOFAR processing inefficiencies and automating workflows are first steps to modernizing......  
+
+%We have built software that can encapsulate LOFAR processing steps and distribute them across a heterogeneous infrastructure. Our tools have been used by several scientists, implementing multiple complex pipelines, processing a total of eight petabytes of data. 
+
+%We implemented a modern monitoring suite along our processing to track the performance of individual pipeline steps. 
 
 \section{Answers to Research Questions}
 
@@ -21,7 +27,7 @@ We implemented a modern monitoring suite along our processing to track the perfo
     \emph{\textbf{Research Question 1:} How can we use a distributed shared infrastructure for efficient LOFAR data processing?}
 \end{addmargin}
 
-In Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT}, we detail our success with massively distributed processing of LOFAR data. We describe the underlying platform, inherited from the High Energy Physics community and the modifications to these tools that were required to host sophisticted processing software. We detail these modifications and discuss the resulting increase in throughput. Finally, we make estimations on the processing time saved by parallelizing LOFAR data processing. The work described in these chapters is essential to producing scientific data sets at a high cadence, particularly considering the high data rates produced by LOFAR.  
+In Chapters \ref{ch:LOFAR_DSP} and \ref{ch:GRID_LRT}, we detail our success with massively distributed processing of LOFAR data. We describe the underlying platform, inherited from the High Energy Physics community and the modifications to these tools that were required to host sophisticted processing software. We detail these modifications and discuss the resulting increase in throughput. Finally, we make estimations on the processing time saved by parallelizing LOFAR data processing. The work described in these chapters is essential to producing scientific data sets at a high rate, particularly considering the high data rates produced by LOFAR.  
 
 
 \begin{addmargin}[4em]{8em}% 1em left, 2em right
@@ -41,11 +47,9 @@ Chapters \ref{ch:pipeline_collector} and \ref{ch:Scalability_model} describe a p
 
 Using the software described, the LOFAR Surveys team was able to process several petabytes of archived data and produce scientific quality images. Despite the successes of the project, several issues occasionally impede data processing and prevent rapid deployment of software pipelines.
 
-The primary issue is difficulty deploying processing software on the restricted computational clusters at Forschungszentrum J{\:u}lich, one of the three LOFAR archive locations. As this cluster neither supports docker, singularity, nor CVMFS, deploying new software is difficult and time-consuming. Additionally, orchestrating jobs at this site requires additional integration with our tools.
+The primary issue is difficulty deploying processing software on the restricted computational clusters at Forschungszentrum J{\"u}lich, one of the three LOFAR archive locations. As this cluster does not support any modern containerization software, nor any other software distribution method, deploying new software is difficult and time-consuming. Additionally, orchestrating jobs at this site requires additional integration with our tools. These limitation makes deploying modern software and performing scientific processing at the J{\"u}lich clusters difficult. 
 
-Furthermore, our tools do not include data quality checks and automatic reprocessing, meaning some user overhead is needed to check the quality of each data-set and to debug common processing errors. As the software and scientific pipelines mature, we expect this issue to be slowly resolved.
-
-Finally, our current software distribution does not give semantic versions to software images, nor is there a way to store these images or cite them in related papers. Implementing these features will not only make data processing easily reproducible but also make it possible to recognize the effort put into building and distributing software images.
+Finally, our current software distribution does not give long-term version numbers to software images and scripts, nor is there a way to store these images or cite them in related papers. Implementing these features will not only make data processing easily reproducible but also make it possible to recognize the effort put into building and distributing software images as well as enable FAIR science with LOFAR data\citep{wilkinson2016fair}.
 
 
 \section{Future Work}
