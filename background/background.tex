@@ -136,27 +136,27 @@ There are a few software packages used to process LOFAR data, typically used in 
 \end{figure}
 
 
-A broadband LOFAR data set has to be processed by the Direction-Independent and Direction-Dependent pipelines. In this section, we will show the progress of one observation\footnote{The target is P18Hetdex03, observed on 2014-05-28 with phase centre 11h55m41.282, +049d44m52.908} from raw data to a final scientific image. Because of the large size of the data involved, we only use half of the bandwidth, from 132.2MHz to 156.1MHz.
+In this section, we will show the progress of one observation\footnote{The target is P18Hetdex03, observed on 2014-05-28 with phase centre 11h55m41.282, +049d44m52.908} from raw data to a final scientific image. We run this observation through the \texttt{prefactor} pipeline\footnote{prefactor \href{https://github.com/lofar-astron/prefactor/releases/tag/V3.0-beta1}{v3.0 beta 1}. } to perform the Direction Independent correction, followed by the \texttt{ddf-pipeline}\footnote{https://github.com/mhardcastle/ddf-pipeline} for Direction Dependent corrections. For this work, we only use half of the bandwidth (from 132.2MHz to 156.1MHz) to speed up the DD calibration.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=.8\linewidth]{background/figures/full_ampphase_brighter.jpeg}
-    \caption[Fully calibrated image]{Full direction dependent calibrated image of the L229587 data, done at a high resolution. }
+    \caption[Fully calibrated image]{Full direction dependent calibrated image of the L229587 data, done at a high resolution. This image shows a drastic reduction in imaging artifacts as well as a low image noise level. Some of the leftover artifacts are due to skipping the flux bootstrapping step, and using half the bandwidth}
     \label{fig:L229587_full_high}
 \end{figure}
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=.8\linewidth]{background/figures/full_low_ampphase_brighter.jpeg}
-    \caption[Fully calibrated low-resolution image]{Full direction dependent calibrated image of the L229587 data, done at a low-resolution in order to better retrieve large scale emission. }
-    \label{fig:L229587_full_low}
-\end{figure}
+%\begin{figure}[!htb]
+%    \centering
+%    \includegraphics[width=.8\linewidth]{background/figures/full_low_ampphase_brighter.jpeg}
+%    \caption[Fully calibrated low-resolution image]{Full direction dependent calibrated image of the L229587 data, done at a low-resolution in order to better retrieve large scale emission. }
+%    \label{fig:L229587_full_low}
+%\end{figure}
+%
 
 
+Figure \ref{fig:L229587_raw} shows an image of the data downloaded from the LOFAR Long Term Archive. There have been minimal corrections done to this data, only removing radio frequency interference before archiving the observation. The lack of phase and amplitude corrections result in a large amplitude offset (see scale bar below figure) and distinct artifacts around bright sources. In order to decrease these artifacts and calibrate the brightness of the sources, we use calibration data from a known bright radio source and apply these solutions to our data.  The resulting data produces Figure \ref{fig:L229587_prepcal}. We remove Radio Frequency Interference (caused by manmade sources) from our data and correct for bright off-axis radio sources. Finally, we use a model of the radio sky obtained by a previous survey to calibrate all our direction independent gain parameters. The resulting data produces Figure \ref{fig:L229587_DI_cal}.
 
-Figure \ref{fig:L229587_raw} shows an image of the data downloaded from the LOFAR Long Term Archive. There have been no corrections done to this data, resulting in a large amplitude offset (see scale bar below figure) and distinct artifacts around bright sources. In order to decrease these artifacts and calibrate the brightness of the sources, we use calibration data from a known bright radio source and apply these solutions to our data.  The resulting data produces Figure \ref{fig:L229587_prepcal}. We remove Radio Frequency Interference (caused by manmade sources) from our data and correct for bright off-axis radio sources. Finally, we use a model of the radio sky obtained by a previous survey to calibrate all our direction independent gain parameters. The resulting data produces Figure \ref{fig:L229587_DI_cal}.
-
-After the Direction-Independent calibration, we perform correction for Direction-Dependent effects. This correction is done by the ddf-pipeline scripts using the DDFacet and killMS software packages. To produce the images, we use the `tier1-jul2018' parameters with bootstrapping turned off. This processing produces two images, a high resolution and a low-resolution image of our data. These are shown in Figures \ref{fig:L229587_full_high} and \ref{fig:L229587_full_low} respectively. 
+After the Direction-Independent calibration, we perform correction for Direction-Dependent effects. This correction is done by the ddf-pipeline scripts using the DDFacet and killMS software packages. To produce the images, we use the `tier1-jul2018' parameters. To speed up processing, we turn off the bootstrapping step, which loads flux estimates from previous surveys\citep{hardcastle2016}. Once all the DD calibration completes, it produces a high resolution, high fidelity image of the target observation, shown in Figure \ref{fig:L229587_full_high}.
 
 \section{Problem Statement and Research Questions}
 
