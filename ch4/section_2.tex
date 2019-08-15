@@ -7,12 +7,12 @@ In this work, we use a sample LOFAR SKSP data set as a test case. A particular f
 
 \subsection{\textit{Prefactor} Pipeline}
 
-The LOFAR \textit{prefactor} pipeline \citep{lofar_prefactor} is a software pipeline that performs direction independent calibration using the LOFAR software. The LOFAR software stack is a software package containing commonly used processing software used by LOFAR pipelines \citep{cookbook,lofar_NDPPP}. These tools are built and maintained by ASTRON\footnote{ASTRON: Netherlands Institute for Radio Astronomy, url{https://www.astron.nl/}}. 
+The LOFAR \textit{prefactor} pipeline \citep{vanweeren2016} is a software pipeline that performs direction independent calibration using the LOFAR software. The LOFAR software stack is a software package containing commonly used processing software used by LOFAR pipelines \citep{cookbook,lofar_NDPPP}. These tools are built and maintained by ASTRON\footnote{ASTRON: Netherlands Institute for Radio Astronomy, url{https://www.astron.nl/}}. 
 
 The \textit{prefactor} pipeline performs a sequence of four stages, namely the calibrator and target calibration. The first half of \textit{prefactor} processes data from a calibration source and the second half processes a science target. Altogether, this processing takes six hours on a high-throughput cluster. The final result is a data-set ready for creating  images of the sky at radio wavelengths. Figure \ref{fig:ch4_four_steps_box} shows a graphical view of the prefactor pipeline's Calibrator and Target stages.
 
 
-The Calibrator stage consists of the \textit{ndppp\_prep\_cal} and the \textit{calib\_cal} step. The former flags radio interference and averages the data, and the latter performs gain calibration on a bright calibration source. It is followed by the \textit{fitclock} step which fits a clock-TEC model to the calibration solutions \citep{lofar_prefactor}.  
+The Calibrator stage consists of the \textit{ndppp\_prep\_cal} and the \textit{calib\_cal} step. The former flags radio interference and averages the data, and the latter performs gain calibration on a bright calibration source. It is followed by the \textit{fitclock} step which fits a clock-TEC model to the calibration solutions \citep{vanweeren2016}.  
 
 The Target stage consists of a \textit{ndppp\_prep\_targ} step, \textit{predict\_ateam}, \textit{gsmcal\_solve} and \textit{gsmcal\_apply} steps. The first two of these steps flag and average the target data and calculate contamination by bright off-axis radio sources. The \textit{gsmcal\_solve} step determines phase solutions for each antenna using a model of the target and the results of the \textit{ndppp\_prep\_targ} step. Finally, the \textit{gsmcal\_apply} step applies these solutions to the target data. Figure \ref{fig:ch4_4_steps_pies} shows the percentage of time spent by these steps for the four \textit{prefactor} stages.
 

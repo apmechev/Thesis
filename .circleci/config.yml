@@ -81,9 +81,10 @@ jobs:
           command: |
               export ALL_REFS_OK=$( pdftotext thesis/thesis.pdf - |grep "??" )
               [[ ! -z "$ALL_REFS_OK" ]] && { echo "There are undefined references\n" ; echo $ALL_REFS_OK ; exit 1; } || exit 0; 
-     - run:
-         name: "Check if any bad references??"
-         command: |
+
+      - run:
+          name: "Check if any bad references??"
+          command: |
              export CITE_SEARCH=$( pdftotext thesis/thesis.pdf - |grep "\[[a-zA-Z].*\]" |grep -v  "astro-ph" |grep -v "e.g."  |grep -v "PAPI" |grep -v ";" |grep -v ", " |grep -v "cs.MS"  )
              [[ ! -z "$CITE_SEARCH" ]] && { echo "There are undefined  bib references\n" ; echo $CITE_SEARCH; exit 1; } || exit 0;
 
