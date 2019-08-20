@@ -27,22 +27,19 @@
 
 %“He moved in a way that suggested he was attempting the world speed record for the nonchalant walk.” ― Terry Pratchett, The Light Fantastic
 
-\begin{frshaded*}
-    The contents of this chapter are based on a manuscript Published at the International Symposium for Grids and Clouds 2017
+\begin{tcolorbox}[colback=thesislight,colframe=thesismid,width=\dimexpr\textwidth+12mm\relax]
+     \textbf{Original Abstract:}
 
-    \fullcite{mechev17}
-\end{frshaded*}
+The Low Frequency Array (LOFAR) radio telescope stationed near Exloo, the Netherlands is an international aperture synthesis radio telescope used to study the universe at low frequencies. Aperture synthesis requires large amounts of computation between data acquisition and science ready images. The LOFAR Two Meter Sky Survey (LoTSS) will require to process 50 PB of data within five years. The data rates demanded by this project require processing at locations with high-speed access to the data. The current software packages are not suited for all cluster architectures, and cannot launch and monitor processing at multiple locations.
+
+To complete the LoTSS project, the processing software needs to be made portable and moved to clusters capable of handling the data rates above. This work presents a framework that makes the LOFAR software portable, and is used to scale out LOFAR data reduction. The hight throughput achieved will make imaging 3000 observations possible within five years.
+
+    This chapter is based on the work of  \fullcite{mechev17}
+\end{tcolorbox}
 %
 
 
 \setlength\FrameRule{1.5pt}
-\begin{frshaded*}
-    \textbf{Original Abstract:}
-
-The Low Frequency Array (LOFAR) radio telescope stationed near Exloo, the Netherlands is an international aperture synthesis radio telescope used to study the universe at low frequencies. Aperture synthesis requires large amounts of computation between data acquisition and science ready images. The LOFAR Two Meter Sky Survey (LoTSS) will require to process 50 PB of data within five years. The data rates demanded by this project require processing at locations with high-speed access to the data. The current software packages are not suited for all cluster architectures, and cannot launch and monitor processing at multiple locations. 
-
-To complete the LoTSS project, the processing software needs to be made portable and moved to clusters capable of handling the data rates above. This work presents a framework that makes the LOFAR software portable, and is used to scale out LOFAR data reduction. The hight throughput achieved will make imaging 3000 observations possible within five years.
-\end{frshaded*}
 %
 
 %
@@ -60,7 +57,7 @@ The LOFAR Two Meter Sky Survey (\Gls{LoTSS}) Survey\cite{lotss} will observe 300
 
 To mitigate delays caused by data transfer, the reduction must be done at a location with a high bandwidth connection to the raw data. Software packages for the initial processing of LOFAR data already exist\cite{vanweeren2016}, however they were not designed to work on all cluster architectures. To complete the LoTSS project in time, a framework is needed to automatically process multiple data sets at a cluster with a fast connection to the data. 
 
-Building on previous work (Oonk+, in prep), we created a framework to launch and monitor processing for multiple data sets. We present this framework, built to process data sets across multiple machines. The framework is named the LOFAR Reduction Tools (LRT) and it provides:
+Building on previous work \citep{oonk2019}, we created a framework to launch and monitor processing for multiple data sets. We present this framework, built to process data sets across multiple machines. The framework is named the LOFAR Reduction Tools (LRT) and it provides:
 
 \begin{itemize}[noitemsep,topsep=0pt]
  \item Automation, enabling processing of multiple concurrent jobs
@@ -152,7 +149,7 @@ The LRT framework (Fig. \ref{fig:ch3_design}) was developed to automate the LOFA
 \end{figure}
 
 \subsection{Framework Elements}
-The LRT framework consists of a set of modules responsible for different parts of the data reduction. The \verb|srmlist| module handles the links to the data. If the data is on tape, it sends a command to stage it to disk. The \verb|sandbox| module creates an archive of processing scripts and uploads it to storage. The \verb|Token| module is responsible for managing metadata, which defines a processing job. Appendix \ref{sec:ch3_appendix_1} contains information on the functionality of each module and their use. 
+The LRT framework consists of a set of modules responsible for different parts of the data reduction. The \texttt{\gls{srm}list} module handles the links to the data. If the data is on tape, it sends a command to stage it to disk. The \verb|sandbox| module creates an archive of processing scripts and uploads it to storage. The \verb|Token| module is responsible for managing metadata, which defines a processing job. Appendix \ref{sec:ch3_appendix_1} contains information on the functionality of each module and their use. 
 
 \subsubsection{Storing Job Metadata}
 

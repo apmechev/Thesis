@@ -22,8 +22,68 @@
 
 
 
-\newglossaryentry{UV plane}
+\newglossaryentry{Fourier space}
 {
-    name={UV plane},
-    description={Radio Astronomers use the term `UV plane' to refer to the Fourier Transform of the final image. Each baseline of an aperture synthesis telescope corresponds to one sample of the UV plane. The letters U and V refer to the two  orthogonal components of a baseline with respect to an observation's phase center. The $u$ and $v$ vectors are defined in a plane orthogonal to the direction towards the phase center, and are typically in units of wavelength}
+    name={Fourier space},
+    description={Radio Astronomers use the term `UV plane' or `Fourier space' interchangably to refer to the Fourier Transform of the final image. Each baseline of an aperture synthesis telescope corresponds to one measurement in this space. The letters U and V refer to the two  orthogonal components of a baseline with respect to an observation's phase center. The $u$ and $v$ vectors are defined in a plane orthogonal to the direction towards the phase center, and are typically in units of wavelength. To obtain an image, the UV data needs to be `cleaned' by iteratively removing the point spread function of the telescope}
+}
+
+\newglossaryentry{Grid}
+{   
+    name={Grid},
+    description={Grid computing refers to massively parallel distributed computing introduced in the '90s to tackle the processing challenges processing data from the Large Hadron Collider. A computational grid is a set of compute nodes connected with a high throughput connection, common job scheduler and shared, distributed storage. The computational and storage resources in a Grid are federated, and users are provided a share of those resources by a managing authority }
+}
+
+\newglossaryentry{GridLRT}
+{
+    name={GRID\_LRT},
+    description={GRID\_LRT is the GRID LOFAR Reduction Tools package. This software consists of a set of tools to easily create and launch processing jobs on a distributed infrastructure. It includes tools to manage LOFAR data stored on the grid filesystem. These tools make it possible to quickly integrate processing scripts with a high throughput environment, accelerating bottleneck steps in LOFAR processing }
+}
+
+
+\newglossaryentry{AGLOW}
+{
+    name={AGLOW},
+    description={AGLOW is a combination of Apache Airflow with GRID\_LRT. This integration allows LOFAR users to build and launch massively parallel workflows
+}}
+
+\newglossaryentry{dCache}{
+    name={dCache},
+    description={dCache is a system for storing and retrieving large amounts of data, distributed across heterogenous servers. dCache provides a common virtual filesystem, while also allows data to be located on varied storage devices including SSDs, spinning disks and magnetic tape }
+}
+
+\newglossaryentry{VOMS}
+{
+    name=VOMS,
+    description={The Virtual Organization Membership Service is a service that manages the access to data and computational resources provided to each Grid user. It handles authentication and authorization of job launching and access to data on the grid filesystem. More information can be found at \url{https://italiangrid.github.io/voms/} }
+}
+
+\newglossaryentry{CouchDB}
+{
+    name=CouchDB, 
+    description={CouchDB is a document-based eventually consistent database, that we use to store processing information for distributed jobs. Each CouchDB document corresponds to a single distributed job, and contains a full description of the job required to run on a worker node. As jobs run, they update their status in the CouchDB document, which can be accessed by users through their browsers or a Python client}
+}
+
+\newglossaryentry{CVMFS}
+{
+    name=CVMFS,
+    description={The CERN VM Filesystem is a virtually mounted filesystem that is used to distribute software on multiple clusters, cluster nodes and individual machines. CVMFS allows an institute to host a portable installation of their software, which is distributed and cached by other CVMFS clients. The software is cached locally on the worker nodes as a FileSystem in Userspace (FUSE) module }
+}
+
+\newglossaryentry{demix}
+{
+    name=demix,
+    description={Demixing data is a processing step which removes the effects of bright off-axis sources. Because the LOFAR telescope is sensitive to sources away from its phase center, when a bright radio source is close to the observation, it contributes to the data and needs to be removed. Typically the brightest radio sources removed are called the A-team sources, and their contribution is removed using a well-known model of the source and the distance between the source and the observation's phase center 
+}}
+
+\newglossaryentry{PiCaS}
+{
+    name=PiCaS,
+    description={A framework to manage the status and metadata of distributed jobs on a central \Gls{CouchDB} server. This server is accessed through HTTP by processing jobs, to update their progress, or download metadata. Additionally, users can access it through their browser or python client to create, launch or reset processing jobs }
+}
+
+\newglossaryentry{srm}
+{
+    name=srm, 
+    description={Storage Resource Manager, a system to co-ordinate data storage. This system defines the protocols for referencing data on a distributed system, accessing metadata and changing data locality (e.g., moving from tape to disk). }
 }

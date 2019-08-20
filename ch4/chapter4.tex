@@ -111,17 +111,13 @@
 %\address{$^b$Leiden Institute of Advanced Computer Science, Niels Bohrweg 1, 2333 CA Leiden, the Netherlands}
 %\address{$^c$ASTRON,  Oude Hoogeveensedijk 4, 7991 PD Dwingeloo, the Netherlands}
 
-\begin{frshaded*}
-    The contents of this chapter are based on a manuscript Published in Astronomy and Computing in 2018
-\end{frshaded*}
-%
+\begin{tcolorbox}[colback=thesislight,colframe=thesismid,width=\dimexpr\textwidth+12mm\relax]
 
-
-\setlength\FrameRule{1.5pt}
-\begin{frshaded*}
     \textbf{Original Abstract:}
 Modern astronomical data processing requires complex software pipelines to process ever growing data sets. For radio astronomy, these pipelines have become so large that they need to be distributed across a computational cluster. This makes it difficult to monitor the performance of each pipeline step. To gain insight into the performance of each  step, a performance monitoring utility needs to be integrated with the pipeline execution. In this work we have developed such a utility and integrated it with the calibration pipeline of the Low Frequency Array, LOFAR, a leading radio telescope. We tested the tool by running the pipeline on several different compute platforms and collected the performance data. Based on this data, we make well informed recommendations on future hardware and software upgrades. The aim of these upgrades is to accelerate the slowest processing steps for this LOFAR pipeline. The \textit{pipeline\_collector} suite is open source and will be incorporated in future LOFAR pipelines to create a performance database for all LOFAR processing. 
-\end{frshaded*}
+
+    This chapter is based on the work of  \fullcite{mechev_pipeline_collector}
+\end{tcolorbox}
 
 % \item[Prefactor]
 % The \texttt{LOFAR} pre-factor pipeline prepares LOFAR Observations for creating high fidelity images. 
@@ -157,7 +153,7 @@ In this work, we will use the \textit{pipeline\_collector} utility to study the 
     
  \begin{table*}[!htb]
  \begin{center}
-  \begin{tabular}{ l | p{130mm} }
+  \begin{tabular}{ l | p{100mm} }
     \hline
     Result \# & Description  \\ \hline
     \hline

@@ -101,20 +101,16 @@
 %\thispagestyle{empty}
 %\pagestyle{empty}
 
+\begin{tcolorbox}[colback=thesislight,colframe=thesismid,width=\dimexpr\textwidth+12mm\relax]
 
-\begin{frshaded*}
-    The contents of this chapter are based on a manuscript Published at the IEEE e-Science conference 2018
-\end{frshaded*}
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength\FrameRule{1.5pt}
-\begin{frshaded*}
     \textbf{Original Abstract:}
 
 The LOFAR radio telescope creates petabytes of data per year. This data is important for many scientific projects. The data needs to be efficiently processed within the time span of these projects in order to maximize the scientific impact. We present a workflow orchestration system that integrates LOFAR processing with a distributed computing platform. The system is named Automated Grid-enabled LOFAR Workflows (AGLOW). AGLOW makes it fast and easy to develop, test and deploy complex LOFAR workflows, and to accelerate them on a distributed cluster architecture. AGLOW reduces the setup time of complex workflows: typically, from months to days. We lay out two case studies that process the data from the LOFAR Surveys Key Science Project. We have implemented these into the AGLOW environment. We also describe the capabilities of AGLOW, paving the way for use by other LOFAR science cases. In the future, AGLOW will automatically produce multiple science products from a single data set, serving several of the LOFAR Key Science Projects.
-\end{frshaded*}
-%Target:  IEEE International Conference On e-Science
+
+     This chapter is based on the work of  \fullcite{ieee_AGLOW}
+\end{tcolorbox}
+
+
 %Keywords: Workflow management software, Radio Astronomy, Distributed Computing, Big Data applications
 %\end{abstract}
 %
@@ -125,7 +121,7 @@ The LOFAR radio telescope creates petabytes of data per year. This data is impor
 
 Data sets in radio astronomy have increased 1000-fold over the past decade\cite{sabater_datasize}. It is no longer feasible to move, store and process these data sizes at university clusters, nor to process these data manually. LOFAR, the Low-Frequency Array\cite{LOFAR} is a modern and powerful radio telescope that creates more than 5 Petabytes of data per year. At present, the majority of LOFAR time is allocated to several Key Science Projects (KSPs)\cite{lotss}. These projects need to process hundreds or thousands of observations. Typical observations produce approximately 14 TB of archived data. Obtaining high fidelity images from this data requires complex processing steps. To manage and automate the data processing, workflow management software is needed. This software needs to accelerate LOFAR processing on a High Throughput Computing (HTC) cluster while ensuring it is easy to prototype, test, and integrate future algorithms and pipelines. 
 	
-To automate LOFAR data processing, we have worked with the LOFAR Surveys KSP (SKSP). Together, we designed a software suite that integrates LOFAR software\cite{cookbook} with the Dutch grid infrastructure\cite{dutchinfra}. This software, based on Apache Airflow\footnote{\url{https://airflow.apache.org/}}, makes it easy to add future science cases, extend and modify pipelines, include data quality checks, and rapidly prototype complex pipelines.  For the SKSP use cases, AGLOW achieves a significant reduction in development time: from months to days, allowing researchers to concentrate on data analysis rather than management of processing.  Additionally, and perhaps more importantly, the software versions and repositories used are defined within the workflow. This makes reproducibility an integral part of the AGLOW software.  Finally, the software is built to  leverage an HTC cluster by seamlessly submitting the processing jobs through the cluster's job submission system\cite{glite}. The work presented here builds on our previous work parallelizing single LOFAR jobs\cite{mechev} on a distributed environment. The majority of processing was done at SURFsara at the Amsterdam Science Park\cite{SurfSara}, which is one of the sites used by the LOFAR Long Term Archive (LTA)\footnote{\url{https://lta.lofar.eu}}. Ongoing efforts include scheduling and processing data at clusters in Pozna\`{n} in Poland and J\"{u}lich in Germany. 
+To automate LOFAR data processing, we have worked with the LOFAR Surveys KSP (SKSP). Together, we designed a software suite that integrates LOFAR software\cite{cookbook} with the Dutch grid infrastructure\cite{dutchinfra}. This software, based on Apache Airflow\footnote{\url{https://airflow.apache.org/}}, makes it easy to add future science cases, extend and modify pipelines, include data quality checks, and rapidly prototype complex pipelines.  For the SKSP use cases, AGLOW achieves a significant reduction in development time: from months to days, allowing researchers to concentrate on data analysis rather than management of processing.  Additionally, and perhaps more importantly, the software versions and repositories used are defined within the workflow. This makes reproducibility an integral part of the AGLOW software.  Finally, the software is built to  leverage an HTC cluster by seamlessly submitting the processing jobs through the cluster's job submission system\cite{glite}. The work presented here builds on our previous work parallelizing single LOFAR jobs\cite{mechev17} on a distributed environment. The majority of processing was done at SURFsara at the Amsterdam Science Park\cite{SurfSara}, which is one of the sites used by the LOFAR Long Term Archive (LTA)\footnote{\url{https://lta.lofar.eu}}. Ongoing efforts include scheduling and processing data at clusters in Pozna\`{n} in Poland and J\"{u}lich in Germany. 
 
 \textbf{Contributions:}
 The main features of the AGLOW software are the following:
@@ -156,7 +152,7 @@ A workflow is described by a set of tasks. The dependencies between these tasks 
 Workflow management software is used in various fields from research to industry. In biology, gene sequencing and analysis pipelines require automation of multiple processing steps. In gene sequencing, Toil\footnote{\url{https://toil.readthedocs.io}} has been successfully used to automate RNA sequence analysis\cite{toil}. Additionally, many  software teams in biotech develop their own in-house workflow management software \cite{nextflow}.  
 
 
-Currently, we can parallelize a single processing step of the pipeline using the Grid LOFAR Tools (GRID\_LRT\footnote{\url{https://github.com/apmechev/GRID_LRT}}) \cite{mechev}. The LOFAR Surveys science cases incorporate multiple steps with inter-linked dependencies. Resolving these dependencies can be done efficiently by a comprehensive workflow orchestration software. The purpose of such software is to resolve dependencies between the multiple tasks in a workflow, execute these tasks, and track the status, logs, output, and run time of each task. 
+Currently, we can parallelize a single processing step of the pipeline using the Grid LOFAR Tools (GRID\_LRT\footnote{\url{https://github.com/apmechev/GRID_LRT}}) \cite{mechev17}. The LOFAR Surveys science cases incorporate multiple steps with inter-linked dependencies. Resolving these dependencies can be done efficiently by a comprehensive workflow orchestration software. The purpose of such software is to resolve dependencies between the multiple tasks in a workflow, execute these tasks, and track the status, logs, output, and run time of each task. 
 
 In astronomy, workflow systems have been developed that are telescope specific, such as ESOReflex\cite{reflex} by the European Southern Observatory. Other projects, such as astrogrid\footnote{http://www.astrogrid.org} and 'Workflow 4Ever'\footnote{http://wf4ever.github.io/ro/}, have either been completed or are no longer supported. The astrogrid project, for example, was a collaboration to create standards, infrastructure, and software for distributed astronomical processing. Its operation phase spanned 2008-2010. Workflow4Ever, likewise, has been out of support since 2013. To ensure continuing support for the LOFAR workflows, we have decided to use a leading enterprise workflow management software, Airflow.
 
@@ -196,13 +192,13 @@ AGLOW combines the LOFAR software, the Grid LOFAR Tools (GRID\_LRT), and Airflow
   \framebox{\parbox{3.3in}{      
   \includegraphics[width=0.45\textwidth]{ch5/figures/AGLOW_structure.png}
  }}
-    \caption[Design of the AGLOW software, including its constituent packages.]{Design of the AGLOW software, incorporating Airflow, the GRID\_LRT package\cite{mechev} and custom operators designed to integrate LOFAR software, Grid middleware and dCache storage. GRID\_LRT is a software package developed to parallelize single LOFAR jobs at SURFsara. It contains several modules to help set up, and launch jobs on an HTC cluster at SURFsara. Airflow is a stand-alone package by Airbnb, which is extended with several classes that couple Airflow with the Grid infrastructure. These classes are collectively named the AGLOW operators/sensors. }
+    \caption[Design of the AGLOW software, including its constituent packages.]{Design of the AGLOW software, incorporating Airflow, the GRID\_LRT package\cite{mechev17} and custom operators designed to integrate LOFAR software, Grid middleware and dCache storage. GRID\_LRT is a software package developed to parallelize single LOFAR jobs at SURFsara. It contains several modules to help set up, and launch jobs on an HTC cluster at SURFsara. Airflow is a stand-alone package by Airbnb, which is extended with several classes that couple Airflow with the Grid infrastructure. These classes are collectively named the AGLOW operators/sensors. }
  \label{AGLOW_structure}
 \end{figure}
 
 
 \subsubsection{GRID LOFAR Tools and LOFAR software}
-We have previously developed tools to create LOFAR jobs and launch them on a distributed infrastructure\cite{mechev}. These tools have matured to a point where it is easy to both plug and play existing scripts and extend the framework to add more complex pipelines. These steps make it possible for a user to batch execute bash or Python scripts on their LOFAR data in parallel. After the scripts are executed, the results are uploaded to shared dCache storage\cite{dcache} at SURFsara\cite{SurfSara}. 
+We have previously developed tools to create LOFAR jobs and launch them on a distributed infrastructure\cite{mechev17}. These tools have matured to a point where it is easy to both plug and play existing scripts and extend the framework to add more complex pipelines. These steps make it possible for a user to batch execute bash or Python scripts on their LOFAR data in parallel. After the scripts are executed, the results are uploaded to shared dCache storage\cite{dcache} at SURFsara\cite{SurfSara}. 
 
 More complex steps use additional Github repositories, such as the prefactor\footnote{https://github.com/lofar-astron/prefactor} for direction independent calibration or DDF-pipeline\footnotemark{}  for direction-dependent calibration and imaging. The sequence of steps is encoded in parameter-set files (parsets), which can be modified and dropped into AGLOW depending on the processing requirements. Users have full control over which git repository, branch and commit number to use for each processing step. 
 
@@ -222,7 +218,7 @@ Second, more complex tasks were implemented as Airflow operators or sensors (Fig
 AGLOW stages data through the ASTRON staging API, which is made available through the GRID\_LRT software \footnote{\url{https://grid-lrt.readthedocs.io/en/latest/staging.html\#grid-lrt-staging-stage-all-lta}}.This API loads the user's LTA credentials from a file. Using these credentials, AGLOW stages the required files at the respective LTA site. The AGLOW staging operator waits until all the files have been staged before returning a successful exit status. 
 
 \paragraph{Sandbox}
-Scripts to retrieve, process and upload the data are stored in a sandbox, as described in \cite{mechev}. The LRT\_Sandbox operator that builds this sandbox directly uses the GRID\_LRT Sandbox module to build and upload the sandbox according to the user-provided configuration file. 
+Scripts to retrieve, process and upload the data are stored in a sandbox, as described in \cite{mechev17}. The LRT\_Sandbox operator that builds this sandbox directly uses the GRID\_LRT Sandbox module to build and upload the sandbox according to the user-provided configuration file. 
 
 \paragraph{Token Creation}
 Jobs parallelized with GRID\_LRT store processing parameters inside CouchDB documents called PiCaS Tokens. Each token corresponds to one grid processing job. These tokens are created by the LRT\_Token operator in AGLOW. This operator uses the GRID\_LRT Token module to define tokens and create them from a list of links to LOFAR data. 
@@ -239,7 +235,7 @@ Using AGLOW to accelerate the execution of a pipeline requires deciding how to s
   \framebox{\parbox{3.3in}{      
   \includegraphics[width=0.45\textwidth]{ch5/figures/Operators.png}
  }}
-    \caption[Graphical representation of the Airflow Operators built for AGLOW]{Airflow Operators for Staging LOFAR data, creating job descriptions and submitting jobs to the Dutch grid. On the left is the input given to each operator. `SRM lists' are lists of links to data at the LOFAR LTA or located on the SURFsara dCache storage. Parsets are files specific to `prefactor' and `DDF-pipeline' and define the processing for each pipeline step. Finally, the `Sandbox' and `Token' operators read their parameters from a configuration file. The use of a scripts sandbox and job description tokens is detailed in our previous work\cite{mechev}. Documentation of the operators is available at  \protect\url{https://aglow.readthedocs.io/en/latest/operators.html}}
+    \caption[Graphical representation of the Airflow Operators built for AGLOW]{Airflow Operators for Staging LOFAR data, creating job descriptions and submitting jobs to the Dutch grid. On the left is the input given to each operator. `\Gls{srm} lists' are lists of links to data at the LOFAR LTA or located on the SURFsara dCache storage. Parsets are files specific to `prefactor' and `DDF-pipeline' and define the processing for each pipeline step. Finally, the `Sandbox' and `Token' operators read their parameters from a configuration file. The use of a scripts sandbox and job description tokens is detailed in our previous work\cite{mechev17}. Documentation of the operators is available at  \protect\url{https://aglow.readthedocs.io/en/latest/operators.html}}
  \label{AGLOW_Operators}
 \end{figure}
  
@@ -248,7 +244,7 @@ Using AGLOW to accelerate the execution of a pipeline requires deciding how to s
 
 Once LOFAR observations are downloaded from the LTA, they are typically processed with several packages before producing a science ready data set. We have integrated these packages with Airflow to make it easy to create complex LOFAR workflows. 
 
-Each of the processing steps above requires extra set-up to process on the Dutch Grid infrastructure. The job scripts setup, job description, and job submission are done by the GRID\_LRT package\cite{mechev}. With AGLOW, we automate this setup, enabling users to focus on developing more comprehensive data processing pipelines. Below we outline several possible steps a user can use in their pipeline. 
+Each of the processing steps above requires extra set-up to process on the Dutch Grid infrastructure. The job scripts setup, job description, and job submission are done by the GRID\_LRT package\cite{mechev17}. With AGLOW, we automate this setup, enabling users to focus on developing more comprehensive data processing pipelines. Below we outline several possible steps a user can use in their pipeline. 
 
 \subsubsection{DPPP Parset}
 The DPPP software is used extensively in LOFAR data processing. It has many capabilities such as flagging bad data, averaging data in time and frequency, and calibrating the data with a sky-model. 

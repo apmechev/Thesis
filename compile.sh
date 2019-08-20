@@ -7,7 +7,7 @@ rm thesis/*aux
 
 pdflatex  -output-directory=thesis/  thesis.tex 
 
-makeglossaries -d thesis/ thesis
+
 
 cd thesis
 #cp ../thesis.tex ./ 
@@ -16,6 +16,8 @@ cd ../
 
 
 pdflatex  -output-directory=thesis/  thesis.tex
+makeglossaries -d thesis/ thesis
+
 pdflatex  -output-directory=thesis/  thesis.tex
 
 #mv thesis.preamble.aux thesis
