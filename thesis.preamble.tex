@@ -155,22 +155,22 @@
 \newlength\chapnumb
 \setlength\chapnumb{4cm}
 
-\titleformat{\chapter}[block]
-{\normalfont\sffamily}{}{0pt}
-{\parbox[b]{\chapnumb}{%
-   \fontsize{80}{90}\selectfont\thechapter}%
-  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
-    \raggedleft%
-    \hfill{\LARGE#1}\\
-    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
-\titleformat{name=\chapter,numberless}[block]
-{\normalfont\sffamily}{}{0pt}
-{\parbox[b]{\chapnumb}{%
-   \mbox{}}%
-  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
-    \raggedleft%
-    \hfill{\LARGE#1}\\
-    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %\let\oldaddtocontents\addtocontents
@@ -216,6 +216,22 @@
 \definecolor{thesisaltlight}{HTML}{AAFAAB}
 \definecolor{thesisaltdark}{HTML}{2E626A}
 
+\titleformat{\chapter}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+    \textcolor{thesisdark}{\fontsize{80}{90}\selectfont\thechapter}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
 
 
 

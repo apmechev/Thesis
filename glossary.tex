@@ -7,6 +7,19 @@
     description={The LOw Frequency ARray: A large, low-frequency aperture synthesis radio telescope} 
 }
 
+\newglossaryentry{HBA}
+{
+    name=HBA,
+    description={The High Band Array is an array of LOFAR antennas sensitive to 110-240MHz. Each lofar station in the Netherlands has 48 HBA elements, with core stations having two separate sub-arrays of 24; while international stations have 96 HBA elements. The naming schele of these antenasis as such: LLNNNHBAS, where LL is the location (CS for core stations, RS for remote stations, and the ISO 3166-1 2-letter country code for the international stations); NNN is the station number, starting at 000, HBA/LBA denotes whether it's a HBA or LBA antenna and S refers to the core station sub-array}
+}
+
+\newglossaryentry{HTC}
+{
+    name=HTC,
+    description={High Throughput Computing, as opposed to High Performance Computing (\Gls{HPC}), focuses on minimizing the time taken processing large amounts of data by using techniques in streaming, parallelizing and distributing many small jobs on a cluster }
+}
+
+
 \newglossaryentry{LoTSS}
 {
     name=LoTSS,
@@ -20,12 +33,16 @@
     description={Broadband LOFAR observations are stored in separate 'Subbands', splitting the frequency range into several individual files, before storing at the Long Term Archive. Depending on the observation mode, one observation can have 230-480 Subbands. This splitting makes it easier for users to request, download and process a fraction of observation's entire bandwidth}
 }
 
-
-
-\newglossaryentry{Fourier space}
+\newglossaryentry{HPC}
 {
-    name={Fourier space},
-    description={Radio Astronomers use the term `UV plane' or `Fourier space' interchangably to refer to the Fourier Transform of the final image. Each baseline of an aperture synthesis telescope corresponds to one measurement in this space. The letters U and V refer to the two  orthogonal components of a baseline with respect to an observation's phase center. The $u$ and $v$ vectors are defined in a plane orthogonal to the direction towards the phase center, and are typically in units of wavelength. To obtain an image, the UV data needs to be `cleaned' by iteratively removing the point spread function of the telescope}
+    name=HPC,
+    description={High Performance Computing, as opposed to High Throughput Computing (\Gls{HTC}), refers to computation on one or multiple machines with many, fast CPUS; large quantities of RAM and fast disks. Often HPC jobs are done on clusters where multiple of these machines are connected with a fast network used to pass messages and to synchronize workloads 
+}}
+
+\newglossaryentry{visibility}
+{
+    name={visibilitie},
+    description={Radio Astronomers use the term `UV plane' or `visibilities' interchangably to refer to the Fourier Transform of the final image. Each baseline of an aperture synthesis telescope corresponds to one measurement in this space. The letters U and V refer to the two  orthogonal components of a baseline with respect to an observation's phase center. The $u$ and $v$ vectors are defined in a plane orthogonal to the direction towards the phase center, and are typically in units of wavelength. To obtain an image, the UV data needs to be `cleaned' by iteratively removing the point spread function of the telescope}
 }
 
 \newglossaryentry{Grid}
