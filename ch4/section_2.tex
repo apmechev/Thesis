@@ -7,7 +7,7 @@ In this work, we use a sample LOFAR SKSP data set as a test case. A particular f
 
 \subsection{\textit{Prefactor} Pipeline}
 
-The LOFAR \textit{prefactor} pipeline \citep{vanweeren2016} is a software pipeline that performs direction independent calibration using the LOFAR software. The LOFAR software stack is a software package containing commonly used processing software used by LOFAR pipelines \citep{cookbook,lofar_NDPPP}. These tools are built and maintained by ASTRON\footnote{ASTRON: Netherlands Institute for Radio Astronomy, url{https://www.astron.nl/}}. 
+The LOFAR \textit{prefactor} pipeline \citep{vanweeren2016} is a software pipeline that performs direction independent calibration using the LOFAR software. The LOFAR software stack is a software package containing commonly used processing software used by LOFAR pipelines \citep{cookbook,offringa2013}. These tools are built and maintained by ASTRON\footnote{ASTRON: Netherlands Institute for Radio Astronomy, url{https://www.astron.nl/}}. 
 
 The \textit{prefactor} pipeline performs a sequence of four stages, namely the calibrator and target calibration. The first half of \textit{prefactor} processes data from a calibration source and the second half processes a science target. Altogether, this processing takes six hours on a high-throughput cluster. The final result is a data-set ready for creating  images of the sky at radio wavelengths. Figure \ref{fig:ch4_four_steps_box} shows a graphical view of the prefactor pipeline's Calibrator and Target stages.
 
@@ -25,7 +25,7 @@ The Target stage consists of a \textit{ndppp\_prep\_targ} step, \textit{predict\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{ch4/figures/fig2/4pies.pdf}
+    \includegraphics[width=0.5\linewidth]{ch4/figures/fig2/4pies_thesis.png}
       \caption[Portion of processing time taken by each step for the four prefactor stages.]{Portion of processing time taken by each step for the four prefactor stages, as reported by the Prefactor software. For each stage, the majority of processing time is spent during one or two steps. This is due to the fact that each prefactor stage also has intermediate book-keeping steps explicitly included in the pipeline. For each pipeline stage, the mean processing time for the longest running steps at SURFsara is also indicated. It should be noted that while faster, pref\_cal1 runs 10 times as many jobs as pref\_targ2. }
 	\label{fig:ch4_4_steps_pies}
 \end{figure}

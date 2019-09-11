@@ -107,7 +107,7 @@
 
 The LOFAR radio telescope creates petabytes of data per year. This data is important for many scientific projects. The data needs to be efficiently processed within the time span of these projects in order to maximize the scientific impact. We present a workflow orchestration system that integrates LOFAR processing with a distributed computing platform. The system is named Automated Grid-enabled LOFAR Workflows (AGLOW). AGLOW makes it fast and easy to develop, test and deploy complex LOFAR workflows, and to accelerate them on a distributed cluster architecture. AGLOW reduces the setup time of complex workflows: typically, from months to days. We lay out two case studies that process the data from the LOFAR Surveys Key Science Project. We have implemented these into the AGLOW environment. We also describe the capabilities of AGLOW, paving the way for use by other LOFAR science cases. In the future, AGLOW will automatically produce multiple science products from a single data set, serving several of the LOFAR Key Science Projects.
 
-     This chapter is based on the work of  \fullcite{ieee_AGLOW}
+     This chapter is based on the work of  \fullcite{mechev2018_aglow}
 \end{tcolorbox}
 
 
@@ -204,9 +204,9 @@ More complex steps use additional Github repositories, such as the prefactor\foo
 
 With AGLOW, we can easily include the DDF-pipeline and prefactor repositories, as well as any other scripts. Since these scripts are tracked by git \cite{torvalds2010git}, a full commit and branch history of the scripts is available. We use this history to make processing reproducible, by using the same git-commit for all LOFAR data sets. 
 
-In addition to these script repositories, we have integrated the most common software packages used to process LOFAR data with AGLOW. These are the Default Pre-Processing Pipeline (DPPP)\cite{cookbook}, the LOFAR Solutions Tool (LoSoTo), WSclean \cite{wsclean}, AOflagger\cite{aoflag}, CASA\cite{casa}, pyBDSF\cite{bdsf}, DDFacet\cite{tasse2018} and KillMS\cite{smirnov_tasse_KillMS,tassekalman}.
+In addition to these script repositories, we have integrated the most common software packages used to process LOFAR data with AGLOW. These are the Default Pre-Processing Pipeline (DPPP)\cite{cookbook}, the LOFAR Solutions Tool (LoSoTo), WSclean \cite{wsclean}, AOflagger\cite{aoflag}, CASA\cite{casa}, pyBDSF\cite{bdsf}, DDFacet\cite{tasse2018} and KillMS\cite{tassesmirnov,tassekalman}.
 
-\footnotetext{https://github.com/mhardcastle/ddf-pipeline. DDF-pipeline is a leading example of a Direction Dependent calibration pipeline used for LOFAR data. It uses DDFacet \cite{tasse2018}, KillMS \cite{smirnov_tasse_KillMS} and to create high quality images. }
+\footnotetext{https://github.com/mhardcastle/ddf-pipeline. DDF-pipeline is a leading example of a Direction Dependent calibration pipeline used for LOFAR data. It uses DDFacet \cite{tasse2018}, KillMS \cite{tassesmirnov} and to create high quality images. }
 
 \subsubsection{Extending Airflow}\label{sec:extending}
 
@@ -282,7 +282,7 @@ We have already processed more than 50 datasets through the `prefactor' DAG usin
 
 \subsection{DDF-pipeline}
 
-The final AGLOW DAG is the implementation of the DDF-pipeline repository which is a pipeline that is extensively used by the LOFAR surveys KSP and is described in detail in \cite{lotss}. This pipeline operates on the products of the prefactor pipeline and consists of a series of calibration and imaging loops with the objective of creating a final science quality image. For each of these loops the majority of the processing time is spent in DDFacet\cite{tasse2018} and KillMS\cite{smirnov_tasse_KillMS,tassekalman} steps that perform the direction-dependent imaging and calibration respectively. 
+The final AGLOW DAG is the implementation of the DDF-pipeline repository which is a pipeline that is extensively used by the LOFAR surveys KSP and is described in detail in \cite{lotss}. This pipeline operates on the products of the prefactor pipeline and consists of a series of calibration and imaging loops with the objective of creating a final science quality image. For each of these loops the majority of the processing time is spent in DDFacet\cite{tasse2018} and KillMS\cite{tassesmirnov,tassekalman} steps that perform the direction-dependent imaging and calibration respectively. 
 
 In total, DDF-pipeline takes $\sim$4\, days of processing to complete. As DDF-pipeline creates large intermediate files we have so far not divided the pipeline into too many steps to avoid filling the storage on the \texttt{GINA} cluster. However, we have split the pipeline into two steps and there is further potential for parallelization that will be implemented in the future. 
 

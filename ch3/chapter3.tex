@@ -14,6 +14,7 @@
 %\addcontentsline{toc}{chapter}{Scaling LOFAR Processing}                                                                                                     
 
 \chapter[LOFAR Scalability Framework]{An Automated Scalable Framework for Distributing Radio Astronomy Processing Across Clusters and Clouds}\label{ch:GRID_LRT}
+\continuethumb
 \addtitlethumb{Frontmatter}{\huge 3}{white}{gray}                                                                                           
 
 
@@ -51,9 +52,9 @@ To complete the LoTSS project, the processing software needs to be made portable
 \setcounter{footnote}{0}
 
 \section{Introduction}
-The \Gls{LOFAR} radio telescope is the world's largest aperture synthesis array with more than 20,000 antennas and baselines of 60 m to 1000 km\cite{van2013lofar}. With its unprecedented sensitivity and angular resolution at ultra-low frequencies, LOFAR's goals are far reaching: from studying pulsars and supernova remnants to the evolution of distant galaxies. Additionally, LOFAR is a pathfinder for the larger Square Kilometer Array (SKA) radio telescope. The SKA-Low telescope is expected to increase data size\cite{lofar_data} to 400TB per day creating more than 120PB per year\cite{ska_cloud_memo}. 
+The \Gls{LOFAR} radio telescope is the world's largest aperture synthesis array with more than 20,000 antennas and baselines of 60 m to 1000 km\cite{vanHaarlem2013}. With its unprecedented sensitivity and angular resolution at ultra-low frequencies, LOFAR's goals are far reaching: from studying pulsars and supernova remnants to the evolution of distant galaxies. Additionally, LOFAR is a pathfinder for the larger Square Kilometer Array (SKA) radio telescope. The SKA-Low telescope is expected to increase data size\cite{lofar_data} to 400TB per day creating more than 120PB per year\cite{ska_cloud_memo}. 
 
-The LOFAR Two Meter Sky Survey (\Gls{LoTSS}) Survey\cite{lotss} will observe 3000 different fields that collectively will map the entire northern radio sky. The size of each of these data sets is 16TB, making for a total of 48 Petabytes. To complete the LoTSS survey in the project's anticipated 5 year duration, 1PB of data need to be processed each month. 
+The LOFAR Two Meter Sky Survey (\Gls{LoTSS}) Survey\cite{shimwell2017} will observe 3000 different fields that collectively will map the entire northern radio sky. The size of each of these data sets is 16TB, making for a total of 48 Petabytes. To complete the LoTSS survey in the project's anticipated 5 year duration, 1PB of data need to be processed each month. 
 
 To mitigate delays caused by data transfer, the reduction must be done at a location with a high bandwidth connection to the raw data. Software packages for the initial processing of LOFAR data already exist\cite{vanweeren2016}, however they were not designed to work on all cluster architectures. To complete the LoTSS project in time, a framework is needed to automatically process multiple data sets at a cluster with a fast connection to the data. 
 
