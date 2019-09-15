@@ -1,7 +1,7 @@
 \section[Measuring LOFAR Pipeline performance with pipeline\_collector]{Measuring LOFAR Pipeline performance with \\pipeline\_collector}\label{sec:ch4_methods}
 We developed the package \textit{pipeline\_collector} as an extension of  the performance collection package \textit{tcollector}. \textit{pipeline\_collector} makes it possible to collect performance data for complex multi-step pipelines. Additionally, it makes it easy to record performance data from other utilities. A performance monitoring utility that we plan to integrate in the future are the PAPI tools described in section \ref{sec:ch4_related}. The resulting performance data was recorded in a database and analyzed. For our tests, we used the LOFAR \textit{prefactor} pipeline, however with minor modifications, any multi-step pipeline can be profiled. 
 
-\textit{tcollector} is a software package that automatically launches 'collector' scripts. These scripts are  sample the specific system resource and send the data to the main tcollector process. This process then sends the data to the dedicated time series database. We created custom scripts to monitor processes launched by the \textit{prefactor} pipeline (\ref{sec:ch4_customcollectors}). 
+\textit{tcollector} is a software package that automatically launches 'collector' scripts. These scripts sample the specific system resource and send the data to the main tcollector process. This process then sends the data to the dedicated time series database. We created custom scripts to monitor processes launched by the \textit{prefactor} pipeline (\ref{sec:ch4_customcollectors}). 
 
 In this work, we use a sample LOFAR SKSP data set as a test case. A particular focus was to understand the effect of hardware on the bottlenecks of the LOFAR data reduction. To gain insight into the effect of hardware on \textit{prefactor} performance, the data was processed on four different hardware configurations (Table \ref{tab:ch4_nodes}). As typical upgrade cycle for cluster hardware is five years, our results will be used to select optimal hardware for future clusters tasked with LOFAR processing.  
 
@@ -19,14 +19,14 @@ The Target stage consists of a \textit{ndppp\_prep\_targ} step, \textit{predict\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{ch4/figures/fig1/fig1.pdf}
-      \caption[The four processing stages that make up the prefactor pipeline.]{The four processing stages that make up the prefactor pipeline. The Calibrator stages (top) process a known bright calibrator to obtain the gain for the LOFAR antennas. The Target stages (bottom) process the scientific observation to remove Direction Independent effects. The \textit{pref\_cal1} and \textit{pref\_targ1} stages are massively parallelized across nodes without the need of an interconnect. The \textit{pref\_cal2} step runs only on one node, while \textit{pref\_targ2} is parallelized on 25 nodes. As the LOFAR software does not use MPI, we can run each processing job in isolation. }
+      \caption[The four processing stages that make up the prefactor pipeline.]{The four processing stages that make up the prefactor pipeline. The Calibrator stages (top) process a known bright calibrator to obtain the gain for the LOFAR antennas. The Target stages (bottom) process the scientific observation to remove Direction Independent effects. The \textit{pref\_cal1} and \textit{pref\_targ1} stages are massively parallelized across nodes without the need for an interconnect. The \textit{pref\_cal2} step runs only on one node, while \textit{pref\_targ2} is parallelized on 25 nodes. As the LOFAR software does not use MPI, we can run each processing job in isolation. }
 	\label{fig:ch4_four_steps_box}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{ch4/figures/fig2/4pies_thesis.png}
-      \caption[Portion of processing time taken by each step for the four prefactor stages.]{Portion of processing time taken by each step for the four prefactor stages, as reported by the Prefactor software. For each stage, the majority of processing time is spent during one or two steps. This is due to the fact that each prefactor stage also has intermediate book-keeping steps explicitly included in the pipeline. For each pipeline stage, the mean processing time for the longest running steps at SURFsara is also indicated. It should be noted that while faster, pref\_cal1 runs 10 times as many jobs as pref\_targ2. }
+      \caption[Portion of processing time taken by each step for the four prefactor stages.]{Portion of processing time taken by each step for the four prefactor stages, as reported by the Prefactor software. For each stage, the majority of processing time is spent during one or two steps. This is due to the fact that each prefactor stage also has intermediate book-keeping steps explicitly included in the pipeline. For each pipeline stage, the mean processing time for the longest-running steps at SURFsara is also indicated. It should be noted that while faster, pref\_cal1 runs ten times as many jobs as pref\_targ2. }
 	\label{fig:ch4_4_steps_pies}
 \end{figure}
 
