@@ -281,7 +281,6 @@
 \usepackage{scrextend}
 \usepackage[toc]{glossaries}
 
-
 %\usepackage{setspace}
 %\singlespacing
 %\onehalfspacing
@@ -290,3 +289,24 @@
 %\usepackage{xparse,nameref}
 %\NewDocumentCommand{\chapref}{s m}{Chapter~\ref{#2}\IfBooleanF{#1}{ \nameref{#2}}}
 
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+%\makeatletter
+%\DeclareCiteCommand{\longfullcite}
+%  {\usebibmacro{prenote}}
+%  {\usedriver
+%     {\c@maxnames\blx@maxbibnames\relax
+%      \DeclareNameAlias{sortname}{default}}
+%     {\thefield{entrytype}}}
+%  {\multicitedelim}
+%  {\usebibmacro{postnote}}
+%\makeatother
+%\usepackage{xstring}
