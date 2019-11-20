@@ -39,67 +39,7 @@
 \chapter{Fast and Reproducible LOFAR Workflows with AGLOW}\label{ch:AGLOW}
 \addtitlethumb{Frontmatter}{\huge 5}{white}{gray}                                                                                           
 
-% %  {\normalfont\large 
-% %  A.P. Mechev\Mark{a,1},J.B.R Oonk\Mark{a,b,c,2}, T. Shimwell\Mark{b,3}, A. Plaat\Mark{d,4}, H.T. Intema\Mark{a,5}, H.J.A. R\"{o}ttgering\Mark{a,6}
-% %  }\\[-1.5ex]
 
-%\setcounter{footnote}{0}                                                                                                                                    
-
-% \author{A.P. Mechev $^{1}$ and A. Plaat$^{2}$
-
-% %\thanks{*This work was not supported by any organization}% <-this % stops a space
-% $^{1}$Leiden Observatory
-% 		Leiden University, 	Niels Bohrweg 2 NL-2333 CA,
-%         Leiden        {\tt\small research at apmechev.com} \\
-% $^{2}$Leiden Institute for Advanced Computer Science
-% 		Leiden University, 	Niels Bohrweg 2 NL-2333 CA,
-%         Leiden          {\tt\small a.plaat at liacs.leidenuniv.nl}%
-
-% }
-% %
-% %\author{
-% %
-% %\IEEEauthorblockA{%
-% %        \Mark{a}Leiden Observatory,\\
-% %        Leiden University,\\
-% %        Niels Bohrweg 2 NL-2333 CA\\
-% %        Netherlands \\
-% %       \Mark{1}apmechev at strw.leidenuniv.nl \\
-% %       \Mark{2}oonk at strw.leidenuniv.nl \\
-% %       \Mark{5}intema at strw.leidenuniv.nl \\
-% %       \Mark{6}rottgering at strw.leidenuniv.nl \\
-% %    }  \and
-% %
-% %\IEEEauthorblockA{%
-% %        \Mark{b}ASTRON,\\
-% %        Oude Hoogeveensedijk 4,\\
-% %       7991 PD Dwingeloo\\
-% %        Netherlands\\
-% %        \Mark{3}shimwell at astron.nl
-% %    } \and
-% %\IEEEauthorblockA{%
-% %        \Mark{c}SURFsara\\
-% %        P.O. Box 94613\\
-% %        1090 GP Amsterdam\\
-% %        Netherlands\\   
-% %        }  \and
-% %\IEEEauthorblockA{%
-% %        \Mark{d}LIACS,\\
-% %        Leiden University,\\
-% %        Niels Bohrweg 1 NL-2333 CA\\
-% %        Netherlands\\
-% %        \Mark{4}a.plaat at liacs.leidenuniv.nl
-% %    }
-% %}
-% %
-% %\usepackage[perpage]{footmisc}
-% %\begin{document}
-
-
-
-%\maketitle
-%\thispagestyle{empty}
-%\pagestyle{empty}
 
 \begin{tcolorbox}[colback=thesislight,colframe=thesismid,width=\dimexpr\textwidth+1mm\relax]
 
@@ -332,7 +272,7 @@ Our experience with automating LOFAR scientific workflows on a distributed archi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{subappendices}
+
 
 \section*{APPENDIX}
  
@@ -349,25 +289,3 @@ The LOFAR SKSP workflow is shown in Figure \ref{SKSP_workflow}. This figure show
 
 \subsection{Sub-DAG}\label{sec:Subdags}
 Airflow allows developers to include entire DAGs as a single task in their workflow. Airflow can trigger a DAG execution based on parameters provided by the parent DAG. This feature makes it possible to concatenate short, commonly used tasks into DAGs and call them in a parent workflow. Using sub-DAGS makes the code more maintainable and easy to use, while it makes workflows simpler. For LOFAR, Sub-DAGs are used to automate job submission, making the resulting scientific workflows simpler. 
-
-   
-% Appendixes should appear before the acknowledgment.
-\end{subappendices}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
